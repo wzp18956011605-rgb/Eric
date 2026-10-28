@@ -5,3 +5,6 @@ MegaPuff-burnade-card-index-fix-test.zip修正UI_SeedPackets_768与1536分包内
 
 最新测试包：MegaPuff-burnade-alignment-badge-lifetime-test.zip。取消动画额外平移，改用390兼容画布；小卡沿用普通小喷菇的逻辑尺寸和裁剪偏移；补充burnade图鉴属性表和DESCRIPTION_HEADER；将卡槽铜/银/金/精通等级角标专用贴图置透明，其他原图集像素保持；一级寿命60降50秒，其他等级按相同比例。
 验证：340帧变换与源XFL逐项对照、20级寿命值、图鉴文本与属性、图集索引顺序、卡面逻辑尺寸和非目标像素均通过检查。尚未实机验证显示位置和死机问题。不要重新启用隐藏LV的lib。
+
+后续版本：Sweetpea-Contain-MegaPuff-30s-test.zip放大Hot Date甜豌豆卡面至电豌豆相同逻辑尺寸，改Containmint；机枪喷各等级固定30秒，间隔0.54~0.60秒。
+PVZ2-9.8.1-arm64-hide-level-progress-draw-test.zip是新的原生UI测试方案，保持控件创建与更新，只隐藏进度条树绘制和等级文字，保留冰火增伤。不使用旧跳过等级控件创建的补丁。14组指令检查通过，未实机验证；其他使用PlantLevelProgressBar的界面也可能隐藏进度显示。
