@@ -1,0 +1,19 @@
+{
+  "user_confirmed_working_file": "MegaPuff-burnade-alignment-badge-lifetime-test (1).zip",
+  "baseline_sha256": "957cc2869b2fbd73289d3dae72748cd46b845f0bc3317387e5ba17efbb5f632c",
+  "rebuild_file": "Sweetpea-MegaPuff-working-base-rebuild-test.zip",
+  "rebuild_sha256": "5b583979cb32140d592344f1961501ce18a59dd549c9cd3d20eb13d66ede146b",
+  "baseline_user_confirmed_working": true,
+  "rebuild_android_runtime_test": "not run",
+  "new_resource_ids_or_slots": false,
+  "texture_indices_and_count_preserved": true,
+  "modified_overlay_files": [
+    "Overlay/Packet/__MANIFESTGROUP__.rsgp",
+    "Overlay/Packet/Packages.rsgp",
+    "Overlay/StructInfo.json",
+    "Overlay/Packet/UI_SeedPackets_768.rsgp",
+    "Overlay/Packet/UI_SeedPackets_1536.rsgp"
+  ],
+  "native_library_not_included": true,
+  "do_not_overlay_previous_separate_structinfo_repair": true
+}
