@@ -1,0 +1,4 @@
+用户反馈：同时使用MegaPuff-burnade-768-1536-test.zip与PVZ2-9.8.1-arm64-fire25-hide-card-level-test.zip后，进入图鉴和选卡界面卡死。尚未定位到确切根因。
+暂时停用隐藏LV的lib，换回PVZ2-9.8.1-arm64-fire25-tallnut-water-test.zip中的库，单独对照测试。
+MegaPuff-burnade-card-index-fix-test.zip修正UI_SeedPackets_768与1536分包内图集索引和StructInfo资源顺序不一致；仅修改StructInfo和说明/验证报告。未实机验证，不代表已解决卡死。
+高坚果水面显示仍未修复。
