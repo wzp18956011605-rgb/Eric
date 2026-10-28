@@ -2,3 +2,6 @@
 暂时停用隐藏LV的lib，换回PVZ2-9.8.1-arm64-fire25-tallnut-water-test.zip中的库，单独对照测试。
 MegaPuff-burnade-card-index-fix-test.zip修正UI_SeedPackets_768与1536分包内图集索引和StructInfo资源顺序不一致；仅修改StructInfo和说明/验证报告。未实机验证，不代表已解决卡死。
 高坚果水面显示仍未修复。
+
+最新测试包：MegaPuff-burnade-alignment-badge-lifetime-test.zip。取消动画额外平移，改用390兼容画布；小卡沿用普通小喷菇的逻辑尺寸和裁剪偏移；补充burnade图鉴属性表和DESCRIPTION_HEADER；将卡槽铜/银/金/精通等级角标专用贴图置透明，其他原图集像素保持；一级寿命60降50秒，其他等级按相同比例。
+验证：340帧变换与源XFL逐项对照、20级寿命值、图鉴文本与属性、图集索引顺序、卡面逻辑尺寸和非目标像素均通过检查。尚未实机验证显示位置和死机问题。不要重新启用隐藏LV的lib。
