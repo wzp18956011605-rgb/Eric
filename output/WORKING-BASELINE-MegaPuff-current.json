@@ -1,0 +1,8 @@
+{
+  "baseline": "Sweetpea-MegaPuff-data-only-recovery-test.zip",
+  "sha256": "0dc5842dcf85e24c4e681ac6e7ab7a4410a796ad9667b094a57039864b460655",
+  "user_confirmed": "Can load normally; MegaPuff seed-card portrait blank",
+  "card_test": "MegaPuff-primary-card-fix-test.zip",
+  "card_test_runtime": "not verified",
+  "do_not_use_failed_later_UI_libs": true
+}
