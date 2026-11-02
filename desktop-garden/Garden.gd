@@ -10,12 +10,14 @@ const DATA = {
  "pea": {"name":"豌豆射手", "cost":75, "cool":7.5, "hp":300.0, "rate":1.425, "damage":20.0, "color":"83c969", "desc":"发射 20 伤害的直线豌豆。"},
  "wallnut": {"name":"坚果", "cost":50, "cool":20.0, "hp":4000.0, "rate":99.0, "damage":0.0, "color":"c59c68", "desc":"4000 生命，阻挡前方僵尸。"},
  "snowpea": {"name":"寒冰射手", "cost":175, "cool":5.0, "hp":300.0, "rate":1.425, "damage":20.0, "color":"8bdaec", "desc":"50% 概率冻结 1 秒，否则减速 50% 10 秒。原型冻结时长，待对照。"},
- "sweetpea": {"name":"甜豌豆", "cost":350, "cool":20.0, "hp":300.0, "rate":1.425, "damage":40.0, "color":"f38fbe", "desc":"直击 40，附近溅射 10；减速 50% 持续 2 秒。大招立即发射穿透糖弹。"},
+ "sweetpea": {"name":"甜豌豆", "cost":350, "cool":20.0, "hp":300.0, "rate":1.425, "damage":40.0, "color":"f38fbe", "desc":"直击 40，附近溅射 10；命中格周围 3×3 减速 50%，持续 2 秒。大招立即发射穿透糖弹。"},
  "megapuff": {"name":"机枪喷", "cost":0, "cool":7.5, "hp":150.0, "rate":1.425, "damage":20.0, "color":"b8a1e3", "desc":"每轮连射 4 发，射程 3 格；存活 30 秒。普通小喷仍可在后续加入。"},
  "torchwood": {"name":"火炬树桩", "cost":175, "cool":5.0, "hp":2000.0, "rate":99.0, "damage":0.0, "color":"ed995e", "desc":"普通豌豆经过后伤害翻倍。火焰命中冰减速目标增伤 25%，随后解冻。"},
  "squash": {"name":"倭瓜", "cost":50, "cool":20.0, "hp":1000.0, "rate":99.0, "damage":600.0, "color":"a3c45f", "desc":"近距离触发，两次砸击，各 600 伤害，随后离场。"}
 }
 const CARDS = ["sunflower", "pea", "wallnut", "snowpea", "sweetpea", "megapuff", "torchwood", "squash"]
+var animations = preload("res://OriginalAnimations.gd").new()
+var corpses: Array = []
 var font = preload("res://assets/ui-font.ttc")
 var sweet_texture = preload("res://assets/sweetpea.png")
 var mega_texture = preload("res://assets/megapuff.png")
@@ -64,7 +66,7 @@ func _ready():
  reset_game()
 
 func reset_game():
- plants.clear(); zombies.clear(); bullets.clear(); effects.clear(); suns.clear(); pending.clear(); mowers.clear()
+ plants.clear(); zombies.clear(); bullets.clear(); effects.clear(); suns.clear(); pending.clear(); mowers.clear(); corpses.clear()
  cooldowns.clear()
  for key in CARDS: cooldowns[key] = 0.0
  for r in range(ROWS): mowers.append({"row":r, "x":ORIGIN.x-46, "state":"ready"})
@@ -107,7 +109,7 @@ func place(key, col, row) -> bool:
  if sun < def.cost or cooldowns[key] > 0: return false
  sun -= def.cost; cooldowns[key] = def.cool
  next_id += 1
- plants.append({"id":next_id, "key":key, "col":col, "row":row, "hp":def.hp, "maxhp":def.hp, "timer":2.0 if key == "sunflower" else 0.3, "age":0.0, "flash":0.0, "burst":0, "burst_timer":0.0, "squash_hits":0, "squash_time":-1.0})
+ plants.append({"id":next_id, "key":key, "col":col, "row":row, "hp":def.hp, "maxhp":def.hp, "timer":2.0 if key == "sunflower" else 0.3, "age":0.0, "flash":0.0, "burst":0, "burst_timer":0.0, "squash_hits":0, "squash_time":-1.0, "pose":"idle", "pose_age":0.0, "shot_cues":[]})
  return true
 
 func _gui_input(event):
@@ -188,6 +190,8 @@ func tick(dt):
  sim_time += dt
  message_time -= dt
  for key in cooldowns: cooldowns[key] = maxf(0, cooldowns[key]-dt)
+ for dead in corpses: dead.age += dt
+ corpses = corpses.filter(func(x): return x.age < x.duration)
  for fx in effects:
   fx.ttl -= dt; fx.pos += fx.vel*dt
  effects = effects.filter(func(x): return x.ttl > 0)
@@ -206,11 +210,13 @@ func tick(dt):
  pending = pending.filter(func(x): return x.at != INF)
  for p in plants:
   if p.hp <= 0: continue
-  p.age += dt; p.flash = maxf(0,p.flash-dt); p.timer -= dt
+  p.age += dt; p.pose_age += dt; p.flash = maxf(0,p.flash-dt); p.timer -= dt
+  if p.pose != "idle" and p.pose_age >= animations.duration(p.key,p.pose): p.pose="idle"; p.pose_age=0.0
   if p.key == "megapuff" and p.age >= 30:
    p.hp = 0; spark(center_at(p.col,p.row),Color("cdb7ec"),8); continue
   if p.key == "sunflower" and p.timer <= 0:
    p.timer = DATA.sunflower.rate
+   p.pose="special";p.pose_age=0.0
    var spot = center_at(p.col,p.row)
    spawn_sun(spot-Vector2(0,44),spot.y+8)
   elif p.key == "squash": tick_squash(p,dt)
@@ -220,18 +226,18 @@ func tick(dt):
    var target = zombies.any(func(z): return z.hp > 0 and z.row == p.row and z.x > pos.x-25 and z.x-pos.x < range_px)
    if target and p.timer <= 0:
     p.timer = DATA[p.key].rate
-    if p.key == "megapuff": p.burst = 4; p.burst_timer = 0.0
-    else: fire(p)
-   if p.burst > 0:
-    p.burst_timer -= dt
-    if p.burst_timer <= 0:
-     fire(p); p.burst -= 1; p.burst_timer = 0.085
+    p.pose="attack"; p.pose_age=0.0
+    p.shot_cues=animations.action_cues(p.key,"attack")
+    if p.shot_cues.is_empty():p.shot_cues=[0.0,0.085,0.17,0.255] if p.key=="megapuff" else [0.0]
+   while not p.shot_cues.is_empty() and p.pose_age+0.0001 >= p.shot_cues[0]:
+    p.shot_cues.pop_front();fire(p)
  for b in bullets: tick_bullet(b,dt)
  bullets = bullets.filter(func(b): return b.alive and b.x < 1560 and b.travel < b.range)
  for z in zombies:
   if z.hp <= 0: continue
-  z.flash = maxf(0,z.flash-dt); z.slow = maxf(0,z.slow-dt); z.stalled = maxf(0,z.stalled-dt); z.freeze = maxf(0,z.freeze-dt); z.anim += dt
+  z.flash = maxf(0,z.flash-dt); z.slow = maxf(0,z.slow-dt); z.stalled = maxf(0,z.stalled-dt); z.freeze = maxf(0,z.freeze-dt)
   if z.freeze > 0: continue
+  z.anim += dt
   var victim = null
   for p in plants:
    if p.hp > 0 and p.row == z.row and absf(z.x-center_at(p.col,p.row).x) < 47:
@@ -259,7 +265,8 @@ func tick(dt):
 func tick_squash(p,dt):
  var x = center_at(p.col,p.row).x
  if p.squash_time < 0:
-  if zombies.any(func(z): return z.hp > 0 and z.row == p.row and absf(z.x-x) < 115): p.squash_time = 0.4
+  if zombies.any(func(z): return z.hp > 0 and z.row == p.row and absf(z.x-x) < 115):
+   p.squash_time = 0.4;p.pose="size_up";p.pose_age=0.0
  else:
   p.squash_time -= dt
   if p.squash_time <= 0:
@@ -300,7 +307,7 @@ func tick_bullet(b,dt):
    if b.frozen: z.freeze = maxf(z.freeze,1.0)
    else: z.slow = maxf(z.slow,10.0)
   elif b.kind == "sweetpea" and not b.power:
-   z.stalled = maxf(z.stalled,2.0)
+   apply_candy_slow(z)
    for nearby in zombies:
     if nearby.id != z.id and nearby.hp > 0 and absf(nearby.x-z.x) < 95 and abs(nearby.row-z.row) <= 1:
      hurt(nearby,10,Color("f6a0d1"))
@@ -309,6 +316,14 @@ func tick_bullet(b,dt):
   if not b.power:
    b.alive = false; break
 
+func apply_candy_slow(hit):
+ # A 3x3 group of grid cells centered on the impacted zombie's cell.
+ var hit_col = floori((hit.x-ORIGIN.x)/CELL.x)
+ for target in zombies:
+  var target_col = floori((target.x-ORIGIN.x)/CELL.x)
+  if target.hp > 0 and abs(target.row-hit.row) <= 1 and abs(target_col-hit_col) <= 1:
+   target.stalled = maxf(target.stalled,2.0)
+
 func hurt(z,damage,color_value):
  var alive_before = z.hp > 0
  z.hp -= damage; z.flash = 0.12
@@ -316,6 +331,8 @@ func hurt(z,damage,color_value):
  effects.append({"pos":spot,"vel":Vector2(0,-25),"ttl":0.65,"max":0.65,"text":str(snappedf(damage,0.1)),"color":color_value,"size":18})
  if alive_before and z.hp <= 0:
   kills += 1; spark(spot,Color("a9c4a3"),5)
+  var actor="giant" if z.kind=="giant" else (z.kind if z.kind in ["cone","bucket"] else "zombie")
+  corpses.append({"actor":actor,"x":z.x,"row":z.row,"age":0.0,"duration":animations.duration(actor,"die")})
 
 func spark(pos,color_value,count):
  for i in range(count): effects.append({"pos":pos,"vel":Vector2(rng.randf_range(-55,55),rng.randf_range(-70,35)),"ttl":0.45,"max":0.45,"text":"","color":color_value,"size":rng.randf_range(2,5)})
@@ -352,7 +369,7 @@ func _draw():
  draw_rect(Rect2(0,0,1600,900),Color("111e1b"))
  box(Rect2(18,18,1564,94),Color("1e322b"),20)
  label_at("庭院实验室",Vector2(38,59),29,Color("f2e5bb"))
- label_at("DESKTOP GARDEN  /  原型 0.1",Vector2(40,88),13,Color("93ad9d"))
+ label_at("DESKTOP GARDEN  /  原型 0.2",Vector2(40,88),13,Color("93ad9d"))
  draw_circle(Vector2(351,64),23,Color("f4ce64")); label_at(str(sun),Vector2(388,76),34,Color("f6df96"))
  label_at("能量豆  %d" % food,Vector2(535,75),23,Color("b4d994"))
  label_at("击退  %d" % kills,Vector2(723,75),23)
@@ -387,10 +404,14 @@ func _draw():
   if mower.state != "spent": draw_mower(Vector2(mower.x,center_at(0,mower.row).y+10))
  for p in plants:
   var pos = center_at(p.col,p.row)
-  draw_plant(p.key,pos,1.0,p.age,p.flash>0)
+  var pose=p.pose
+  if p.key=="wallnut" and p.hp/p.maxhp<0.75:pose="damage3" if p.hp/p.maxhp<0.25 else ("damage2" if p.hp/p.maxhp<0.5 else "damage")
+  draw_plant(p.key,pos,1.0,p.age,p.flash>0,pose,p.pose_age)
   if p.hp < p.maxhp: health_bar(pos+Vector2(-32,36),64,p.hp/p.maxhp,Color("a8d67a"))
   if p.key=="megapuff":
    draw_arc(pos+Vector2(0,28),25,-PI/2,-PI/2+TAU*(1-p.age/30),24,Color("c6acec"),2)
+ for dead in corpses:
+  animations.draw_actor(self,dead.actor,Vector2(dead.x,center_at(0,dead.row).y),1.0,dead.age,"die")
  for z in zombies: draw_zombie(z)
  for b in bullets:
   var c = Color("ff9b5b") if b.fire else Color(DATA[b.kind].color)
@@ -419,7 +440,7 @@ func _draw():
  if inspect_key != "":
   label_at(DATA[inspect_key].name+"："+DATA[inspect_key].desc,Vector2(346,794),16,Color("d8dfc7"))
  elif message_time>0: label_at(message,Vector2(346,794),18,Color("e5dba5"))
- label_at("独立桌面引擎 · 固定步长战斗 · 示例素材接入 / 非完整原版复刻",Vector2(346,880),14,Color("718c7b"))
+ label_at("独立桌面引擎 · 原版动作接入 · 固定步长战斗 / 非完整原版复刻",Vector2(346,880),14,Color("718c7b"))
  if paused or help_open or phase in ["won","lost"]: draw_overlay()
 
 func draw_card(i):
@@ -447,7 +468,10 @@ func draw_sun(pos):
  draw_circle(pos,20,Color("f5d666"));draw_circle(pos-Vector2(4,5),13,Color("ffe594"))
  label_at("25",pos+Vector2(-11,7),16,Color("7a612c"))
 
-func draw_plant(key,pos,scale_value,age,flash):
+func draw_plant(key,pos,scale_value,age,flash,pose="idle",pose_age=-1.0):
+ if animations.has_actor(key):
+  animations.draw_actor(self,key,pos,scale_value,pose_age if pose!="idle" and pose_age>=0 else age,pose,Color(1.15,1.15,1.15) if flash else Color.WHITE)
+  return
  var sc=float(scale_value)
  draw_set_transform(pos,0,Vector2.ONE*sc)
  draw_ellipse_shadow(Vector2(0,28),Vector2(29,8))
@@ -498,6 +522,15 @@ func draw_ellipse_shadow(pos,radii,color_value=Color(0.06,0.12,0.08,0.22)):
  draw_colored_polygon(points,color_value)
 
 func draw_zombie(z):
+ var actor="giant" if z.kind=="giant" else (z.kind if z.kind in ["cone","bucket"] else "zombie")
+ if animations.has_actor(actor):
+  var spot=Vector2(z.x,center_at(0,z.row).y)
+  var tint=Color("c7aad6") if z.stalled>0 else (Color("9fd7ed") if z.slow>0 else Color.WHITE)
+  if z.flash>0:tint=Color(1.2,1.2,1.2)
+  animations.draw_actor(self,actor,spot,1.0,z.anim,"eat" if z.attack>0 else "walk",tint)
+  if z.freeze>0:box(Rect2(spot+Vector2(-30,-83),Vector2(60,112)),Color(0.55,0.88,1,0.30),10,Color("b2e8fa"))
+  if z.hp<z.maxhp:health_bar(spot+Vector2(-28,-100 if actor!="giant" else -148),56,z.hp/z.maxhp,Color("d9b36f"))
+  return
  var pos=Vector2(z.x,center_at(0,z.row).y)
  var giant=z.kind=="giant"
  var scale_value=1.3 if giant else 1.0
@@ -539,7 +572,7 @@ func draw_overlay():
  box(Rect2(390,220,820,430),Color("20382b"),24,Color("6e8761"))
  if help_open:
   label_at("操作与原型范围",Vector2(436,279),32,Color("ecdba5"))
-  var lines=["点击卡片，再点击草坪种植；点击阳光收集。", "1–8 选卡 · X 铲子 · F 能量豆 · 右键 / Esc 取消", "空格 / P 暂停 · F11 全屏 · 开始前可选练习模式", "每行一辆割草机。九波守住即胜利；再次突破则失败。", "已接入甜豌豆、机枪喷静态素材，其余为临时矢量画面。", "这是独立玩法原型：未实现全部世界、完整动画与原版存档。", "点击任意位置关闭说明。"]
+  var lines=["点击卡片，再点击草坪种植；点击阳光收集。", "1–8 选卡 · X 铲子 · F 能量豆 · 右键 / Esc 取消", "空格 / P 暂停 · F11 全屏 · 开始前可选练习模式", "每行一辆割草机。九波守住即胜利；再次突破则失败。", "已接入八株植物与普通僵尸、巨人的部分原版动画。", "这是独立玩法原型：未实现全部世界、完整动画与原版存档。", "点击任意位置关闭说明。"]
   for i in range(lines.size()): label_at(lines[i],Vector2(436,330+i*39),20)
  else:
   var title="已暂停" if paused else ("防守成功" if phase=="won" else "防线被突破")

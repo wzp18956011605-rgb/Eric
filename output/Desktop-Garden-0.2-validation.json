@@ -1,0 +1,24 @@
+{
+  "version": "0.2",
+  "godot": "4.6.3",
+  "windows_arch": "x86_64",
+  "embedded_pack_verified": true,
+  "combat_checks_passed": 30,
+  "interaction_and_full_match_checks_passed": 14,
+  "animation_checks_passed": 18,
+  "exported_pack_animation_checks_passed": 18,
+  "render_test": "Linux X11 OpenGL actual prep/combat frames",
+  "actual_windows_runtime_tested": false,
+  "rar_volume_integrity": "23 of 23 passed",
+  "all_2982_struct_packets_present": true,
+  "artifacts": {
+    "Desktop-Garden-0.2-Windows.zip": {
+      "size": 55798470,
+      "sha256": "d0e6f72153ad7adadab5663d557b8943c3aaf351d0f275307b27eefd20998ed1"
+    },
+    "Desktop-Garden-0.2-source.zip": {
+      "size": 19973747,
+      "sha256": "0fb16e9337d3dce9a819e8d615c1a7a5cf2e196918eff3a22c1e6133159ca8db"
+    }
+  }
+}
