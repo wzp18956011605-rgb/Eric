@@ -1,0 +1,92 @@
+{
+  "shoot": {
+    "event": "Play_Throw",
+    "variants": [
+      {
+        "file": "shoot0.wav",
+        "source_media_id": 258411163,
+        "duration": 0.145813
+      },
+      {
+        "file": "shoot1.wav",
+        "source_media_id": 291795630,
+        "duration": 0.37475
+      },
+      {
+        "file": "shoot2.wav",
+        "source_media_id": 470836671,
+        "duration": 0.483344
+      }
+    ]
+  },
+  "impact": {
+    "event": "Play_Splat",
+    "variants": [
+      {
+        "file": "impact0.wav",
+        "source_media_id": 756505477,
+        "duration": 0.242313
+      },
+      {
+        "file": "impact1.wav",
+        "source_media_id": 258718304,
+        "duration": 0.242875
+      },
+      {
+        "file": "impact2.wav",
+        "source_media_id": 387371653,
+        "duration": 0.243938
+      }
+    ]
+  },
+  "sun": {
+    "event": "Play_Spawn_Sun",
+    "variants": [
+      {
+        "file": "sun0.wav",
+        "source_media_id": 161661594,
+        "duration": 1.338875
+      }
+    ]
+  },
+  "plant": {
+    "event": "Play_Plant",
+    "variants": [
+      {
+        "file": "plant0.wav",
+        "source_media_id": 1023057834,
+        "duration": 0.862375
+      }
+    ]
+  },
+  "shovel": {
+    "event": "Play_Shovel",
+    "variants": [
+      {
+        "file": "shovel0.wav",
+        "source_media_id": 30585199,
+        "duration": 0.25075
+      }
+    ]
+  },
+  "squash": {
+    "event": "Play_Plant_Squash_Attack",
+    "variants": [
+      {
+        "file": "squash0.wav",
+        "source_media_id": 853187184,
+        "duration": 0.458188
+      }
+    ]
+  },
+  "food": {
+    "event": "Play_Peashooter_Food",
+    "variants": [
+      {
+        "file": "food0.wav",
+        "source_media_id": 287910843,
+        "duration": 2.604938
+      }
+    ]
+  }
+}

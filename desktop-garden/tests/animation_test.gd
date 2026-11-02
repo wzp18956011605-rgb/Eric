@@ -7,7 +7,7 @@ func check(value,message):
 func _initialize():call_deferred("run")
 func run():
  var anim=load("res://OriginalAnimations.gd").new()
- for key in ["sunflower","pea","wallnut","snowpea","sweetpea","megapuff","torchwood","squash","zombie","cone","bucket","giant"]:
+ for key in ["sunflower","pea","wallnut","snowpea","sweetpea","megapuff","torchwood","squash","zombie","cone","bucket","cone_damage_01","cone_damage_02","bucket_damage_01","bucket_damage_02","wallnut_armored","giant"]:
   var valid=anim.has_actor(key)
   if valid:
    var data=anim.actors[key]

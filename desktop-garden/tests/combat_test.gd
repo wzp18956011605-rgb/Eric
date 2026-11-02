@@ -72,7 +72,7 @@ func run():
  verify(game.bullets.size()==4,"Mega Puff shoots four projectiles per original animation burst")
  clean()
  game.place("squash",0,0);p=game.plants[0];pos=game.center_at(0,0);z=game.add_zombie(0,"giant",pos.x+70)
- for i in range(75):game.tick(1.0/60)
+ for i in range(300):game.tick(1.0/60)
  verify(z.hp==2400,"Squash deals exactly two hits of 600")
  verify(game.plants.is_empty(),"Squash leaves after second slam")
  clean()

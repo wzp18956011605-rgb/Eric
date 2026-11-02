@@ -1,0 +1,28 @@
+{
+  "version": "0.3",
+  "godot": "4.6.3",
+  "windows_arch": "x86_64",
+  "embedded_pack_verified": true,
+  "combat_checks_passed": 30,
+  "interaction_and_full_match_checks_passed": 16,
+  "animation_checks_passed": 23,
+  "power_and_presentation_checks_passed": 25,
+  "exported_pack_animation_checks_passed": 23,
+  "exported_pack_power_checks_passed": 25,
+  "render_test": "Linux X11 OpenGL actual prep/combat frames",
+  "actual_windows_runtime_tested": false,
+  "audio_hardware_listening_tested": false,
+  "headless_audio_playback_disabled": true,
+  "rar_volume_integrity": "23 of 23 passed",
+  "all_2982_struct_packets_present": true,
+  "artifacts": {
+    "Desktop-Garden-0.3-Windows.zip": {
+      "size": 58333734,
+      "sha256": "e534e9f239826e4932268447638450509f0316bba2d1ca70e499eb5538ecb6a1"
+    },
+    "Desktop-Garden-0.3-source.zip": {
+      "size": 23766317,
+      "sha256": "4decc55c94e3c96b3e5924fe3e25f66be724a276f0b760de63c451667c56c71f"
+    }
+  }
+}

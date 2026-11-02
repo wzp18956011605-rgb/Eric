@@ -5,7 +5,8 @@
     "pam": "IMAGES\\768\\INITIAL\\PLANT\\PEASHOOTER\\PEASHOOTER.PAM",
     "clips": [
       "idle",
-      "attack"
+      "attack",
+      "plantfood"
     ],
     "image_count": 37,
     "flags": {
@@ -19,7 +20,10 @@
     "pam": "IMAGES\\768\\INITIAL\\PLANT\\SUNFLOWER\\SUNFLOWER.PAM",
     "clips": [
       "idle",
-      "special"
+      "special",
+      "plantfood_on",
+      "plantfood",
+      "plantfood_off"
     ],
     "image_count": 28,
     "flags": {
@@ -35,7 +39,10 @@
       "idle",
       "damage",
       "damage2",
-      "damage3"
+      "damage3",
+      "plantfood_on",
+      "plantfood",
+      "plantfood_off"
     ],
     "image_count": 35,
     "flags": {
@@ -49,7 +56,10 @@
     "pam": "IMAGES\\768\\INITIAL\\PLANT\\SNOWPEA\\SNOWPEA.PAM",
     "clips": [
       "idle",
-      "attack"
+      "attack",
+      "plantfood_on",
+      "plantfood",
+      "plantfood_off"
     ],
     "image_count": 29,
     "flags": {
@@ -63,7 +73,8 @@
     "pam": "IMAGES\\768\\CUSTOM\\PLANT\\SWEETPEA\\SWEETPEA.PAM",
     "clips": [
       "idle",
-      "attack"
+      "attack",
+      "plantfood"
     ],
     "image_count": 34,
     "flags": {
@@ -77,7 +88,10 @@
     "pam": "IMAGES\\768\\INITIAL\\PLANT\\MEGAGATLINGPUFF\\MEGAGATLINGPUFF.PAM",
     "clips": [
       "idle_stage1",
-      "special_stage1"
+      "special_stage1",
+      "plantfood_on",
+      "plantfood",
+      "plantfood_off"
     ],
     "image_count": 38,
     "flags": {
@@ -91,7 +105,11 @@
     "pam": "IMAGES\\768\\INITIAL\\PLANT\\TORCHWOOD\\TORCHWOOD.PAM",
     "clips": [
       "idle",
-      "idle2"
+      "idle2",
+      "plantfood_on",
+      "plantfood",
+      "plantfood_on_t2",
+      "plantfood_t2"
     ],
     "image_count": 90,
     "flags": {
@@ -105,7 +123,10 @@
     "pam": "IMAGES\\768\\INITIAL\\PLANT\\SQUASH\\SQUASH.PAM",
     "clips": [
       "idle",
-      "size_up"
+      "size_up",
+      "jump_up_right",
+      "jump_down_right",
+      "plantfood_jump_down_right"
     ],
     "image_count": 28,
     "flags": {
@@ -162,6 +183,25 @@
     }
   },
   {
+    "key": "wallnut_armored",
+    "packet": "PlantWallnut",
+    "pam": "IMAGES\\768\\INITIAL\\PLANT\\WALLNUT\\WALLNUT.PAM",
+    "clips": [
+      "idle",
+      "damage",
+      "damage2",
+      "damage3",
+      "plantfood_on",
+      "plantfood",
+      "plantfood_off"
+    ],
+    "image_count": 35,
+    "flags": {
+      "rect": 0,
+      "additive": 0
+    }
+  },
+  {
     "key": "giant",
     "packet": "ZombieTutorialGargantuarGroup",
     "pam": "IMAGES\\768\\INITIAL\\ZOMBIE\\TUTORIAL_GARGANTUAR\\TUTORIAL_GARGANTUAR.PAM",
@@ -173,6 +213,70 @@
       "die"
     ],
     "image_count": 75,
+    "flags": {
+      "rect": 0,
+      "additive": 0
+    }
+  },
+  {
+    "key": "cone_damage_01",
+    "packet": "ZombieTutorialGroup",
+    "pam": "IMAGES\\768\\INITIAL\\ZOMBIE\\ZOMBIE_TUTORIAL\\ZOMBIE_TUTORIAL.PAM",
+    "clips": [
+      "idle",
+      "walk",
+      "eat",
+      "die"
+    ],
+    "image_count": 41,
+    "flags": {
+      "rect": 0,
+      "additive": 0
+    }
+  },
+  {
+    "key": "cone_damage_02",
+    "packet": "ZombieTutorialGroup",
+    "pam": "IMAGES\\768\\INITIAL\\ZOMBIE\\ZOMBIE_TUTORIAL\\ZOMBIE_TUTORIAL.PAM",
+    "clips": [
+      "idle",
+      "walk",
+      "eat",
+      "die"
+    ],
+    "image_count": 41,
+    "flags": {
+      "rect": 0,
+      "additive": 0
+    }
+  },
+  {
+    "key": "bucket_damage_01",
+    "packet": "ZombieTutorialGroup",
+    "pam": "IMAGES\\768\\INITIAL\\ZOMBIE\\ZOMBIE_TUTORIAL\\ZOMBIE_TUTORIAL.PAM",
+    "clips": [
+      "idle",
+      "walk",
+      "eat",
+      "die"
+    ],
+    "image_count": 41,
+    "flags": {
+      "rect": 0,
+      "additive": 0
+    }
+  },
+  {
+    "key": "bucket_damage_02",
+    "packet": "ZombieTutorialGroup",
+    "pam": "IMAGES\\768\\INITIAL\\ZOMBIE\\ZOMBIE_TUTORIAL\\ZOMBIE_TUTORIAL.PAM",
+    "clips": [
+      "idle",
+      "walk",
+      "eat",
+      "die"
+    ],
+    "image_count": 41,
     "flags": {
       "rect": 0,
       "additive": 0

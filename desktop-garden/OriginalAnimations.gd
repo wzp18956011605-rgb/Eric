@@ -5,7 +5,7 @@ var textures: Dictionary = {}
 const ROOT = "res://assets/animations/"
 
 func _init():
- for key in ["sunflower","pea","wallnut","snowpea","sweetpea","megapuff","torchwood","squash","zombie","cone","bucket","giant"]:
+ for key in ["sunflower","pea","wallnut","snowpea","sweetpea","megapuff","torchwood","squash","zombie","cone","bucket","cone_damage_01","cone_damage_02","bucket_damage_01","bucket_damage_02","wallnut_armored","giant"]:
   var path=ROOT+key+".json"
   if not FileAccess.file_exists(path): continue
   var data=JSON.parse_string(FileAccess.get_file_as_string(path))
@@ -15,6 +15,8 @@ func _init():
    if not textures.has(atlas): textures[atlas]=load(ROOT+atlas)
 
 func has_actor(key): return actors.has(key)
+
+func has_clip(key,clip):return actors.has(key) and actors[key].clips.has(clip)
 
 func clip_name(key,pose):
  var data=actors[key]
@@ -40,7 +42,7 @@ func draw_actor(canvas,key,pos,display_scale,clock,pose="idle",tint=Color.WHITE)
  if pose=="die":frame_number=mini(frame_number,frames.size()-1)
  else:frame_number%=frames.size()
  var bounds=data.bounds
- var target_height=112.0 if key in ["zombie","cone","bucket"] else (162.0 if key=="giant" else 92.0)
+ var target_height=112.0 if key=="zombie" or key.begins_with("cone") or key.begins_with("bucket") else (162.0 if key=="giant" else 92.0)
  var sc=display_scale*target_height/maxf(1,bounds[3]-bounds[1])
  var anchor=Vector2((bounds[0]+bounds[2])/2.0,bounds[3])
  var root_transform=Transform2D(0.0,Vector2.ONE*sc,0.0,pos+Vector2(0,30*display_scale)-anchor*sc)

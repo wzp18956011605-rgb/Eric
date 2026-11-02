@@ -60,11 +60,11 @@ def convert(key,gid,pam_suffix,wanted):
    if it.get('additive'):flags['additive']+=1
    if it['sprite']:
     child=pam['sprites'][res];childname=child['name'].lower()
-    if key not in ['megapuff','sweetpea'] and (childname.startswith('custom') or childname.startswith('_custom') or childname=='_wallnut_armor_states'):continue
-    if key in ['zombie','cone','bucket','giant']:
+    if key not in ['megapuff','sweetpea'] and (childname.startswith('custom') or childname.startswith('_custom') or (childname=='_wallnut_armor_states' and key!='wallnut_armored')):continue
+    if key in ['zombie','cone','bucket','cone_damage_01','cone_damage_02','bucket_damage_01','bucket_damage_02','giant']:
      if childname in ['ink','butter','ground_swatch','ground_swatch_plane'] or 'bone' in childname:continue
      if childname.startswith('zombie_armor_'):
-      allowed='zombie_armor_'+key+'_norm'
+      basekey=key.split('_')[0];damage_stage='_'.join(key.split('_')[1:]) if '_' in key else 'norm';allowed='zombie_armor_'+basekey+'_'+damage_stage
       if childname!=allowed:continue
     n=len(child['frames']);elapsed=fi-it['frame_set'];childframe=int(elapsed*it.get('timescale',1)+it['frame_base'])
     stops=[i for i,f in enumerate(child['frames']) if f.get('stop')]
@@ -85,12 +85,15 @@ def convert(key,gid,pam_suffix,wanted):
      for x,y in [(0,0),(w,0),(0,h),(w,h)]:bounds.append((m[0]*x+m[2]*y+m[4],m[1]*x+m[3]*y+m[5]))
  assert clips and bounds
  bbox=[min(x for x,y in bounds),min(y for x,y in bounds),max(x for x,y in bounds),max(y for x,y in bounds)]
- if key in ['cone','bucket'] and (OUT/'zombie.json').exists():bbox=json.loads((OUT/'zombie.json').read_text())['bounds']
+ if key=='wallnut_armored' and (OUT/'wallnut.json').exists():bbox=json.loads((OUT/'wallnut.json').read_text())['bounds']
+ if key in ['cone','bucket','cone_damage_01','cone_damage_02','bucket_damage_01','bucket_damage_02'] and (OUT/'zombie.json').exists():bbox=json.loads((OUT/'zombie.json').read_text())['bounds']
  data={'rate':pam['rate'],'atlases':atlases,'images':images,'clips':clips,'idle':wanted[0],'bounds':bbox,'source':gid,'flags':flags};(OUT/(key+'.json')).write_text(json.dumps(data,separators=(',',':')))
  print(key,'clips',[(k,len(v['frames'])) for k,v in clips.items()],'bounds',bbox,'flags',flags,flush=True)
  return {'key':key,'packet':gid,'pam':path,'clips':list(clips),'image_count':len(images),'flags':flags}
 
-items=[('pea','PlantPeashooter','\\PEASHOOTER.PAM',['idle','attack']),('sunflower','PlantSunflower','\\SUNFLOWER.PAM',['idle','special']),('wallnut','PlantWallnut','\\WALLNUT.PAM',['idle','damage','damage2','damage3']),('snowpea','PlantSnowPea','\\SNOWPEA.PAM',['idle','attack']),('sweetpea','PlantSweetpea','\\SWEETPEA.PAM',['idle','attack']),('megapuff','PlantMegaGatlingPuff','\\MEGAGATLINGPUFF.PAM',['idle_stage1','special_stage1']),('torchwood','PlantTorchwood','\\TORCHWOOD.PAM',['idle','idle2']),('squash','PlantSquash','\\SQUASH.PAM',['idle','size_up']),('zombie','ZombieTutorialGroup','\\ZOMBIE_TUTORIAL.PAM',['idle','walk','eat','die']),('cone','ZombieTutorialGroup','\\ZOMBIE_TUTORIAL.PAM',['idle','walk','eat','die']),('bucket','ZombieTutorialGroup','\\ZOMBIE_TUTORIAL.PAM',['idle','walk','eat','die']),('giant','ZombieTutorialGargantuarGroup','\\TUTORIAL_GARGANTUAR.PAM',['idle','walk','eat','smash_left','die'])]
+items=[('pea','PlantPeashooter','\\PEASHOOTER.PAM',['idle','attack','plantfood']),('sunflower','PlantSunflower','\\SUNFLOWER.PAM',['idle','special','plantfood_on','plantfood','plantfood_off']),('wallnut','PlantWallnut','\\WALLNUT.PAM',['idle','damage','damage2','damage3','plantfood_on','plantfood','plantfood_off']),('snowpea','PlantSnowPea','\\SNOWPEA.PAM',['idle','attack','plantfood_on','plantfood','plantfood_off']),('sweetpea','PlantSweetpea','\\SWEETPEA.PAM',['idle','attack','plantfood']),('megapuff','PlantMegaGatlingPuff','\\MEGAGATLINGPUFF.PAM',['idle_stage1','special_stage1','plantfood_on','plantfood','plantfood_off']),('torchwood','PlantTorchwood','\\TORCHWOOD.PAM',['idle','idle2','plantfood_on','plantfood','plantfood_on_t2','plantfood_t2']),('squash','PlantSquash','\\SQUASH.PAM',['idle','size_up','jump_up_right','jump_down_right','plantfood_jump_down_right']),('zombie','ZombieTutorialGroup','\\ZOMBIE_TUTORIAL.PAM',['idle','walk','eat','die']),('cone','ZombieTutorialGroup','\\ZOMBIE_TUTORIAL.PAM',['idle','walk','eat','die']),('bucket','ZombieTutorialGroup','\\ZOMBIE_TUTORIAL.PAM',['idle','walk','eat','die']),('wallnut_armored','PlantWallnut','\\WALLNUT.PAM',['idle','damage','damage2','damage3','plantfood_on','plantfood','plantfood_off']),('giant','ZombieTutorialGargantuarGroup','\\TUTORIAL_GARGANTUAR.PAM',['idle','walk','eat','smash_left','die'])]
+for armor in ['cone','bucket']:
+ for stage in ['damage_01','damage_02']:items.append((armor+'_'+stage,'ZombieTutorialGroup','\\ZOMBIE_TUTORIAL.PAM',['idle','walk','eat','die']))
 report=[]
 for args in items:report.append(convert(*args))
 (OUT/'conversion-report.json').write_text(json.dumps(report,indent=2))
