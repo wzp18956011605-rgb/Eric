@@ -1,0 +1,21 @@
+{
+  "version": "0.1",
+  "godot": "4.6.3",
+  "windows_arch": "x86_64",
+  "embedded_pack_verified": true,
+  "combat_checks_passed": 27,
+  "interaction_and_full_match_checks_passed": 14,
+  "render_test": "Linux X11 OpenGL actual prep/combat frames",
+  "actual_windows_runtime_tested": false,
+  "artifacts": {
+    "Desktop-Garden-0.1-Windows.zip": {
+      "size": 52450165,
+      "sha256": "99273249a4659fe7e9b701c0b3f4d91debecf9164199dffa645b78a8108d44d2"
+    },
+    "Desktop-Garden-0.1-source.zip": {
+      "size": 15615947,
+      "sha256": "11be027287b4d64f005d4f8eed7e6e44342cb21b6ae0c2e9b0c81daf25a5b340"
+    }
+  },
+  "exported_pack_boot_test": "Loaded embedded Windows EXE pack in Linux Godot; 120 frames, no script errors"
+}
