@@ -1,0 +1,31 @@
+{
+  "version": "0.4",
+  "godot": "4.6.3",
+  "windows_arch": "x86_64",
+  "embedded_pack_verified": true,
+  "combat_checks_passed": 30,
+  "interaction_and_full_match_checks_passed": 16,
+  "animation_checks_passed": 38,
+  "power_and_presentation_checks_passed": 25,
+  "expansion_checks_passed": 40,
+  "total_source_checks": 149,
+  "exported_pack_total_checks": 149,
+  "exported_pack_animation_checks_passed": 38,
+  "exported_pack_power_checks_passed": 25,
+  "render_test": "Linux X11 OpenGL actual Egypt combat and chooser frames",
+  "actual_windows_runtime_tested": false,
+  "audio_hardware_listening_tested": false,
+  "headless_audio_playback_disabled": true,
+  "rar_volume_integrity": "23 of 23 passed",
+  "all_2982_struct_packets_present": true,
+  "artifacts": {
+    "Desktop-Garden-0.4-Windows.zip": {
+      "size": 63292482,
+      "sha256": "367bd4cf8c3bc16b02dd13c79d19a48ace2275562ba54632d97e623f089d6e43"
+    },
+    "Desktop-Garden-0.4-source.zip": {
+      "size": 30539076,
+      "sha256": "2ee733127f5515cc09494e7c026f4df41717a1697d05eab1c9f81580382a9652"
+    }
+  }
+}

@@ -13,9 +13,20 @@ const DATA = {
  "sweetpea": {"name":"甜豌豆", "cost":350, "cool":20.0, "hp":300.0, "rate":1.425, "damage":40.0, "color":"f38fbe", "desc":"直击 40，附近溅射 10；命中格周围 3×3 减速 50%，持续 2 秒。大招立即发射穿透糖弹。"},
  "megapuff": {"name":"机枪喷", "cost":0, "cool":7.5, "hp":150.0, "rate":1.425, "damage":20.0, "color":"b8a1e3", "desc":"每轮连射 4 发，射程 3 格；存活 30 秒。大招连射并重置寿命。"},
  "torchwood": {"name":"火炬树桩", "cost":175, "cool":5.0, "hp":2000.0, "rate":99.0, "damage":0.0, "color":"ed995e", "desc":"普通豌豆经过后伤害翻倍。火焰命中冰减速目标增伤 25%，随后解冻。"},
- "squash": {"name":"倭瓜", "cost":50, "cool":20.0, "hp":1000.0, "rate":99.0, "damage":600.0, "color":"a3c45f", "desc":"近距离触发，两次砸击，各 600 伤害，随后离场。"}
+ "squash": {"name":"倭瓜", "cost":50, "cool":20.0, "hp":1000.0, "rate":99.0, "damage":600.0, "color":"a3c45f", "desc":"近距离触发，两次砸击，各 600 伤害，随后离场。"},
+ "cabbage":{"name":"卷心菜投手","cost":125,"cool":5.0,"hp":300.0,"rate":3.0,"damage":50.0,"color":"95c96e","desc":"抛射 50 伤害，越过墓碑。大招攻击全场僵尸，各 200 伤害。"},
+ "bloomerang":{"name":"回旋镖射手","cost":250,"cool":5.0,"hp":300.0,"rate":2.925,"damage":15.0,"color":"bb89d0","desc":"去程和回程各穿透最多 4 个目标，各 15 伤害。暂未接入能量豆。"},
+ "mine":{"name":"土豆雷","cost":25,"cool":20.0,"hp":300.0,"rate":99.0,"damage":1800.0,"color":"c9ac82","desc":"10 秒准备；近距离爆炸造成 1800 伤害。大招立即准备并复制两颗。"},
+ "bonk":{"name":"菜问","cost":150,"cool":5.0,"hp":300.0,"rate":0.333333,"damage":15.0,"color":"88bf70","desc":"近距离双向拳击，每拳 15。大招持续攻击周围 3×3，各 70 伤害。"},
+ "gravebuster":{"name":"噬碑藤","cost":0,"cool":10.0,"hp":3000.0,"rate":99.0,"damage":0.0,"color":"959579","desc":"只能种在墓碑上，5 秒吞噬墓碑后消失。不能使用能量豆。"}
 }
-const CARDS = ["sunflower", "pea", "wallnut", "snowpea", "sweetpea", "megapuff", "torchwood", "squash"]
+const CARDS = ["sunflower", "pea", "wallnut", "snowpea", "sweetpea", "megapuff", "torchwood", "squash", "cabbage", "bloomerang", "mine", "bonk", "gravebuster"]
+var world="lawn"
+var deck=["sunflower","pea","wallnut","snowpea","sweetpea","megapuff","torchwood","squash"]
+var chooser_open=false
+var draft_deck=[]
+var expansion=preload("res://Expansion.gd").new(self)
+var egypt_texture=preload("res://assets/egypt.png")
 var lawn_texture=preload("res://assets/frontlawn.png")
 var grass_texture=preload("res://assets/frontlawn-grass.png")
 var sounds: Dictionary={}
@@ -90,12 +101,14 @@ func reset_game():
  sun = 1000 if practice else 275
  food = 3; selected = ""; shovel = false; food_mode = false
  phase = "prep"; paused = false; wave = 0; sim_time = 0; wave_timer = 8; sky_timer = 7; kills = 0; accumulator = 0; next_id = 0
+ chooser_open=false
+ expansion.reset()
  message = "先布置防线，准备好后点击「开始防守」"; message_time = 6
 
 func _process(delta):
  elapsed_ui += delta
  hover = get_local_mouse_position()
- if not paused and not help_open and phase in ["prep", "play"]:
+ if not paused and not help_open and not chooser_open and phase in ["prep", "play"]:
   accumulator += minf(delta, 0.20)
   while accumulator >= STEP:
    tick(STEP)
@@ -119,14 +132,14 @@ func notify(text_value):
 func choose(key):
  selected = key; shovel = false; food_mode = false
 
-func place(key, col, row) -> bool:
+func place(key, col, row, free=false) -> bool:
  if phase not in ["prep", "play"] or col < 0 or col >= COLS or row < 0 or row >= ROWS: return false
- if plant_at(col, row) != null: return false
+ if plant_at(col, row) != null or not expansion.can_place(key,col,row): return false
  var def = DATA[key]
- if sun < def.cost or cooldowns[key] > 0: return false
- sun -= def.cost; cooldowns[key] = def.cool
+ if not free and (sun < def.cost or cooldowns[key] > 0): return false
+ if not free:sun -= def.cost; cooldowns[key] = def.cool
  next_id += 1
- plants.append({"id":next_id, "key":key, "col":col, "row":row, "hp":def.hp, "maxhp":def.hp, "timer":2.0 if key == "sunflower" else 0.3, "age":0.0, "flash":0.0, "burst":0, "burst_timer":0.0, "squash_hits":0, "squash_time":-1.0, "pose":"idle", "pose_age":0.0, "shot_cues":[], "shield":0.0, "torch_blue":false, "pf_active":false, "pf_time":0.0, "pf_next":0.0, "pf_remaining":0, "pf_total":0, "pf_loop":0.0, "pf_on":0.0, "pf_off":0.0, "airborne":false, "squash_phase":"wait", "squash_power":false, "smash_x":0.0, "smash_row":row, "smash_landed":false, "visual_x":-1.0,"visual_y":0.0,"visual_ground_y":center_at(col,row).y,"launch_x":0.0,"launch_y":0.0})
+ plants.append({"facing_left":false,"id":next_id, "key":key, "col":col, "row":row, "hp":def.hp, "maxhp":def.hp, "timer":2.0 if key == "sunflower" else 0.3, "age":0.0, "flash":0.0, "burst":0, "burst_timer":0.0, "squash_hits":0, "squash_time":-1.0, "pose":"idle", "pose_age":0.0, "shot_cues":[], "shield":0.0, "torch_blue":false, "pf_active":false, "pf_time":0.0, "pf_next":0.0, "pf_remaining":0, "pf_total":0, "pf_loop":0.0, "pf_on":0.0, "pf_off":0.0, "airborne":false, "squash_phase":"wait", "squash_power":false, "smash_x":0.0, "smash_row":row, "smash_landed":false, "visual_x":-1.0,"visual_y":0.0,"visual_ground_y":center_at(col,row).y,"launch_x":0.0,"launch_y":0.0})
  play_sound("plant")
  return true
 
@@ -136,6 +149,8 @@ func _gui_input(event):
    selected = ""; shovel = false; food_mode = false; return
   if event.button_index != MOUSE_BUTTON_LEFT: return
   var pos = event.position
+  if chooser_open:
+   chooser_click(pos);return
   if help_open:
    help_open = false; return
   if Rect2(1168,34,96,44).has_point(pos):toggle_sound();return
@@ -146,14 +161,20 @@ func _gui_input(event):
    else: confirm_restart = true; notify("再点一次「重开」开始新的一局")
    return
   if paused: return
+  if phase=="prep" and Rect2(680,146,150,42).has_point(pos):
+   world="egypt" if world=="lawn" else "lawn"
+   deck=["sunflower","pea","wallnut","cabbage","bloomerang","mine","bonk","gravebuster"] if world=="egypt" else ["sunflower","pea","wallnut","snowpea","sweetpea","megapuff","torchwood","squash"]
+   reset_game();return
+  if phase=="prep" and Rect2(842,146,150,42).has_point(pos):
+   draft_deck=deck.duplicate();chooser_open=true;return
   if phase in ["won", "lost"]:
    if Rect2(650, 520, 300, 64).has_point(pos): reset_game()
    return
   for s in suns:
    if s.ttl > 0 and s.pos.distance_to(pos) < 34:
     sun += int(s.value);play_sound("sun"); s.ttl = -1; spark(pos, Color("ffdc72"), 7); return
-  for i in range(CARDS.size()):
-   if card_rect(i).has_point(pos): choose(CARDS[i]); return
+  for i in range(deck.size()):
+   if card_rect(i).has_point(pos): choose(deck[i]); return
   if Rect2(28, 726, 128, 48).has_point(pos): shovel = not shovel; food_mode = false; selected = ""; return
   if Rect2(168, 726, 128, 48).has_point(pos): food_mode = not food_mode; shovel = false; selected = ""; return
   if phase == "prep" and Rect2(1114, 800, 364, 62).has_point(pos): start_game(); return
@@ -170,6 +191,9 @@ func _gui_input(event):
 
 func _unhandled_key_input(event):
  if not event is InputEventKey or not event.pressed or event.echo: return
+ if chooser_open:
+  if event.keycode==KEY_ESCAPE and not draft_deck.is_empty():deck=draft_deck.duplicate();chooser_open=false;selected=""
+  return
  if event.keycode == KEY_ESCAPE:
   if help_open: help_open = false
   elif selected != "" or shovel or food_mode: selected = ""; shovel = false; food_mode = false
@@ -179,12 +203,15 @@ func _unhandled_key_input(event):
  elif event.keycode == KEY_X: shovel = not shovel; selected = ""; food_mode = false
  elif event.keycode == KEY_F: food_mode = not food_mode; selected = ""; shovel = false
  elif event.keycode == KEY_ENTER and phase == "prep": start_game()
- elif event.keycode >= KEY_1 and event.keycode <= KEY_8: choose(CARDS[event.keycode-KEY_1])
+ elif event.keycode >= KEY_1 and event.keycode <= KEY_8:
+  var slot=event.keycode-KEY_1
+  if slot<deck.size():choose(deck[slot])
  elif event.keycode == KEY_F11:
   var mode = DisplayServer.window_get_mode()
   DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_WINDOWED if mode == DisplayServer.WINDOW_MODE_FULLSCREEN else DisplayServer.WINDOW_MODE_FULLSCREEN)
 
 func start_game():
+ if chooser_open or deck.is_empty():return
  phase = "play"; wave_timer = 4.0; notify("防线已就位。僵尸即将到来！")
 
 func add_zombie(row, kind = "basic", xpos = 1515.0):
@@ -207,6 +234,7 @@ func make_wave():
  notify("一大波僵尸！第 %d 面旗" % int(ceil(wave/3.0)) if wave % 3 == 0 else "第 %d / 9 波" % wave)
 
 func tick(dt):
+ expansion.tick(dt)
  sim_time += dt
  message_time -= dt
  for key in cooldowns: cooldowns[key] = maxf(0, cooldowns[key]-dt)
@@ -237,6 +265,7 @@ func tick(dt):
   if p.pf_active:
    tick_power(p,dt)
    continue
+  if expansion.tick_plant(p,dt):continue
   if p.key == "sunflower" and p.timer <= 0:
    p.timer = DATA.sunflower.rate
    p.pose="special";p.pose_age=0.0
@@ -343,6 +372,7 @@ func fire(p, power = false):
 
 func tick_bullet(b,dt):
  if not b.alive: return
+ if expansion.special_bullet(b,dt):return
  var old_x = b.x
  b.x += 420*dt; b.travel += 420*dt
  if b.kind == "pea" and not b.fire:
@@ -350,6 +380,7 @@ func tick_bullet(b,dt):
    var px = center_at(p.col,p.row).x
    if p.hp > 0 and p.key == "torchwood" and p.row == b.row and old_x <= px and b.x >= px:
     b.fire = true;b.blue=p.torch_blue;b.damage*=3 if p.torch_blue else 2;break
+ if expansion.block_straight(b,old_x):return
  # Swept collision, sorted front-to-back: no tunnelling at low frame rates.
  var candidates = zombies.filter(func(z): return z.hp > 0 and z.row == b.row and z.x+24 >= old_x and z.x-24 <= b.x and z.id not in b.hit)
  candidates.sort_custom(func(a,c): return a.x < c.x)
@@ -394,6 +425,7 @@ func spark(pos,color_value,count):
  for i in range(count): effects.append({"pos":pos,"vel":Vector2(rng.randf_range(-55,55),rng.randf_range(-70,35)),"ttl":0.45,"max":0.45,"text":"","color":color_value,"size":rng.randf_range(2,5)})
 
 func use_food(p):
+ if p.key in ["gravebuster","bloomerang"]:notify("这株植物暂不能使用能量豆");return
  if food<=0:notify("本局能量豆已用完");return
  if p.pf_active or (p.key=="squash" and p.squash_phase!="wait"):
   notify("这株植物正在发动动作");return
@@ -418,6 +450,7 @@ func use_food(p):
   if p.key=="megapuff":
    for other in plants:
     if other.key=="megapuff":other.age=0
+  expansion.start_power(p)
   p.pose="plantfood_on" if p.pf_on>0 else "plantfood";p.pose_age=0
  spark(center_at(p.col,p.row),Color("bde99c"),12)
  notify("能量豆发动！")
@@ -442,10 +475,14 @@ func tick_power(p,dt):
    spawn_sun(spot,spot.y+60,40)
    p.pf_remaining-=1
    p.pf_next=[0.1,0.2333,0.3667,0.6,0.7333,0.8667,99.0][6-p.pf_remaining]
+ expansion.tick_power(p,elapsed)
  if p.pf_time>=p.pf_on+p.pf_loop+p.pf_off:
   p.pf_active=false;p.pose="idle";p.pose_age=0;p.timer=maxf(p.timer,0.1)
 
 func zombie_actor(z):
+ return ("egypt_" if world=="egypt" else "")+base_zombie_actor(z)
+
+func base_zombie_actor(z):
  if z.kind=="giant":return "giant"
  if z.kind not in ["cone","bucket"] or z.hp<=200:return "zombie"
  var ratio=(z.hp-200)/(z.maxhp-200)
@@ -495,14 +532,14 @@ func label_at(text_value,pos,size=20,color_value=Color("e6eddc")):
 func _draw():
  draw_rect(Rect2(0,0,1600,900),Color("111e1b"))
  var world_scale=Vector2(COLS*CELL.x/1480.0,ROWS*CELL.y/970.0)
- draw_texture_rect(lawn_texture,Rect2(ORIGIN-Vector2(510,405)*world_scale,Vector2(2048,1536)*world_scale),false)
+ draw_texture_rect(egypt_texture if world=="egypt" else lawn_texture,Rect2(ORIGIN-Vector2(510,405)*world_scale,Vector2(2048,1536)*world_scale),false)
  draw_rect(Rect2(0,0,1600,900),Color(0.03,0.08,0.06,0.58))
  box(Rect2(314,125,1190,88),Color("1b3026"),14)
  box(Rect2(14,207,300,580),Color("1b3026"),14)
  box(Rect2(314,778,1190,112),Color("1b3026"),14)
  box(Rect2(18,18,1564,94),Color("1e322b"),20)
  label_at("庭院实验室",Vector2(38,59),29,Color("f2e5bb"))
- label_at("DESKTOP GARDEN  /  原型 0.3",Vector2(40,88),13,Color("93ad9d"))
+ label_at("DESKTOP GARDEN  /  原型 0.4",Vector2(40,88),13,Color("93ad9d"))
  draw_circle(Vector2(351,64),23,Color("f4ce64")); label_at(str(sun),Vector2(388,76),34,Color("f6df96"))
  label_at("能量豆  %d" % food,Vector2(535,75),23,Color("b4d994"))
  label_at("击退  %d" % kills,Vector2(723,75),23)
@@ -512,8 +549,11 @@ func _draw():
  for item in [[1278,"继续" if paused else "暂停"],[1378,"说明"],[1478,"重开"]]:
   box(Rect2(item[0],34,86,44),Color("344b3b"),9)
   label_at(item[1],Vector2(item[0]+19,63),20)
- label_at("草坪 / 晴天",Vector2(346,166),24,Color("f2e5bb"))
- label_at("三面旗 · 九波 · 普通 / 路障 / 铁桶 / 巨人",Vector2(346,195),16,Color("91ab99"))
+ label_at("古埃及 / 墓碑" if world=="egypt" else "草坪 / 晴天",Vector2(346,166),24,Color("f2e5bb"))
+ label_at("三面旗 · 九波 · 守住防线",Vector2(346,195),16,Color("91ab99"))
+ if phase=="prep":
+  box(Rect2(680,146,150,42),Color("344b3b"),9);label_at("切换场景",Vector2(708,174),19)
+  box(Rect2(842,146,150,42),Color("344b3b"),9);label_at("选择卡组",Vector2(870,174),19)
  var progress = float(wave)/9.0
  box(Rect2(1040,150,439,12),Color("2c4137"),6)
  if progress > 0: box(Rect2(1040,150,439*progress,12),Color("c2d879"),6)
@@ -521,17 +561,18 @@ func _draw():
   var xx = 1040+(i+1)*439/3.0
   draw_line(Vector2(xx,144),Vector2(xx,171),Color("d6dab2"),2)
  label_at("准备布阵" if phase=="prep" else "波次 %d / 9" % wave,Vector2(1300,196),18,Color("d6dab2"))
- draw_texture_rect_region(grass_texture,Rect2(ORIGIN,CELL*Vector2(COLS,ROWS)),Rect2(58,0,1468,968))
+ if world=="lawn":draw_texture_rect_region(grass_texture,Rect2(ORIGIN,CELL*Vector2(COLS,ROWS)),Rect2(58,0,1468,968))
  for row in range(1,ROWS):draw_line(ORIGIN+Vector2(0,row*CELL.y),ORIGIN+Vector2(COLS*CELL.x,row*CELL.y),Color(0.1,0.2,0.08,0.12),1)
  for col in range(1,COLS):draw_line(ORIGIN+Vector2(col*CELL.x,0),ORIGIN+Vector2(col*CELL.x,ROWS*CELL.y),Color(0.1,0.2,0.08,0.12),1)
  var hc = cell_at(hover)
  if hc.x>=0 and hc.x<COLS and hc.y>=0 and hc.y<ROWS and phase in ["prep","play"]:
-  var valid = plant_at(hc.x,hc.y)==null
+  var valid = plant_at(hc.x,hc.y)==null and expansion.can_place(selected,hc.x,hc.y)
   var tint = Color(0.85,0.96,0.65,0.19) if valid else Color(1,0.65,0.50,0.22)
   draw_rect(Rect2(ORIGIN+Vector2(hc)*CELL,CELL-Vector2(3,3)),tint)
   if selected != "" and valid: draw_plant(selected,center_at(hc.x,hc.y),0.6,0,true)
  for mower in mowers:
   if mower.state != "spent": draw_mower(Vector2(mower.x,center_at(0,mower.row).y+10))
+ expansion.draw_graves()
  for p in plants:
   var pos = center_at(p.col,p.row)
   if p.key=="squash" and p.visual_x>=0:pos=Vector2(p.visual_x,p.visual_ground_y+p.visual_y)
@@ -540,7 +581,7 @@ func _draw():
   var actor_key="wallnut_armored" if p.key=="wallnut" and p.shield>0 else p.key
   if actor_key=="wallnut_armored" and pose=="plantfood_off":pose="idle"
   if p.key=="torchwood" and p.torch_blue and not p.pf_active:pose="plantfood"
-  draw_plant(actor_key,pos,1.0,p.age,p.flash>0,pose,p.pose_age)
+  draw_plant(actor_key,pos,1.0,p.age,p.flash>0,pose,p.pose_age,p.key=="bonk" and p.facing_left and pose=="attack")
   if p.shield>0:health_bar(pos+Vector2(-32,43),64,p.shield/8000.0,Color("8acbf0"))
   if p.hp < p.maxhp: health_bar(pos+Vector2(-32,36),64,p.hp/p.maxhp,Color("a8d67a"))
   if p.key=="megapuff":
@@ -553,12 +594,13 @@ func _draw():
   draw_circle(Vector2(b.x,b.y),15 if b.power else 7,c)
   draw_circle(Vector2(b.x-2,b.y-2),4,Color(1,1,1,0.45))
   if b.kind=="sweetpea": draw_arc(Vector2(b.x,b.y),9,0,PI*1.6,10,Color("ffe1f0"),2)
+ expansion.draw_effects()
  for s in suns: draw_sun(s.pos,s.value)
  for fx in effects:
   var color_value = fx.color; color_value.a = clampf(fx.ttl/fx.max,0,1)
   if fx.text=="": draw_circle(fx.pos,fx.size,color_value)
   else: label_at(fx.text,fx.pos,fx.size,color_value)
- for i in range(CARDS.size()): draw_card(i)
+ for i in range(deck.size()): draw_card(i)
  box(Rect2(28,726,128,48),Color("87684a") if shovel else Color("293e32"),10)
  label_at("铲子  X",Vector2(51,758),21)
  box(Rect2(168,726,128,48),Color("577c41") if food_mode else Color("293e32"),10)
@@ -570,16 +612,17 @@ func _draw():
   label_at("开始防守   ENTER",Vector2(1190,840),25,Color("233524"))
  else: label_at("快捷键 1–8 选卡 · 右键取消 · F11 全屏",Vector2(346,840),18,Color("8da693"))
  var inspect_key = selected
- for i in range(CARDS.size()):
-  if card_rect(i).has_point(hover): inspect_key=CARDS[i]
+ for i in range(deck.size()):
+  if card_rect(i).has_point(hover): inspect_key=deck[i]
  if inspect_key != "":
   label_at(DATA[inspect_key].name+"："+DATA[inspect_key].desc,Vector2(346,794),16,Color("d8dfc7"))
  elif message_time>0: label_at(message,Vector2(346,794),18,Color("e5dba5"))
  label_at("独立桌面引擎 · 原版动作接入 · 固定步长战斗 / 非完整原版复刻",Vector2(346,880),14,Color("718c7b"))
  if paused or help_open or phase in ["won","lost"]: draw_overlay()
+ if chooser_open:draw_chooser()
 
 func draw_card(i):
- var key = CARDS[i]; var rect = card_rect(i); var d=DATA[key]
+ var key = deck[i]; var rect = card_rect(i); var d=DATA[key]
  var active = key==selected
  box(rect,Color("304737") if active else Color("24382e"),12,Color("e2d18b") if active else Color("4a624b"))
  draw_plant(key,rect.position+Vector2(38,48),0.48,0,false)
@@ -603,9 +646,9 @@ func draw_sun(pos,value=25):
  draw_circle(pos,24 if value==40 else 20,Color("f5d666"));draw_circle(pos-Vector2(4,5),13,Color("ffe594"))
  label_at(str(value),pos+Vector2(-11,7),16,Color("7a612c"))
 
-func draw_plant(key,pos,scale_value,age,flash,pose="idle",pose_age=-1.0):
+func draw_plant(key,pos,scale_value,age,flash,pose="idle",pose_age=-1.0,mirror=false):
  if animations.has_actor(key):
-  animations.draw_actor(self,key,pos,scale_value,pose_age if pose!="idle" and pose_age>=0 else age,pose,Color(1.15,1.15,1.15) if flash else Color.WHITE)
+  animations.draw_actor(self,key,pos,scale_value,pose_age if pose!="idle" and pose_age>=0 else age,pose,Color(1.15,1.15,1.15) if flash else Color.WHITE,mirror)
   return
  var sc=float(scale_value)
  draw_set_transform(pos,0,Vector2.ONE*sc)
@@ -707,7 +750,7 @@ func draw_overlay():
  box(Rect2(390,220,820,430),Color("20382b"),24,Color("6e8761"))
  if help_open:
   label_at("操作与原型范围",Vector2(436,279),32,Color("ecdba5"))
-  var lines=["点击卡片，再点击草坪种植；点击阳光收集。", "1–8 选卡 · X 铲子 · F 能量豆 · 右键 / Esc 取消", "空格 / P 暂停 · F11 全屏 · 开始前可选练习模式", "每行一辆割草机。九波守住即胜利；再次突破则失败。", "已接入八株植物与普通僵尸、巨人的部分原版动画。", "这是独立玩法原型：未实现全部世界、完整动画与原版存档。", "点击任意位置关闭说明。"]
+  var lines=["点击卡片，再点击草坪种植；点击阳光收集。", "1–8 选卡 · X 铲子 · F 能量豆 · 右键 / Esc 取消", "空格 / P 暂停 · F11 全屏 · 开始前可选练习模式", "每行一辆割草机。九波守住即胜利；再次突破则失败。", "已接入十三株植物、埃及墓碑和部分原版动画。", "这是独立玩法原型：未实现全部世界、完整动画与原版存档。", "点击任意位置关闭说明。"]
   for i in range(lines.size()): label_at(lines[i],Vector2(436,330+i*39),20)
  else:
   var title="已暂停" if paused else ("防守成功" if phase=="won" else "防线被突破")
@@ -716,3 +759,30 @@ func draw_overlay():
   if not paused:
    box(Rect2(650,520,300,64),Color("c6d77e"),14)
    label_at("再守一局",Vector2(744,563),26,Color("233524"))
+
+func chooser_rect(i):return Rect2(360+(i%5)*180,230+int(i/5)*150,164,130)
+func chooser_click(pos):
+ for i in range(CARDS.size()):
+  if chooser_rect(i).has_point(pos):
+   var key=CARDS[i]
+   if key in draft_deck:draft_deck.erase(key)
+   elif draft_deck.size()<8:draft_deck.append(key)
+   else:notify("最多携带 8 张卡片")
+   return
+ if Rect2(1050,736,230,60).has_point(pos) and not draft_deck.is_empty():
+  deck=draft_deck.duplicate();chooser_open=false;selected=""
+func draw_chooser():
+ draw_rect(Rect2(0,0,1600,900),Color(0.02,0.04,0.03,0.88))
+ box(Rect2(324,122,956,694),Color("20382b"),22,Color("6e8761"))
+ label_at("选择卡组  %d / 8"%draft_deck.size(),Vector2(360,177),30,Color("ecdba5"))
+ label_at("点击添加或移除；编号为卡片顺序。切换场景会恢复推荐卡组。",Vector2(360,210),17)
+ for i in range(CARDS.size()):
+  var key=CARDS[i];var rect=chooser_rect(i);var chosen=key in draft_deck
+  box(rect,Color("435d36") if chosen else Color("273c30"),12,Color("d4d58a") if chosen else Color("415847"))
+  draw_plant(key,rect.position+Vector2(82,63),0.65,0,false)
+  label_at(DATA[key].name,rect.position+Vector2(12,113),18)
+  label_at(str(DATA[key].cost),rect.position+Vector2(12,26),18,Color("f3da8b"))
+  if chosen:label_at(str(draft_deck.find(key)+1),rect.position+Vector2(135,26),20,Color("f3da8b"))
+ box(Rect2(1050,736,230,60),Color("c6d77e") if not draft_deck.is_empty() else Color("435442"),12)
+ label_at("确认卡组",Vector2(1110,775),24,Color("233524"))
+ label_at("切换场景会重新布阵；更换卡组保留已种植物。",Vector2(360,774),18)

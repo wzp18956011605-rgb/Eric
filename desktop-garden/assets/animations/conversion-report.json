@@ -281,5 +281,249 @@
       "rect": 0,
       "additive": 0
     }
+  },
+  {
+    "key": "cabbage",
+    "packet": "PlantCabbagepult",
+    "pam": "IMAGES\\768\\INITIAL\\PLANT\\CABBAGEPULT\\CABBAGEPULT.PAM",
+    "clips": [
+      "idle",
+      "attack",
+      "plantfood"
+    ],
+    "image_count": 28,
+    "flags": {
+      "rect": 0,
+      "additive": 0
+    }
+  },
+  {
+    "key": "bloomerang",
+    "packet": "PlantBloomerang",
+    "pam": "IMAGES\\768\\INITIAL\\PLANT\\BLOOMERANG\\BLOOMERANG.PAM",
+    "clips": [
+      "idle",
+      "attack",
+      "attack_02",
+      "plantfoodON",
+      "plantfood",
+      "plantfoodOFF"
+    ],
+    "image_count": 22,
+    "flags": {
+      "rect": 0,
+      "additive": 0
+    }
+  },
+  {
+    "key": "mine",
+    "packet": "PlantPotatomine",
+    "pam": "IMAGES\\768\\INITIAL\\PLANT\\POTATOMINE\\POTATOMINE.PAM",
+    "clips": [
+      "plant",
+      "plant_idle",
+      "recover",
+      "idle",
+      "attack",
+      "plantfood_on",
+      "plantfood",
+      "plantfood_off"
+    ],
+    "image_count": 29,
+    "flags": {
+      "rect": 0,
+      "additive": 0
+    }
+  },
+  {
+    "key": "bonk",
+    "packet": "PlantBonkchoy",
+    "pam": "IMAGES\\768\\INITIAL\\PLANT\\BONKCHOY\\BONKCHOY.PAM",
+    "clips": [
+      "idle",
+      "attack",
+      "attack2",
+      "plantfood_on",
+      "plantfood",
+      "plantfood_off"
+    ],
+    "image_count": 33,
+    "flags": {
+      "rect": 0,
+      "additive": 0
+    }
+  },
+  {
+    "key": "gravebuster",
+    "packet": "PlantGraveBuster",
+    "pam": "IMAGES\\768\\INITIAL\\PLANT\\GRAVEBUSTER\\GRAVEBUSTER.PAM",
+    "clips": [
+      "attack",
+      "attack1"
+    ],
+    "image_count": 17,
+    "flags": {
+      "rect": 0,
+      "additive": 0
+    }
+  },
+  {
+    "key": "grave",
+    "packet": "Egypt_Gravestone",
+    "pam": "IMAGES\\768\\INITIAL\\GRAVESTONES\\EGYPT_HIEROGLYPH\\EGYPT_HIEROGLYPH.PAM",
+    "clips": [
+      "undamaged",
+      "damage1",
+      "damage2",
+      "damage3",
+      "damage4"
+    ],
+    "image_count": 5,
+    "flags": {
+      "rect": 0,
+      "additive": 0
+    }
+  },
+  {
+    "key": "mine_fx",
+    "packet": "PlantPotatomine",
+    "pam": "IMAGES\\768\\INITIAL\\EFFECTS\\POTATOMINE_EXPLOSION\\POTATOMINE_EXPLOSION.PAM",
+    "clips": [
+      "animation"
+    ],
+    "image_count": 34,
+    "flags": {
+      "rect": 0,
+      "additive": 0
+    }
+  },
+  {
+    "key": "egypt_zombie",
+    "packet": "ZombieEgyptBasicGroup",
+    "pam": "IMAGES\\768\\INITIAL\\ZOMBIE\\ZOMBIE_EGYPT_BASIC\\ZOMBIE_EGYPT_BASIC.PAM",
+    "clips": [
+      "idle",
+      "walk",
+      "eat",
+      "die"
+    ],
+    "image_count": 36,
+    "flags": {
+      "rect": 0,
+      "additive": 0
+    }
+  },
+  {
+    "key": "egypt_cone",
+    "packet": "ZombieEgyptBasicGroup",
+    "pam": "IMAGES\\768\\INITIAL\\ZOMBIE\\ZOMBIE_EGYPT_BASIC\\ZOMBIE_EGYPT_BASIC.PAM",
+    "clips": [
+      "idle",
+      "walk",
+      "eat",
+      "die"
+    ],
+    "image_count": 36,
+    "flags": {
+      "rect": 0,
+      "additive": 0
+    }
+  },
+  {
+    "key": "egypt_cone_damage_01",
+    "packet": "ZombieEgyptBasicGroup",
+    "pam": "IMAGES\\768\\INITIAL\\ZOMBIE\\ZOMBIE_EGYPT_BASIC\\ZOMBIE_EGYPT_BASIC.PAM",
+    "clips": [
+      "idle",
+      "walk",
+      "eat",
+      "die"
+    ],
+    "image_count": 36,
+    "flags": {
+      "rect": 0,
+      "additive": 0
+    }
+  },
+  {
+    "key": "egypt_cone_damage_02",
+    "packet": "ZombieEgyptBasicGroup",
+    "pam": "IMAGES\\768\\INITIAL\\ZOMBIE\\ZOMBIE_EGYPT_BASIC\\ZOMBIE_EGYPT_BASIC.PAM",
+    "clips": [
+      "idle",
+      "walk",
+      "eat",
+      "die"
+    ],
+    "image_count": 36,
+    "flags": {
+      "rect": 0,
+      "additive": 0
+    }
+  },
+  {
+    "key": "egypt_bucket",
+    "packet": "ZombieEgyptBasicGroup",
+    "pam": "IMAGES\\768\\INITIAL\\ZOMBIE\\ZOMBIE_EGYPT_BASIC\\ZOMBIE_EGYPT_BASIC.PAM",
+    "clips": [
+      "idle",
+      "walk",
+      "eat",
+      "die"
+    ],
+    "image_count": 36,
+    "flags": {
+      "rect": 0,
+      "additive": 0
+    }
+  },
+  {
+    "key": "egypt_bucket_damage_01",
+    "packet": "ZombieEgyptBasicGroup",
+    "pam": "IMAGES\\768\\INITIAL\\ZOMBIE\\ZOMBIE_EGYPT_BASIC\\ZOMBIE_EGYPT_BASIC.PAM",
+    "clips": [
+      "idle",
+      "walk",
+      "eat",
+      "die"
+    ],
+    "image_count": 36,
+    "flags": {
+      "rect": 0,
+      "additive": 0
+    }
+  },
+  {
+    "key": "egypt_bucket_damage_02",
+    "packet": "ZombieEgyptBasicGroup",
+    "pam": "IMAGES\\768\\INITIAL\\ZOMBIE\\ZOMBIE_EGYPT_BASIC\\ZOMBIE_EGYPT_BASIC.PAM",
+    "clips": [
+      "idle",
+      "walk",
+      "eat",
+      "die"
+    ],
+    "image_count": 36,
+    "flags": {
+      "rect": 0,
+      "additive": 0
+    }
+  },
+  {
+    "key": "egypt_giant",
+    "packet": "ZombieEgyptGargantuarGroup",
+    "pam": "IMAGES\\768\\INITIAL\\ZOMBIE\\EGYPT_GARGANTUAR\\EGYPT_GARGANTUAR.PAM",
+    "clips": [
+      "idle",
+      "walk",
+      "eat",
+      "smash_left",
+      "die"
+    ],
+    "image_count": 84,
+    "flags": {
+      "rect": 0,
+      "additive": 0
+    }
   }
 ]

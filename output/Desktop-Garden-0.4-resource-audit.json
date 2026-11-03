@@ -1,0 +1,649 @@
+{
+  "rar_volumes": 23,
+  "rar_integrity_test": "passed with unrar 7.3.1",
+  "extracted_file_count": 5955,
+  "extracted_bytes": 775318848,
+  "top_level_rsgp_count": 2982,
+  "struct_group_count": 1057,
+  "struct_subgroup_count": 2982,
+  "missing_struct_packets": [],
+  "manifest_resource_groups": 3657,
+  "resource_extension_counts": {
+    ".PTX": 2029,
+    ".PAM": 1290,
+    ".BNK": 351,
+    ".TXT": 7,
+    ".XML": 1,
+    ".TTF": 5,
+    ".RTON": 2984,
+    ".POPFX": 9,
+    ".WEM": 649
+  },
+  "texture_format_counts": {
+    "0": 57,
+    "147": 1972
+  },
+  "cached_unpacked_packages": "present, not used; imports read ready .rsgp only",
+  "source_is_customized": "contains PlantSweetpea and PlantMegaGatlingPuff",
+  "imported_animation_actors": [
+    {
+      "key": "pea",
+      "packet": "PlantPeashooter",
+      "pam": "IMAGES\\768\\INITIAL\\PLANT\\PEASHOOTER\\PEASHOOTER.PAM",
+      "clips": [
+        "idle",
+        "attack",
+        "plantfood"
+      ],
+      "image_count": 37,
+      "flags": {
+        "rect": 0,
+        "additive": 0
+      }
+    },
+    {
+      "key": "sunflower",
+      "packet": "PlantSunflower",
+      "pam": "IMAGES\\768\\INITIAL\\PLANT\\SUNFLOWER\\SUNFLOWER.PAM",
+      "clips": [
+        "idle",
+        "special",
+        "plantfood_on",
+        "plantfood",
+        "plantfood_off"
+      ],
+      "image_count": 28,
+      "flags": {
+        "rect": 0,
+        "additive": 0
+      }
+    },
+    {
+      "key": "wallnut",
+      "packet": "PlantWallnut",
+      "pam": "IMAGES\\768\\INITIAL\\PLANT\\WALLNUT\\WALLNUT.PAM",
+      "clips": [
+        "idle",
+        "damage",
+        "damage2",
+        "damage3",
+        "plantfood_on",
+        "plantfood",
+        "plantfood_off"
+      ],
+      "image_count": 35,
+      "flags": {
+        "rect": 0,
+        "additive": 0
+      }
+    },
+    {
+      "key": "snowpea",
+      "packet": "PlantSnowPea",
+      "pam": "IMAGES\\768\\INITIAL\\PLANT\\SNOWPEA\\SNOWPEA.PAM",
+      "clips": [
+        "idle",
+        "attack",
+        "plantfood_on",
+        "plantfood",
+        "plantfood_off"
+      ],
+      "image_count": 29,
+      "flags": {
+        "rect": 0,
+        "additive": 0
+      }
+    },
+    {
+      "key": "sweetpea",
+      "packet": "PlantSweetpea",
+      "pam": "IMAGES\\768\\CUSTOM\\PLANT\\SWEETPEA\\SWEETPEA.PAM",
+      "clips": [
+        "idle",
+        "attack",
+        "plantfood"
+      ],
+      "image_count": 34,
+      "flags": {
+        "rect": 0,
+        "additive": 0
+      }
+    },
+    {
+      "key": "megapuff",
+      "packet": "PlantMegaGatlingPuff",
+      "pam": "IMAGES\\768\\INITIAL\\PLANT\\MEGAGATLINGPUFF\\MEGAGATLINGPUFF.PAM",
+      "clips": [
+        "idle_stage1",
+        "special_stage1",
+        "plantfood_on",
+        "plantfood",
+        "plantfood_off"
+      ],
+      "image_count": 38,
+      "flags": {
+        "rect": 0,
+        "additive": 0
+      }
+    },
+    {
+      "key": "torchwood",
+      "packet": "PlantTorchwood",
+      "pam": "IMAGES\\768\\INITIAL\\PLANT\\TORCHWOOD\\TORCHWOOD.PAM",
+      "clips": [
+        "idle",
+        "idle2",
+        "plantfood_on",
+        "plantfood",
+        "plantfood_on_t2",
+        "plantfood_t2"
+      ],
+      "image_count": 90,
+      "flags": {
+        "rect": 0,
+        "additive": 0
+      }
+    },
+    {
+      "key": "squash",
+      "packet": "PlantSquash",
+      "pam": "IMAGES\\768\\INITIAL\\PLANT\\SQUASH\\SQUASH.PAM",
+      "clips": [
+        "idle",
+        "size_up",
+        "jump_up_right",
+        "jump_down_right",
+        "plantfood_jump_down_right"
+      ],
+      "image_count": 28,
+      "flags": {
+        "rect": 0,
+        "additive": 0
+      }
+    },
+    {
+      "key": "zombie",
+      "packet": "ZombieTutorialGroup",
+      "pam": "IMAGES\\768\\INITIAL\\ZOMBIE\\ZOMBIE_TUTORIAL\\ZOMBIE_TUTORIAL.PAM",
+      "clips": [
+        "idle",
+        "walk",
+        "eat",
+        "die"
+      ],
+      "image_count": 41,
+      "flags": {
+        "rect": 0,
+        "additive": 0
+      }
+    },
+    {
+      "key": "cone",
+      "packet": "ZombieTutorialGroup",
+      "pam": "IMAGES\\768\\INITIAL\\ZOMBIE\\ZOMBIE_TUTORIAL\\ZOMBIE_TUTORIAL.PAM",
+      "clips": [
+        "idle",
+        "walk",
+        "eat",
+        "die"
+      ],
+      "image_count": 41,
+      "flags": {
+        "rect": 0,
+        "additive": 0
+      }
+    },
+    {
+      "key": "bucket",
+      "packet": "ZombieTutorialGroup",
+      "pam": "IMAGES\\768\\INITIAL\\ZOMBIE\\ZOMBIE_TUTORIAL\\ZOMBIE_TUTORIAL.PAM",
+      "clips": [
+        "idle",
+        "walk",
+        "eat",
+        "die"
+      ],
+      "image_count": 41,
+      "flags": {
+        "rect": 0,
+        "additive": 0
+      }
+    },
+    {
+      "key": "wallnut_armored",
+      "packet": "PlantWallnut",
+      "pam": "IMAGES\\768\\INITIAL\\PLANT\\WALLNUT\\WALLNUT.PAM",
+      "clips": [
+        "idle",
+        "damage",
+        "damage2",
+        "damage3",
+        "plantfood_on",
+        "plantfood",
+        "plantfood_off"
+      ],
+      "image_count": 35,
+      "flags": {
+        "rect": 0,
+        "additive": 0
+      }
+    },
+    {
+      "key": "giant",
+      "packet": "ZombieTutorialGargantuarGroup",
+      "pam": "IMAGES\\768\\INITIAL\\ZOMBIE\\TUTORIAL_GARGANTUAR\\TUTORIAL_GARGANTUAR.PAM",
+      "clips": [
+        "idle",
+        "walk",
+        "eat",
+        "smash_left",
+        "die"
+      ],
+      "image_count": 75,
+      "flags": {
+        "rect": 0,
+        "additive": 0
+      }
+    },
+    {
+      "key": "cone_damage_01",
+      "packet": "ZombieTutorialGroup",
+      "pam": "IMAGES\\768\\INITIAL\\ZOMBIE\\ZOMBIE_TUTORIAL\\ZOMBIE_TUTORIAL.PAM",
+      "clips": [
+        "idle",
+        "walk",
+        "eat",
+        "die"
+      ],
+      "image_count": 41,
+      "flags": {
+        "rect": 0,
+        "additive": 0
+      }
+    },
+    {
+      "key": "cone_damage_02",
+      "packet": "ZombieTutorialGroup",
+      "pam": "IMAGES\\768\\INITIAL\\ZOMBIE\\ZOMBIE_TUTORIAL\\ZOMBIE_TUTORIAL.PAM",
+      "clips": [
+        "idle",
+        "walk",
+        "eat",
+        "die"
+      ],
+      "image_count": 41,
+      "flags": {
+        "rect": 0,
+        "additive": 0
+      }
+    },
+    {
+      "key": "bucket_damage_01",
+      "packet": "ZombieTutorialGroup",
+      "pam": "IMAGES\\768\\INITIAL\\ZOMBIE\\ZOMBIE_TUTORIAL\\ZOMBIE_TUTORIAL.PAM",
+      "clips": [
+        "idle",
+        "walk",
+        "eat",
+        "die"
+      ],
+      "image_count": 41,
+      "flags": {
+        "rect": 0,
+        "additive": 0
+      }
+    },
+    {
+      "key": "bucket_damage_02",
+      "packet": "ZombieTutorialGroup",
+      "pam": "IMAGES\\768\\INITIAL\\ZOMBIE\\ZOMBIE_TUTORIAL\\ZOMBIE_TUTORIAL.PAM",
+      "clips": [
+        "idle",
+        "walk",
+        "eat",
+        "die"
+      ],
+      "image_count": 41,
+      "flags": {
+        "rect": 0,
+        "additive": 0
+      }
+    },
+    {
+      "key": "cabbage",
+      "packet": "PlantCabbagepult",
+      "pam": "IMAGES\\768\\INITIAL\\PLANT\\CABBAGEPULT\\CABBAGEPULT.PAM",
+      "clips": [
+        "idle",
+        "attack",
+        "plantfood"
+      ],
+      "image_count": 28,
+      "flags": {
+        "rect": 0,
+        "additive": 0
+      }
+    },
+    {
+      "key": "bloomerang",
+      "packet": "PlantBloomerang",
+      "pam": "IMAGES\\768\\INITIAL\\PLANT\\BLOOMERANG\\BLOOMERANG.PAM",
+      "clips": [
+        "idle",
+        "attack",
+        "attack_02",
+        "plantfoodON",
+        "plantfood",
+        "plantfoodOFF"
+      ],
+      "image_count": 22,
+      "flags": {
+        "rect": 0,
+        "additive": 0
+      }
+    },
+    {
+      "key": "mine",
+      "packet": "PlantPotatomine",
+      "pam": "IMAGES\\768\\INITIAL\\PLANT\\POTATOMINE\\POTATOMINE.PAM",
+      "clips": [
+        "plant",
+        "plant_idle",
+        "recover",
+        "idle",
+        "attack",
+        "plantfood_on",
+        "plantfood",
+        "plantfood_off"
+      ],
+      "image_count": 29,
+      "flags": {
+        "rect": 0,
+        "additive": 0
+      }
+    },
+    {
+      "key": "bonk",
+      "packet": "PlantBonkchoy",
+      "pam": "IMAGES\\768\\INITIAL\\PLANT\\BONKCHOY\\BONKCHOY.PAM",
+      "clips": [
+        "idle",
+        "attack",
+        "attack2",
+        "plantfood_on",
+        "plantfood",
+        "plantfood_off"
+      ],
+      "image_count": 33,
+      "flags": {
+        "rect": 0,
+        "additive": 0
+      }
+    },
+    {
+      "key": "gravebuster",
+      "packet": "PlantGraveBuster",
+      "pam": "IMAGES\\768\\INITIAL\\PLANT\\GRAVEBUSTER\\GRAVEBUSTER.PAM",
+      "clips": [
+        "attack",
+        "attack1"
+      ],
+      "image_count": 17,
+      "flags": {
+        "rect": 0,
+        "additive": 0
+      }
+    },
+    {
+      "key": "grave",
+      "packet": "Egypt_Gravestone",
+      "pam": "IMAGES\\768\\INITIAL\\GRAVESTONES\\EGYPT_HIEROGLYPH\\EGYPT_HIEROGLYPH.PAM",
+      "clips": [
+        "undamaged",
+        "damage1",
+        "damage2",
+        "damage3",
+        "damage4"
+      ],
+      "image_count": 5,
+      "flags": {
+        "rect": 0,
+        "additive": 0
+      }
+    },
+    {
+      "key": "mine_fx",
+      "packet": "PlantPotatomine",
+      "pam": "IMAGES\\768\\INITIAL\\EFFECTS\\POTATOMINE_EXPLOSION\\POTATOMINE_EXPLOSION.PAM",
+      "clips": [
+        "animation"
+      ],
+      "image_count": 34,
+      "flags": {
+        "rect": 0,
+        "additive": 0
+      }
+    },
+    {
+      "key": "egypt_zombie",
+      "packet": "ZombieEgyptBasicGroup",
+      "pam": "IMAGES\\768\\INITIAL\\ZOMBIE\\ZOMBIE_EGYPT_BASIC\\ZOMBIE_EGYPT_BASIC.PAM",
+      "clips": [
+        "idle",
+        "walk",
+        "eat",
+        "die"
+      ],
+      "image_count": 36,
+      "flags": {
+        "rect": 0,
+        "additive": 0
+      }
+    },
+    {
+      "key": "egypt_cone",
+      "packet": "ZombieEgyptBasicGroup",
+      "pam": "IMAGES\\768\\INITIAL\\ZOMBIE\\ZOMBIE_EGYPT_BASIC\\ZOMBIE_EGYPT_BASIC.PAM",
+      "clips": [
+        "idle",
+        "walk",
+        "eat",
+        "die"
+      ],
+      "image_count": 36,
+      "flags": {
+        "rect": 0,
+        "additive": 0
+      }
+    },
+    {
+      "key": "egypt_cone_damage_01",
+      "packet": "ZombieEgyptBasicGroup",
+      "pam": "IMAGES\\768\\INITIAL\\ZOMBIE\\ZOMBIE_EGYPT_BASIC\\ZOMBIE_EGYPT_BASIC.PAM",
+      "clips": [
+        "idle",
+        "walk",
+        "eat",
+        "die"
+      ],
+      "image_count": 36,
+      "flags": {
+        "rect": 0,
+        "additive": 0
+      }
+    },
+    {
+      "key": "egypt_cone_damage_02",
+      "packet": "ZombieEgyptBasicGroup",
+      "pam": "IMAGES\\768\\INITIAL\\ZOMBIE\\ZOMBIE_EGYPT_BASIC\\ZOMBIE_EGYPT_BASIC.PAM",
+      "clips": [
+        "idle",
+        "walk",
+        "eat",
+        "die"
+      ],
+      "image_count": 36,
+      "flags": {
+        "rect": 0,
+        "additive": 0
+      }
+    },
+    {
+      "key": "egypt_bucket",
+      "packet": "ZombieEgyptBasicGroup",
+      "pam": "IMAGES\\768\\INITIAL\\ZOMBIE\\ZOMBIE_EGYPT_BASIC\\ZOMBIE_EGYPT_BASIC.PAM",
+      "clips": [
+        "idle",
+        "walk",
+        "eat",
+        "die"
+      ],
+      "image_count": 36,
+      "flags": {
+        "rect": 0,
+        "additive": 0
+      }
+    },
+    {
+      "key": "egypt_bucket_damage_01",
+      "packet": "ZombieEgyptBasicGroup",
+      "pam": "IMAGES\\768\\INITIAL\\ZOMBIE\\ZOMBIE_EGYPT_BASIC\\ZOMBIE_EGYPT_BASIC.PAM",
+      "clips": [
+        "idle",
+        "walk",
+        "eat",
+        "die"
+      ],
+      "image_count": 36,
+      "flags": {
+        "rect": 0,
+        "additive": 0
+      }
+    },
+    {
+      "key": "egypt_bucket_damage_02",
+      "packet": "ZombieEgyptBasicGroup",
+      "pam": "IMAGES\\768\\INITIAL\\ZOMBIE\\ZOMBIE_EGYPT_BASIC\\ZOMBIE_EGYPT_BASIC.PAM",
+      "clips": [
+        "idle",
+        "walk",
+        "eat",
+        "die"
+      ],
+      "image_count": 36,
+      "flags": {
+        "rect": 0,
+        "additive": 0
+      }
+    },
+    {
+      "key": "egypt_giant",
+      "packet": "ZombieEgyptGargantuarGroup",
+      "pam": "IMAGES\\768\\INITIAL\\ZOMBIE\\EGYPT_GARGANTUAR\\EGYPT_GARGANTUAR.PAM",
+      "clips": [
+        "idle",
+        "walk",
+        "eat",
+        "smash_left",
+        "die"
+      ],
+      "image_count": 84,
+      "flags": {
+        "rect": 0,
+        "additive": 0
+      }
+    }
+  ],
+  "imported_audio": {
+    "shoot": {
+      "event": "Play_Throw",
+      "variants": [
+        {
+          "file": "shoot0.wav",
+          "source_media_id": 258411163,
+          "duration": 0.145813
+        },
+        {
+          "file": "shoot1.wav",
+          "source_media_id": 291795630,
+          "duration": 0.37475
+        },
+        {
+          "file": "shoot2.wav",
+          "source_media_id": 470836671,
+          "duration": 0.483344
+        }
+      ]
+    },
+    "impact": {
+      "event": "Play_Splat",
+      "variants": [
+        {
+          "file": "impact0.wav",
+          "source_media_id": 756505477,
+          "duration": 0.242313
+        },
+        {
+          "file": "impact1.wav",
+          "source_media_id": 258718304,
+          "duration": 0.242875
+        },
+        {
+          "file": "impact2.wav",
+          "source_media_id": 387371653,
+          "duration": 0.243938
+        }
+      ]
+    },
+    "sun": {
+      "event": "Play_Spawn_Sun",
+      "variants": [
+        {
+          "file": "sun0.wav",
+          "source_media_id": 161661594,
+          "duration": 1.338875
+        }
+      ]
+    },
+    "plant": {
+      "event": "Play_Plant",
+      "variants": [
+        {
+          "file": "plant0.wav",
+          "source_media_id": 1023057834,
+          "duration": 0.862375
+        }
+      ]
+    },
+    "shovel": {
+      "event": "Play_Shovel",
+      "variants": [
+        {
+          "file": "shovel0.wav",
+          "source_media_id": 30585199,
+          "duration": 0.25075
+        }
+      ]
+    },
+    "squash": {
+      "event": "Play_Plant_Squash_Attack",
+      "variants": [
+        {
+          "file": "squash0.wav",
+          "source_media_id": 853187184,
+          "duration": 0.458188
+        }
+      ]
+    },
+    "food": {
+      "event": "Play_Peashooter_Food",
+      "variants": [
+        {
+          "file": "food0.wav",
+          "source_media_id": 287910843,
+          "duration": 2.604938
+        }
+      ]
+    }
+  }
+}

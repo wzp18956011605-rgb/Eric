@@ -5,11 +5,13 @@ var textures: Dictionary = {}
 const ROOT = "res://assets/animations/"
 
 func _init():
- for key in ["sunflower","pea","wallnut","snowpea","sweetpea","megapuff","torchwood","squash","zombie","cone","bucket","cone_damage_01","cone_damage_02","bucket_damage_01","bucket_damage_02","wallnut_armored","giant"]:
+ for filename in DirAccess.get_files_at(ROOT):
+  if not filename.ends_with(".json"):continue
+  var key=filename.trim_suffix(".json")
   var path=ROOT+key+".json"
   if not FileAccess.file_exists(path): continue
   var data=JSON.parse_string(FileAccess.get_file_as_string(path))
-  if data == null: continue
+  if not data is Dictionary or not data.has("clips") or not data.has("bounds"):continue
   actors[key]=data
   for atlas in data.atlases:
    if not textures.has(atlas): textures[atlas]=load(ROOT+atlas)
@@ -33,19 +35,22 @@ func action_cues(key,pose):
  var data=actors[key];var clip=data.clips[clip_name(key,pose)];var cues=[]
  for frame in clip.events:
   for cmd in clip.events[frame]:
-   if cmd[0]=="use_action":cues.append(float(frame)/float(data.rate))
+   if cmd[0] in ["use_action","use_special"]:cues.append(float(frame)/float(data.rate))
  cues.sort();return cues
 
-func draw_actor(canvas,key,pos,display_scale,clock,pose="idle",tint=Color.WHITE):
+func draw_actor(canvas,key,pos,display_scale,clock,pose="idle",tint=Color.WHITE,mirror=false):
  var data=actors[key];var name=clip_name(key,pose);var frames=data.clips[name].frames
+ if key=="gravebuster" and pose=="idle" and clock==0:clock=0.5
  var frame_number=int(maxf(clock,0)*float(data.rate))
  if pose=="die":frame_number=mini(frame_number,frames.size()-1)
  else:frame_number%=frames.size()
  var bounds=data.bounds
- var target_height=112.0 if key=="zombie" or key.begins_with("cone") or key.begins_with("bucket") else (162.0 if key=="giant" else 92.0)
+ var base_key=key.trim_prefix("egypt_")
+ var target_height=112.0 if base_key=="zombie" or base_key.begins_with("cone") or base_key.begins_with("bucket") else (162.0 if base_key=="giant" else 92.0)
  var sc=display_scale*target_height/maxf(1,bounds[3]-bounds[1])
  var anchor=Vector2((bounds[0]+bounds[2])/2.0,bounds[3])
- var root_transform=Transform2D(0.0,Vector2.ONE*sc,0.0,pos+Vector2(0,30*display_scale)-anchor*sc)
+ var axis=Vector2(-sc if mirror else sc,sc)
+ var root_transform=Transform2D(0.0,axis,0.0,pos+Vector2(0,30*display_scale)-anchor*axis)
  for part in frames[frame_number]:
   var image=data.images[int(part[0])]
   var trans=Transform2D(Vector2(part[1],part[2]),Vector2(part[3],part[4]),Vector2(part[5],part[6]))

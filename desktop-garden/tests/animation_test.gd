@@ -7,11 +7,11 @@ func check(value,message):
 func _initialize():call_deferred("run")
 func run():
  var anim=load("res://OriginalAnimations.gd").new()
- for key in ["sunflower","pea","wallnut","snowpea","sweetpea","megapuff","torchwood","squash","zombie","cone","bucket","cone_damage_01","cone_damage_02","bucket_damage_01","bucket_damage_02","wallnut_armored","giant"]:
+ for key in anim.actors:
   var valid=anim.has_actor(key)
   if valid:
    var data=anim.actors[key]
-   valid=data.rate>0 and data.images.size()>0 and data.clips[data.idle].frames.size()>1
+   valid=data.rate>0 and data.images.size()>0 and data.clips[data.idle].frames.size()>=1
    for clip in data.clips.values():
     for frame in clip.frames:
      for part in frame:
