@@ -1,0 +1,12 @@
+{
+  "artifact": "Sweetpea-MintSplit8-20-Slow1s-Android-test.zip",
+  "bytes": 15457293,
+  "sha256": "3e8053076cf88a39e0b852c85e15047de68cdc02bb4a3b9c3889a833f3c6317c",
+  "native_instruction_cases_passed": 10,
+  "native_child_cases_passed": 2,
+  "original_mint_data_unchanged": true,
+  "original_sun_rules_preserved": true,
+  "card_and_lawnstrings_preserved": true,
+  "android_runtime_tested": false,
+  "requires_obb_and_patched_current_arm64_library": true
+}
