@@ -1,0 +1,121 @@
+{
+  "base": "Balance-Starfruit15-OriginalSun-Android.zip",
+  "target": "Android OBB overlay",
+  "method": "Whitespace translation for two card-level localization keys",
+  "video_accessible": false,
+  "tutorial_reproduction_claimed": false,
+  "native_callsite_evidence": {
+    "normal": [
+      "0x128aef0",
+      "0x13e8cac"
+    ],
+    "mastery": [
+      "0x128aed4",
+      "0x13e8c70"
+    ]
+  },
+  "edits": [
+    {
+      "resource": "PACKAGES\\LAWNSTRINGS-DE-DE.RTON",
+      "key": "LEVEL_MASTERY_NUMBER",
+      "before": "M {LEVEL}",
+      "after": " "
+    },
+    {
+      "resource": "PACKAGES\\LAWNSTRINGS-DE-DE.RTON",
+      "key": "LEVEL_NUMBER",
+      "before": "LVL {LEVEL}",
+      "after": " "
+    },
+    {
+      "resource": "PACKAGES\\LAWNSTRINGS-EN-US.RTON",
+      "key": "LEVEL_MASTERY_NUMBER",
+      "before": "M {LEVEL}",
+      "after": " "
+    },
+    {
+      "resource": "PACKAGES\\LAWNSTRINGS-EN-US.RTON",
+      "key": "LEVEL_NUMBER",
+      "before": "LVL {LEVEL}",
+      "after": " "
+    },
+    {
+      "resource": "PACKAGES\\LAWNSTRINGS-ES-ES.RTON",
+      "key": "LEVEL_MASTERY_NUMBER",
+      "before": "M. {LEVEL}",
+      "after": " "
+    },
+    {
+      "resource": "PACKAGES\\LAWNSTRINGS-ES-ES.RTON",
+      "key": "LEVEL_NUMBER",
+      "before": "NVL {LEVEL}",
+      "after": " "
+    },
+    {
+      "resource": "PACKAGES\\LAWNSTRINGS-FR-FR.RTON",
+      "key": "LEVEL_MASTERY_NUMBER",
+      "before": "M {LEVEL}",
+      "after": " "
+    },
+    {
+      "resource": "PACKAGES\\LAWNSTRINGS-FR-FR.RTON",
+      "key": "LEVEL_NUMBER",
+      "before": "NIV. {LEVEL}",
+      "after": " "
+    },
+    {
+      "resource": "PACKAGES\\LAWNSTRINGS-IT-IT.RTON",
+      "key": "LEVEL_MASTERY_NUMBER",
+      "before": "SUPR. {LEVEL}",
+      "after": " "
+    },
+    {
+      "resource": "PACKAGES\\LAWNSTRINGS-IT-IT.RTON",
+      "key": "LEVEL_NUMBER",
+      "before": "LIV {LEVEL}",
+      "after": " "
+    },
+    {
+      "resource": "PACKAGES\\LAWNSTRINGS-PT-BR.RTON",
+      "key": "LEVEL_MASTERY_NUMBER",
+      "before": "D {LEVEL}",
+      "after": " "
+    },
+    {
+      "resource": "PACKAGES\\LAWNSTRINGS-PT-BR.RTON",
+      "key": "LEVEL_NUMBER",
+      "before": "NVL {LEVEL}",
+      "after": " "
+    }
+  ],
+  "changed_rton": [
+    "PACKAGES\\LAWNSTRINGS-DE-DE.RTON",
+    "PACKAGES\\LAWNSTRINGS-EN-US.RTON",
+    "PACKAGES\\LAWNSTRINGS-ES-ES.RTON",
+    "PACKAGES\\LAWNSTRINGS-FR-FR.RTON",
+    "PACKAGES\\LAWNSTRINGS-IT-IT.RTON",
+    "PACKAGES\\LAWNSTRINGS-PT-BR.RTON"
+  ],
+  "all_other_package_resources_byte_identical": true,
+  "plant_level_data_unchanged": true,
+  "original_sun_rules_preserved": true,
+  "apk_lib_modified": false,
+  "other_overlay_files_byte_identical": true,
+  "runtime_tested": false,
+  "overlay_sha256": {
+    "Overlay/Packet/__MANIFESTGROUP__.rsgp": "6970d2dffa0b1dafbc85b614f8bde3752daae7fd72b9d638d8f31164a87a7502",
+    "Overlay/Packet/SweetpeaEffects_Common.rsgp": "934b1a8efb0ff1ac67998f5b402ac27ba6643deb27eadf7c1cf230f3554bffe8",
+    "Overlay/Packet/PlantSweetpea_768.rsgp": "9e4d93f62c025973b2449cb151ce0e97db0041c13ec8bbe7179bcaeac265f19e",
+    "Overlay/Packet/SweetpeaEffects_768.rsgp": "73bed8b1ace909c8167327207e15e18a39c8a15551107721621567ed93b6ac45",
+    "Overlay/Packet/PlantSweetpea_Common.rsgp": "465b228fd91d79ebb6f6e8d35598ab10330f3e14e2ed8e2eddea1a7df5f36bde",
+    "Overlay/Packet/Packages.rsgp": "a1bb76fd4ed0b07c580da70baf201f6ca2d56742f34d3d6d52f9d8de96ac4c51",
+    "Overlay/StructInfo.json": "cce48c1c2d060e3c4dd9964231068a4da5dbff6c167745ff0f5672c21984f94b",
+    "Overlay/Packet/UI_SeedPackets_768.rsgp": "25ef4d40215d9cf95d2ca18a8098e4aa0904784d6ee0f8d73eabc70926a24a25",
+    "Overlay/Packet/PlantSweetpea_1536.rsgp": "344c785e75f60cbe482954c918b71a043f03bec503dbda3be7b73fa9f8323384",
+    "Overlay/Packet/SweetpeaEffects_1536.rsgp": "ca238a7fd64963f48a37bb9ad3d0b7d7faa6fec384325b180d181d04be8afffc",
+    "Overlay/Packet/UI_SeedPackets_1536.rsgp": "201916e92781da36568e2cb16c420379f2ac804fcf5f7633c38b280d07b5e8a3",
+    "Overlay/Packet/PlantMegaGatlingPuff_Common.rsgp": "9f20f6e8b73a23cb65dc1ca539bedfb8d1e98309a06c1d4ce6a98bab14911850",
+    "Overlay/Packet/PlantMegaGatlingPuff_768.rsgp": "4bab094bbf0a8e8b342720d61f2703269a8f2ae9c9f55c3189948fab712d2de9",
+    "Overlay/Packet/PlantMegaGatlingPuff_1536.rsgp": "6e9aa83f9164eb9eed6a6bde4db7a35d7ddb2f1c339d49e047c06d17eea1dafa"
+  }
+}
