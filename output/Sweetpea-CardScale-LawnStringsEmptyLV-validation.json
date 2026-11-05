@@ -1,0 +1,187 @@
+{
+  "base": "Balance-Starfruit15-OriginalSun-HideCardLevel-Android.zip",
+  "portrait_changes_only_for": "Sweetpea artwork stored as IMAGE_UI_PACKETS_HOTDATE",
+  "portrait_validation": {
+    "status": "portrait_resource_adjustment_ready_for_android_test",
+    "base": "Balance-Starfruit15-OriginalSun-HideCardLevel-Android.zip",
+    "base_sha256": "b5105a31e2d522f88168aecf36822e4753239f033d8c2002a4b88c772e6de8dd",
+    "checks": {
+      "768": {
+        "previous_rect": [
+          745,
+          1079,
+          61,
+          70
+        ],
+        "new_rect": [
+          2,
+          1334,
+          72,
+          62
+        ],
+        "new_offset": [
+          12,
+          18
+        ],
+        "reference_offset": [
+          12,
+          18
+        ],
+        "portrait_render_region_matches_firepea": true,
+        "uniform_scale": true,
+        "original_art_preserved": true,
+        "other_pixels_unchanged": true,
+        "other_resources_unchanged": true,
+        "atlas_dimensions_and_texture_count_unchanged": true
+      },
+      "1536": {
+        "previous_rect": [
+          289,
+          2125,
+          121,
+          139
+        ],
+        "new_rect": [
+          2,
+          2641,
+          143,
+          123
+        ],
+        "new_offset": [
+          12,
+          18
+        ],
+        "reference_offset": [
+          12,
+          18
+        ],
+        "portrait_render_region_matches_firepea": true,
+        "uniform_scale": true,
+        "original_art_preserved": true,
+        "other_pixels_unchanged": true,
+        "other_resources_unchanged": true,
+        "atlas_dimensions_and_texture_count_unchanged": true
+      }
+    },
+    "changed_overlay_files": [
+      "Overlay/Packet/__MANIFESTGROUP__.rsgp",
+      "Overlay/Packet/UI_SeedPackets_768.rsgp",
+      "Overlay/Packet/UI_SeedPackets_1536.rsgp"
+    ],
+    "plant_parameters_and_sun_rules_unchanged": true,
+    "no_new_atlases_or_slots": true,
+    "runtime_tested": false
+  },
+  "level_text_method": "LawnStrings literal empty strings, replacing prior single spaces",
+  "level_caption_scope": "Shared localization keys: all widgets using these keys, not per-plant",
+  "level_text_edits": [
+    {
+      "resource": "PACKAGES\\LAWNSTRINGS-DE-DE.RTON",
+      "key": "LEVEL_MASTERY_NUMBER",
+      "previous": " ",
+      "new": ""
+    },
+    {
+      "resource": "PACKAGES\\LAWNSTRINGS-DE-DE.RTON",
+      "key": "LEVEL_NUMBER",
+      "previous": " ",
+      "new": ""
+    },
+    {
+      "resource": "PACKAGES\\LAWNSTRINGS-EN-US.RTON",
+      "key": "LEVEL_MASTERY_NUMBER",
+      "previous": " ",
+      "new": ""
+    },
+    {
+      "resource": "PACKAGES\\LAWNSTRINGS-EN-US.RTON",
+      "key": "LEVEL_NUMBER",
+      "previous": " ",
+      "new": ""
+    },
+    {
+      "resource": "PACKAGES\\LAWNSTRINGS-ES-ES.RTON",
+      "key": "LEVEL_MASTERY_NUMBER",
+      "previous": " ",
+      "new": ""
+    },
+    {
+      "resource": "PACKAGES\\LAWNSTRINGS-ES-ES.RTON",
+      "key": "LEVEL_NUMBER",
+      "previous": " ",
+      "new": ""
+    },
+    {
+      "resource": "PACKAGES\\LAWNSTRINGS-FR-FR.RTON",
+      "key": "LEVEL_MASTERY_NUMBER",
+      "previous": " ",
+      "new": ""
+    },
+    {
+      "resource": "PACKAGES\\LAWNSTRINGS-FR-FR.RTON",
+      "key": "LEVEL_NUMBER",
+      "previous": " ",
+      "new": ""
+    },
+    {
+      "resource": "PACKAGES\\LAWNSTRINGS-IT-IT.RTON",
+      "key": "LEVEL_MASTERY_NUMBER",
+      "previous": " ",
+      "new": ""
+    },
+    {
+      "resource": "PACKAGES\\LAWNSTRINGS-IT-IT.RTON",
+      "key": "LEVEL_NUMBER",
+      "previous": " ",
+      "new": ""
+    },
+    {
+      "resource": "PACKAGES\\LAWNSTRINGS-PT-BR.RTON",
+      "key": "LEVEL_MASTERY_NUMBER",
+      "previous": " ",
+      "new": ""
+    },
+    {
+      "resource": "PACKAGES\\LAWNSTRINGS-PT-BR.RTON",
+      "key": "LEVEL_NUMBER",
+      "previous": " ",
+      "new": ""
+    }
+  ],
+  "changed_overlay_files": [
+    "Overlay/Packet/__MANIFESTGROUP__.rsgp",
+    "Overlay/Packet/Packages.rsgp",
+    "Overlay/Packet/UI_SeedPackets_768.rsgp",
+    "Overlay/Packet/UI_SeedPackets_1536.rsgp"
+  ],
+  "changed_package_resources": [
+    "PACKAGES\\LAWNSTRINGS-DE-DE.RTON",
+    "PACKAGES\\LAWNSTRINGS-EN-US.RTON",
+    "PACKAGES\\LAWNSTRINGS-ES-ES.RTON",
+    "PACKAGES\\LAWNSTRINGS-FR-FR.RTON",
+    "PACKAGES\\LAWNSTRINGS-IT-IT.RTON",
+    "PACKAGES\\LAWNSTRINGS-PT-BR.RTON"
+  ],
+  "all_other_data_byte_identical": true,
+  "original_sun_rules_preserved": true,
+  "gameplay_levels_unchanged": true,
+  "no_apk_or_lib_changes": true,
+  "eight_direction_shards_included": false,
+  "runtime_tested": false,
+  "files_sha256": {
+    "Overlay/Packet/__MANIFESTGROUP__.rsgp": "19aa63da0cca6ab2c30b9432d7dd83241515e5a7b17dce371f75f4ab08b4c074",
+    "Overlay/Packet/SweetpeaEffects_Common.rsgp": "934b1a8efb0ff1ac67998f5b402ac27ba6643deb27eadf7c1cf230f3554bffe8",
+    "Overlay/Packet/PlantSweetpea_768.rsgp": "9e4d93f62c025973b2449cb151ce0e97db0041c13ec8bbe7179bcaeac265f19e",
+    "Overlay/Packet/SweetpeaEffects_768.rsgp": "73bed8b1ace909c8167327207e15e18a39c8a15551107721621567ed93b6ac45",
+    "Overlay/Packet/PlantSweetpea_Common.rsgp": "465b228fd91d79ebb6f6e8d35598ab10330f3e14e2ed8e2eddea1a7df5f36bde",
+    "Overlay/Packet/Packages.rsgp": "e0d14d55d9d11b07bdedea2f878caafa1f6bf10a1cf815f355cc72b95cd27cb6",
+    "Overlay/StructInfo.json": "cce48c1c2d060e3c4dd9964231068a4da5dbff6c167745ff0f5672c21984f94b",
+    "Overlay/Packet/UI_SeedPackets_768.rsgp": "f0577fab783d059b1974890370c415e5d55f5c9ae9eafc5a29d417d954cf8c45",
+    "Overlay/Packet/PlantSweetpea_1536.rsgp": "344c785e75f60cbe482954c918b71a043f03bec503dbda3be7b73fa9f8323384",
+    "Overlay/Packet/SweetpeaEffects_1536.rsgp": "ca238a7fd64963f48a37bb9ad3d0b7d7faa6fec384325b180d181d04be8afffc",
+    "Overlay/Packet/UI_SeedPackets_1536.rsgp": "1949ccffaa0bf29691b077f9d1d4b72c7cdd047b105ee665bafbf439e8f4eb67",
+    "Overlay/Packet/PlantMegaGatlingPuff_Common.rsgp": "9f20f6e8b73a23cb65dc1ca539bedfb8d1e98309a06c1d4ce6a98bab14911850",
+    "Overlay/Packet/PlantMegaGatlingPuff_768.rsgp": "4bab094bbf0a8e8b342720d61f2703269a8f2ae9c9f55c3189948fab712d2de9",
+    "Overlay/Packet/PlantMegaGatlingPuff_1536.rsgp": "6e9aa83f9164eb9eed6a6bde4db7a35d7ddb2f1c339d49e047c06d17eea1dafa"
+  }
+}
