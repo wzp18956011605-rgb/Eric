@@ -1,0 +1,372 @@
+{
+  "baseline": "Pope-v9-NoAds-AlmanacFormatFix.zip",
+  "pope_resources_source": "/workspace/Eric/output/Pope-Gothic-Throne-Ready-v4/Overlay/Packet",
+  "merged_pope_packets": [
+    "UI_ZombiePackets_1536.rsgp",
+    "UI_ZombiePackets_384.rsgp",
+    "UI_ZombiePackets_768.rsgp",
+    "ZombieIronKingGroup_1536.rsgp",
+    "ZombieIronKingGroup_384.rsgp",
+    "ZombieIronKingGroup_768.rsgp",
+    "ZombieIronKingGroup_Common.rsgp"
+  ],
+  "changed_overlay_files": [
+    "Overlay/Packet/Packages.rsgp",
+    "Overlay/Packet/ZombieIronKingGroup_1536.rsgp",
+    "Overlay/Packet/ZombieIronKingGroup_768.rsgp",
+    "Overlay/Packet/ZombieIronKingGroup_384.rsgp",
+    "Overlay/Packet/ZombieIronKingGroup_Common.rsgp",
+    "Overlay/Packet/UI_ZombiePackets_1536.rsgp",
+    "Overlay/Packet/UI_ZombiePackets_768.rsgp",
+    "Overlay/Packet/UI_ZombiePackets_384.rsgp"
+  ],
+  "currant_before": {
+    "objclass": "ElectricCurrantProps",
+    "aliases": [
+      "ElectricCurrantDefault"
+    ],
+    "objdata": {
+      "Cost": 150,
+      "BeghouledCost": 1000,
+      "Hitpoints": 200.0,
+      "PacketCooldown": 10.0,
+      "StartingCooldown": 0.05,
+      "PlantFoodPlayCount": 1,
+      "PlantFoodActivationSound": "Play_Plant_Potato_Nitro",
+      "PlantGridType": "ground",
+      "ArtCenter": {
+        "x": 99,
+        "y": 105
+      },
+      "ZombiesAffectedByEating": {
+        "ListType": "excludelist",
+        "List": [
+          "pirate_barrel",
+          "birthday_barrel",
+          "pirate_captain_parrot",
+          "cannon",
+          "piano",
+          "beach_fisherman",
+          "dark_king",
+          "football_mech",
+          "hero_barrel",
+          "bighead_barrel",
+          "roman_ballista"
+        ]
+      },
+      "FromEating": {
+        "EatDuration": 2.5,
+        "LaneChangeDuration": 0.3,
+        "IndifferenceDuration": 1.5,
+        "SoundOfMoveUp": "Play_LightningReed_Electrocute_PF",
+        "SoundOfMoveDown": "Play_LightningReed_Electrocute_PF",
+        "ShouldRegret": false
+      },
+      "KnockbackDetails": {
+        "KnockbackDistance": 0.5,
+        "KnockbackHeight": 85
+      },
+      "Actions": [
+        {
+          "# Orphaned currant normal attack": 0,
+          "Type": "special",
+          "Damage": 48,
+          "CooldownTimeMin": 1.0,
+          "CooldownTimeMax": 1.0,
+          "TriggerType": "rect",
+          "RectTriggerRange": {
+            "mX": -32,
+            "mY": -50,
+            "mWidth": 74,
+            "mHeight": 64
+          }
+        },
+        {
+          "# Orphaned currant powered attack": 0,
+          "Type": "special",
+          "Damage": 80,
+          "CooldownTimeMin": 1.0,
+          "CooldownTimeMax": 1.0,
+          "TriggerType": "rect",
+          "RectTriggerRange": {
+            "mX": -32,
+            "mY": -50,
+            "mWidth": 92,
+            "mHeight": 64
+          }
+        },
+        {
+          "# Currant wall normal": 0,
+          "Type": "special",
+          "CooldownTimeMin": 1.0,
+          "CooldownTimeMax": 1.0,
+          "Damage": 40,
+          "TriggerType": "rect",
+          "RectTriggerRange": {
+            "mX": -42,
+            "mY": -50,
+            "mWidth": 84,
+            "mHeight": 64
+          }
+        },
+        {
+          "# Currant wall powered by plantfood": 0,
+          "Type": "special",
+          "Damage": 80,
+          "TriggerType": "rect",
+          "RectTriggerRange": {
+            "mX": -42,
+            "mY": -50,
+            "mWidth": 84,
+            "mHeight": 64
+          }
+        }
+      ],
+      "Boosts": [
+        {
+          "PlantBoostProps": "RTID(BoostFirstStrike@PropertySheets)",
+          "Value": 1,
+          "CooldownDurationSeconds": 28800
+        }
+      ],
+      "PlantStats": [
+        {
+          "Type": "damage",
+          "Value": "damage3"
+        },
+        {
+          "Type": "area",
+          "Value": "currant"
+        }
+      ],
+      "ScaledProps": [
+        {
+          "Key": "MasteryBoostChance",
+          "Formula": "boost_mastery",
+          "Arg1": 10,
+          "Arg2": 0.01,
+          "comment": "arg2 every arg1 levels"
+        },
+        {
+          "Key": "MasteryResistancePiercing",
+          "Formula": "flat",
+          "Arg1": 0.01
+        }
+      ],
+      "ZenGardenSproutWeight": 50,
+      "ZenGardenBoostCost": 12,
+      "ZenGardenDurationOverrideSeconds": 18000,
+      "ZenGardenOffset": {
+        "x": -7,
+        "y": 10
+      },
+      "SuggestionAlts": [
+        "akee",
+        "lightningreed",
+        "peashooter"
+      ]
+    }
+  },
+  "currant_after": {
+    "objclass": "ElectricCurrantProps",
+    "aliases": [
+      "ElectricCurrantDefault"
+    ],
+    "objdata": {
+      "Cost": 150,
+      "BeghouledCost": 1000,
+      "Hitpoints": 200.0,
+      "PacketCooldown": 10.0,
+      "StartingCooldown": 0.05,
+      "PlantFoodPlayCount": 1,
+      "PlantFoodActivationSound": "Play_Plant_Potato_Nitro",
+      "PlantGridType": "ground",
+      "ArtCenter": {
+        "x": 99,
+        "y": 105
+      },
+      "ZombiesAffectedByEating": {
+        "ListType": "excludelist",
+        "List": [
+          "pirate_barrel",
+          "birthday_barrel",
+          "pirate_captain_parrot",
+          "cannon",
+          "piano",
+          "beach_fisherman",
+          "dark_king",
+          "football_mech",
+          "hero_barrel",
+          "bighead_barrel",
+          "roman_ballista"
+        ]
+      },
+      "FromEating": {
+        "EatDuration": 2.5,
+        "LaneChangeDuration": 0.3,
+        "IndifferenceDuration": 1.5,
+        "SoundOfMoveUp": "Play_LightningReed_Electrocute_PF",
+        "SoundOfMoveDown": "Play_LightningReed_Electrocute_PF",
+        "ShouldRegret": false
+      },
+      "KnockbackDetails": {
+        "KnockbackDistance": 0.5,
+        "KnockbackHeight": 85
+      },
+      "Actions": [
+        {
+          "# Orphaned currant normal attack": 0,
+          "Type": "special",
+          "Damage": 48,
+          "CooldownTimeMin": 1.0,
+          "CooldownTimeMax": 1.0,
+          "TriggerType": "rect",
+          "RectTriggerRange": {
+            "mX": -32,
+            "mY": -50,
+            "mWidth": 74,
+            "mHeight": 64
+          }
+        },
+        {
+          "# Orphaned currant powered attack": 0,
+          "Type": "special",
+          "Damage": 80,
+          "CooldownTimeMin": 1.0,
+          "CooldownTimeMax": 1.0,
+          "TriggerType": "rect",
+          "RectTriggerRange": {
+            "mX": -32,
+            "mY": -50,
+            "mWidth": 92,
+            "mHeight": 64
+          }
+        },
+        {
+          "# Currant wall normal": 0,
+          "Type": "special",
+          "CooldownTimeMin": 1.0,
+          "CooldownTimeMax": 1.0,
+          "Damage": 40,
+          "TriggerType": "rect",
+          "RectTriggerRange": {
+            "mX": -42,
+            "mY": -50,
+            "mWidth": 84,
+            "mHeight": 64
+          }
+        },
+        {
+          "# Currant wall powered by plantfood": 0,
+          "Type": "special",
+          "Damage": 80,
+          "TriggerType": "rect",
+          "RectTriggerRange": {
+            "mX": -42,
+            "mY": -50,
+            "mWidth": 84,
+            "mHeight": 64
+          }
+        }
+      ],
+      "Boosts": [
+        {
+          "PlantBoostProps": "RTID(BoostFirstStrike@PropertySheets)",
+          "Value": 1,
+          "CooldownDurationSeconds": 28800
+        }
+      ],
+      "PlantStats": [
+        {
+          "Type": "damage",
+          "Value": "damage3"
+        },
+        {
+          "Type": "area",
+          "Value": "currant"
+        }
+      ],
+      "ScaledProps": [
+        {
+          "Key": "MasteryBoostChance",
+          "Formula": "boost_mastery",
+          "Arg1": 10,
+          "Arg2": 0.01,
+          "comment": "arg2 every arg1 levels"
+        },
+        {
+          "Key": "MasteryResistancePiercing",
+          "Formula": "flat",
+          "Arg1": 0.01
+        }
+      ],
+      "ZenGardenSproutWeight": 50,
+      "ZenGardenBoostCost": 12,
+      "ZenGardenDurationOverrideSeconds": 18000,
+      "ZenGardenOffset": {
+        "x": -7,
+        "y": 10
+      },
+      "SuggestionAlts": [
+        "akee",
+        "lightningreed",
+        "peashooter"
+      ],
+      "Height": "ground"
+    }
+  },
+  "electric_network_framework_unchanged": true,
+  "attack_actions_hp_and_cooldown_unchanged": true,
+  "olivepit_swallow_oil_framework_not_added": true,
+  "ordinary_targeting_source_comparison": {
+    "electriccurrant_framework_target_predicate": "0x808c60",
+    "spikeweed_framework_target_predicate": "0x808c60",
+    "olivepit_framework_target_predicate": "0x1004a94",
+    "olivepit_target_list_is_custom_props_field": true
+  },
+  "other_plant_properties_and_all_levels_unchanged": true,
+  "native_library_not_modified": true,
+  "manifest_and_structinfo_byte_identical": true,
+  "almanac_locales_updated": [
+    "PACKAGES\\LAWNSTRINGS-DE-DE.RTON",
+    "PACKAGES\\LAWNSTRINGS-EN-US.RTON",
+    "PACKAGES\\LAWNSTRINGS-ES-ES.RTON",
+    "PACKAGES\\LAWNSTRINGS-FR-FR.RTON",
+    "PACKAGES\\LAWNSTRINGS-IT-IT.RTON",
+    "PACKAGES\\LAWNSTRINGS-PT-BR.RTON"
+  ],
+  "android_runtime_tested": false,
+  "files": {
+    "Overlay/Packet/Packages.rsgp": "fbb90b35c572ea30037e75f7f28b6cf10f0fe4cbefefc704688dfe044720b54e",
+    "Overlay/Packet/PlantMegaGatlingPuff_1536.rsgp": "6e9aa83f9164eb9eed6a6bde4db7a35d7ddb2f1c339d49e047c06d17eea1dafa",
+    "Overlay/Packet/PlantMegaGatlingPuff_768.rsgp": "4bab094bbf0a8e8b342720d61f2703269a8f2ae9c9f55c3189948fab712d2de9",
+    "Overlay/Packet/PlantMegaGatlingPuff_Common.rsgp": "9f20f6e8b73a23cb65dc1ca539bedfb8d1e98309a06c1d4ce6a98bab14911850",
+    "Overlay/Packet/PlantSweetpea_1536.rsgp": "344c785e75f60cbe482954c918b71a043f03bec503dbda3be7b73fa9f8323384",
+    "Overlay/Packet/PlantSweetpea_768.rsgp": "9e4d93f62c025973b2449cb151ce0e97db0041c13ec8bbe7179bcaeac265f19e",
+    "Overlay/Packet/PlantSweetpea_Common.rsgp": "3fe3db5dd4e3cebcc326e3e7a6a17ff4c65269a3fb8314c6f6928919683a51e1",
+    "Overlay/Packet/SweetpeaEffects_1536.rsgp": "ca238a7fd64963f48a37bb9ad3d0b7d7faa6fec384325b180d181d04be8afffc",
+    "Overlay/Packet/SweetpeaEffects_768.rsgp": "73bed8b1ace909c8167327207e15e18a39c8a15551107721621567ed93b6ac45",
+    "Overlay/Packet/SweetpeaEffects_Common.rsgp": "934b1a8efb0ff1ac67998f5b402ac27ba6643deb27eadf7c1cf230f3554bffe8",
+    "Overlay/Packet/UI_SeedPackets_1536.rsgp": "54ef73df9d3fc160488f200e964b636e53077e5935aedd97133f604c5a2960e0",
+    "Overlay/Packet/UI_SeedPackets_768.rsgp": "0773164ec8c7afe53d38320e7e19ab89e68e70a7f1181181e9152b34946fd766",
+    "Overlay/Packet/__MANIFESTGROUP__.rsgp": "43b5a853d89037e77a16e4e02174f065f366605629be64cc4b82b11edcea7589",
+    "Overlay/StructInfo.json": "067738c2d5c2990c40d7eadd29854a66a47f50b15fbde15980991b809c11cbf8",
+    "Overlay/Packet/ZombieIronKingGroup_1536.rsgp": "04555429575574b3c1c83b1098b7d50b806824404c6cf0923b2f7b5e21a97b62",
+    "Overlay/Packet/ZombieIronKingGroup_768.rsgp": "30cb7397e668d193b745b27586bc335e1cc66b6b218dde6b5d7144560145e80b",
+    "Overlay/Packet/ZombieIronKingGroup_384.rsgp": "2241a64517f59df57d1a7f530bdb8a9c7fb7451006aa7f03f4dd2f25779ef1fc",
+    "Overlay/Packet/ZombieIronKingGroup_Common.rsgp": "d6f692a2bcc765c877fad665210f09a22e42c025977cb4b135b2a9ec83d4c0e5",
+    "Overlay/Packet/WorldPackages_dark.rsgp": "c35950f349faf7e61b14980056dfa87b4520ed646177894c5896fb85ff9bb08f",
+    "Overlay/Packet/ZombieDarkBasicGroup_1536.rsgp": "691c6ef96dbd1a283e65437e9ef71edc577153d5e45c753678d12f158fa9ec08",
+    "Overlay/Packet/ZombieDarkBasicGroup_768.rsgp": "ce38bf88d08c0152ffe4237507fc71e629d01a5ed624e77a5870c89126b2ca67",
+    "Overlay/Packet/ZombieDarkBasicGroup_384.rsgp": "8cecabb33c08d6df3f2a319eeb04854e7bf964c0329dc5045d457930b89ecfae",
+    "Overlay/Packet/ZombieDarkBasicGroup_Common.rsgp": "de9bef8b256462e34038219948b608e195991bd62c105c3ef42274f1dd70bdb8",
+    "Overlay/Packet/UI_ZombiePackets_1536.rsgp": "e4561726ebe489ef9fc3b2d79b4782e2bf5e60ac0efeec30f1be13f9e6936db3",
+    "Overlay/Packet/UI_ZombiePackets_768.rsgp": "52d798ce8ab453d9f4da33d518c91222b07a631b17c8f6e65c44474cf3911067",
+    "Overlay/Packet/UI_ZombiePackets_384.rsgp": "71a1f1730d34950ae42c8cbbe803587bb895635e841c1fefaa6ec961bdfe7870",
+    "Overlay/Packet/Eighties_Speaker_1536.rsgp": "2d2942a0a523fff9f8dc909be34d813e8402892764c566ba7584de20aa13f1c1",
+    "Overlay/Packet/Eighties_Speaker_384.rsgp": "cd8341b100e0d5a60feb9e24a2c8db808541f57b01524a54cd4445b937f6049b",
+    "Overlay/Packet/Eighties_Speaker_768.rsgp": "e2cdeee38bceafaa2ef8d460fe01c0b7dc1e9822287dc8c9804845cc1c4d2807",
+    "Overlay/Packet/Eighties_Speaker_Common.rsgp": "1bac8feb00e523d3c7354602ee010c4028a4481a64abc0f27f0f2c1808eb0696",
+    "Overlay/Packet/PlantBonkchoy_Common.rsgp": "d6d154ac034f330c2a20be7abd396e12a64b5981eed629673e0761c7379f406e"
+  }
+}
