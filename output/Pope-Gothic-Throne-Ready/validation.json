@@ -1,0 +1,158 @@
+{
+  "chair_design": "purple/gold Gothic pointed arch, padded arms, stepped base",
+  "changed_chair_parts": [
+    2,
+    18
+  ],
+  "pam_common_byte_identical": true,
+  "frame_count": 521,
+  "labels": [
+    [
+      0,
+      "intro"
+    ],
+    [
+      97,
+      "idle"
+    ],
+    [
+      217,
+      "idle2"
+    ],
+    [
+      305,
+      "special"
+    ],
+    [
+      425,
+      "die"
+    ],
+    [
+      520,
+      "particles"
+    ]
+  ],
+  "all_bones_offsets_and_cast_events_unchanged": true,
+  "texture_validation": [
+    {
+      "group": "ZombieIronKingGroup_1536",
+      "only_chair_resources_changed": true,
+      "protected_shared_blocks": 0,
+      "dimensions": [
+        1024,
+        1024
+      ],
+      "format": 147,
+      "all_other_resource_pixels_identical": true,
+      "chair_rectangles": [
+        [
+          701,
+          314,
+          169,
+          306
+        ],
+        [
+          701,
+          1,
+          250,
+          311
+        ]
+      ]
+    },
+    {
+      "group": "ZombieIronKingGroup_768",
+      "only_chair_resources_changed": true,
+      "protected_shared_blocks": 0,
+      "dimensions": [
+        512,
+        512
+      ],
+      "format": 147,
+      "all_other_resource_pixels_identical": true,
+      "chair_rectangles": [
+        [
+          352,
+          159,
+          85,
+          153
+        ],
+        [
+          352,
+          1,
+          125,
+          156
+        ]
+      ]
+    },
+    {
+      "group": "ZombieIronKingGroup_384",
+      "only_chair_resources_changed": true,
+      "protected_shared_blocks": 10,
+      "dimensions": [
+        256,
+        256
+      ],
+      "format": 147,
+      "all_other_resource_pixels_identical": true,
+      "chair_rectangles": [
+        [
+          178,
+          81,
+          42,
+          77
+        ],
+        [
+          178,
+          1,
+          63,
+          78
+        ]
+      ]
+    }
+  ],
+  "portrait_validation": [
+    {
+      "group": "UI_ZombiePackets_1536",
+      "other_portraits_pixel_identical": true,
+      "resource_rect_unchanged": [
+        3908,
+        3864,
+        182,
+        228
+      ]
+    },
+    {
+      "group": "UI_ZombiePackets_768",
+      "other_portraits_pixel_identical": true,
+      "resource_rect_unchanged": [
+        1952,
+        1928,
+        91,
+        114
+      ]
+    },
+    {
+      "group": "UI_ZombiePackets_384",
+      "other_portraits_pixel_identical": true,
+      "resource_rect_unchanged": [
+        972,
+        960,
+        46,
+        57
+      ]
+    }
+  ],
+  "resource_ids_atlas_sizes_manifest_structinfo_unchanged": true,
+  "original_king_unchanged": true,
+  "lib_and_gameplay_unchanged": true,
+  "android_runtime_tested": false,
+  "files": {
+    "UI_ZombiePackets_1536.rsgp": "b5a63c640559342c5768824341965d6441a05e4aa8f1640290cb9f111cca91cc",
+    "UI_ZombiePackets_384.rsgp": "49e7371bd5307b2e44c5c257696c19867e4a20ec948fd598e92b93aa0b38dfa8",
+    "UI_ZombiePackets_768.rsgp": "882d27bbbdab778f927a4e2792d4807e654b826ee93c828285581109e3396a85",
+    "ZombieIronKingGroup_1536.rsgp": "a1412bbf794ed47202a4f08e4444418b576fa3a5328315551087a16112430a45",
+    "ZombieIronKingGroup_384.rsgp": "f2a2d0e16112369b43e779bfdd05dc2655b891a9d9a3f2f59d7653e2eb972998",
+    "ZombieIronKingGroup_768.rsgp": "70220521b5d5b202b2f36abc6a23e6ceffdc1ea8ca3abbd22168f465ebacf946",
+    "ZombieIronKingGroup_Common.rsgp": "5e4cb04f1f40203526fcd1c842bb6615c0c4b73e48814aa8072f5f3253bf955c"
+  }
+}
