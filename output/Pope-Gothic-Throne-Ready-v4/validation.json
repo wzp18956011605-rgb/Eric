@@ -1,0 +1,186 @@
+{
+  "chair_design": "purple/gold Gothic pointed arch, padded arms, stepped base",
+  "changed_chair_parts": [
+    2,
+    18
+  ],
+  "pam_common_byte_identical": false,
+  "only_crown_image_header_changed": true,
+  "costume_parts_updated": [
+    34
+  ],
+  "this_update_only_staff_bitmap_changed": true,
+  "previous_mitre_and_hidden_old_jewels_retained": true,
+  "staff_design": "gold three-bar papal cross staff with purple insets, white center jewel and purple grip",
+  "old_separate_staff_jewels_hidden": true,
+  "previous_purple_casting_sleeve_and_herald_unchanged": true,
+  "crown_design": "short purple/gold double-pointed mitre with white round jewel",
+  "crown_transform": {
+    "image": 53,
+    "old": {
+      "name": "zombie_iron_king_48x25|IMAGE_ZOMBIE_ZOMBIE_IRON_KING_ZOMBIE_IRON_KING_48X25",
+      "size": [
+        48,
+        25
+      ],
+      "matrix": [
+        1.15,
+        0.0,
+        0.0,
+        1.5525001525878905,
+        -8.55,
+        -14.15
+      ]
+    },
+    "new": {
+      "name": "zombie_iron_king_48x25|IMAGE_ZOMBIE_ZOMBIE_IRON_KING_ZOMBIE_IRON_KING_48X25",
+      "size": [
+        48,
+        25
+      ],
+      "matrix": [
+        1.15,
+        0.0,
+        0.0,
+        1.3,
+        -8.55,
+        -7.85
+      ]
+    },
+    "only_crown_image_transform_changed": true,
+    "animation_frames_events_and_other_image_matrices_identical": true
+  },
+  "frame_count": 521,
+  "labels": [
+    [
+      0,
+      "intro"
+    ],
+    [
+      97,
+      "idle"
+    ],
+    [
+      217,
+      "idle2"
+    ],
+    [
+      305,
+      "special"
+    ],
+    [
+      425,
+      "die"
+    ],
+    [
+      520,
+      "particles"
+    ]
+  ],
+  "all_animation_bones_and_cast_events_unchanged": true,
+  "crown_image_anchor_adjusted": true,
+  "texture_validation": [
+    {
+      "group": "ZombieIronKingGroup_1536",
+      "only_requested_costume_parts_changed": true,
+      "protected_shared_blocks": 0,
+      "dimensions": [
+        1024,
+        1024
+      ],
+      "format": 147,
+      "all_other_resource_pixels_identical": true,
+      "chair_rectangles": [
+        [
+          977,
+          505,
+          44,
+          132
+        ]
+      ]
+    },
+    {
+      "group": "ZombieIronKingGroup_768",
+      "only_requested_costume_parts_changed": true,
+      "protected_shared_blocks": 0,
+      "dimensions": [
+        512,
+        512
+      ],
+      "format": 147,
+      "all_other_resource_pixels_identical": true,
+      "chair_rectangles": [
+        [
+          483,
+          302,
+          22,
+          66
+        ]
+      ]
+    },
+    {
+      "group": "ZombieIronKingGroup_384",
+      "only_requested_costume_parts_changed": true,
+      "protected_shared_blocks": 5,
+      "dimensions": [
+        256,
+        256
+      ],
+      "format": 147,
+      "all_other_resource_pixels_identical": true,
+      "chair_rectangles": [
+        [
+          243,
+          1,
+          11,
+          33
+        ]
+      ]
+    }
+  ],
+  "portrait_validation": [
+    {
+      "group": "UI_ZombiePackets_1536",
+      "other_portraits_pixel_identical": true,
+      "resource_rect_unchanged": [
+        3908,
+        3864,
+        182,
+        228
+      ]
+    },
+    {
+      "group": "UI_ZombiePackets_768",
+      "other_portraits_pixel_identical": true,
+      "resource_rect_unchanged": [
+        1952,
+        1928,
+        91,
+        114
+      ]
+    },
+    {
+      "group": "UI_ZombiePackets_384",
+      "other_portraits_pixel_identical": true,
+      "resource_rect_unchanged": [
+        972,
+        960,
+        46,
+        57
+      ]
+    }
+  ],
+  "resource_ids_atlas_sizes_manifest_structinfo_unchanged": true,
+  "original_king_unchanged": true,
+  "lib_and_gameplay_unchanged": true,
+  "android_runtime_tested": false,
+  "files": {
+    "UI_ZombiePackets_1536.rsgp": "e4561726ebe489ef9fc3b2d79b4782e2bf5e60ac0efeec30f1be13f9e6936db3",
+    "UI_ZombiePackets_384.rsgp": "71a1f1730d34950ae42c8cbbe803587bb895635e841c1fefaa6ec961bdfe7870",
+    "UI_ZombiePackets_768.rsgp": "52d798ce8ab453d9f4da33d518c91222b07a631b17c8f6e65c44474cf3911067",
+    "ZombieIronKingGroup_1536.rsgp": "04555429575574b3c1c83b1098b7d50b806824404c6cf0923b2f7b5e21a97b62",
+    "ZombieIronKingGroup_384.rsgp": "2241a64517f59df57d1a7f530bdb8a9c7fb7451006aa7f03f4dd2f25779ef1fc",
+    "ZombieIronKingGroup_768.rsgp": "30cb7397e668d193b745b27586bc335e1cc66b6b218dde6b5d7144560145e80b",
+    "ZombieIronKingGroup_Common.rsgp": "d6f692a2bcc765c877fad665210f09a22e42c025977cb4b135b2a9ec83d4c0e5"
+  }
+}
