@@ -1,0 +1,365 @@
+{
+  "version": "11.2",
+  "only_six_OBB_texture_packets_changed": [
+    "ZombieDarkBasicGroup_768.rsgp",
+    "UI_ZombiePackets_1536.rsgp",
+    "UI_ZombiePackets_768.rsgp",
+    "UI_ZombiePackets_384.rsgp",
+    "ZombieDarkBasicGroup_384.rsgp",
+    "ZombieDarkBasicGroup_1536.rsgp"
+  ],
+  "OBB_gameplay_properties_unchanged": true,
+  "original_PAM_bones_unchanged": true,
+  "non_armor_atlas_pixels_unchanged": true,
+  "registry_and_structinfo_unchanged": true,
+  "joint_fit": {
+    "original_bone_fit_used": true,
+    "outer_elbow_pivot_previously_outside_alpha": true,
+    "fitted_overlap_caps": [
+      [
+        67,
+        20.57,
+        51.71,
+        3.3
+      ],
+      [
+        66,
+        23.13,
+        17.04,
+        3.0
+      ],
+      [
+        66,
+        12.72,
+        39.97,
+        2.4
+      ],
+      [
+        65,
+        17.98,
+        12.16,
+        2.4
+      ]
+    ],
+    "reused_original_knight_hinge": true,
+    "no_animation_transform_changes": true
+  },
+  "fire_native": {
+    "python_js_identical": true,
+    "accept_v11_with_or_without_old25": true,
+    "accept_v9p1_elf_layout": true,
+    "headers_and_file_size_preserved": true,
+    "only_fire_hook_and_36byte_stub_changed_from_v11": true,
+    "pope_code_unchanged_from_v11": true,
+    "idempotent": true,
+    "reject_conflicts": true,
+    "old_thaw_and_slow_removal_unchanged": true,
+    "condition_scope_unchanged_fire_flag9_and_chill_condition0": true,
+    "multiplier": 1.5,
+    "emulated_cases": [
+      {
+        "input": [
+          40,
+          1,
+          1,
+          0,
+          0
+        ],
+        "original": {
+          "damage": 40.0,
+          "chill": 0,
+          "freeze": 0,
+          "other": 0,
+          "notify": [
+            1,
+            0
+          ]
+        },
+        "new": {
+          "damage": 60.0,
+          "chill": 0,
+          "freeze": 0,
+          "other": 0,
+          "notify": [
+            1,
+            0
+          ]
+        }
+      },
+      {
+        "input": [
+          70,
+          1,
+          1,
+          0,
+          0
+        ],
+        "original": {
+          "damage": 70.0,
+          "chill": 0,
+          "freeze": 0,
+          "other": 0,
+          "notify": [
+            1,
+            0
+          ]
+        },
+        "new": {
+          "damage": 105.0,
+          "chill": 0,
+          "freeze": 0,
+          "other": 0,
+          "notify": [
+            1,
+            0
+          ]
+        }
+      },
+      {
+        "input": [
+          100,
+          1,
+          1,
+          1,
+          0
+        ],
+        "original": {
+          "damage": 100.0,
+          "chill": 0,
+          "freeze": 0,
+          "other": 0,
+          "notify": [
+            1,
+            0
+          ]
+        },
+        "new": {
+          "damage": 150.0,
+          "chill": 0,
+          "freeze": 0,
+          "other": 0,
+          "notify": [
+            1,
+            0
+          ]
+        }
+      },
+      {
+        "input": [
+          40,
+          1,
+          0,
+          0,
+          0
+        ],
+        "original": {
+          "damage": 40.0,
+          "chill": 0,
+          "freeze": 0,
+          "other": 0,
+          "notify": [
+            1,
+            0
+          ]
+        },
+        "new": {
+          "damage": 40.0,
+          "chill": 0,
+          "freeze": 0,
+          "other": 0,
+          "notify": [
+            1,
+            0
+          ]
+        }
+      },
+      {
+        "input": [
+          40,
+          0,
+          1,
+          0,
+          0
+        ],
+        "original": {
+          "damage": 40.0,
+          "chill": 1,
+          "freeze": 0,
+          "other": 0,
+          "notify": []
+        },
+        "new": {
+          "damage": 40.0,
+          "chill": 1,
+          "freeze": 0,
+          "other": 0,
+          "notify": []
+        }
+      },
+      {
+        "input": [
+          40,
+          1,
+          0,
+          1,
+          0
+        ],
+        "original": {
+          "damage": 40.0,
+          "chill": 0,
+          "freeze": 0,
+          "other": 0,
+          "notify": [
+            1,
+            0
+          ]
+        },
+        "new": {
+          "damage": 40.0,
+          "chill": 0,
+          "freeze": 0,
+          "other": 0,
+          "notify": [
+            1,
+            0
+          ]
+        }
+      },
+      {
+        "input": [
+          40,
+          1,
+          0,
+          0,
+          1
+        ],
+        "original": {
+          "damage": 40.0,
+          "chill": 0,
+          "freeze": 0,
+          "other": 1,
+          "notify": [
+            1,
+            0
+          ]
+        },
+        "new": {
+          "damage": 40.0,
+          "chill": 0,
+          "freeze": 0,
+          "other": 1,
+          "notify": [
+            1,
+            0
+          ]
+        }
+      },
+      {
+        "input": [
+          0,
+          1,
+          1,
+          0,
+          0
+        ],
+        "original": {
+          "damage": 0.0,
+          "chill": 1,
+          "freeze": 0,
+          "other": 0,
+          "notify": []
+        },
+        "new": {
+          "damage": 0.0,
+          "chill": 1,
+          "freeze": 0,
+          "other": 0,
+          "notify": []
+        }
+      },
+      {
+        "input": [
+          -10,
+          1,
+          1,
+          0,
+          0
+        ],
+        "original": {
+          "damage": -10.0,
+          "chill": 1,
+          "freeze": 0,
+          "other": 0,
+          "notify": []
+        },
+        "new": {
+          "damage": -10.0,
+          "chill": 1,
+          "freeze": 0,
+          "other": 0,
+          "notify": []
+        }
+      }
+    ],
+    "runtime_tested": false
+  },
+  "portrait_validation": [
+    {
+      "res": "1536",
+      "blocks": 1914,
+      "protected_blocks_skipped": 0,
+      "other_resources_unchanged": true
+    },
+    {
+      "res": "768",
+      "blocks": 493,
+      "protected_blocks_skipped": 0,
+      "other_resources_unchanged": true
+    },
+    {
+      "res": "384",
+      "blocks": 135,
+      "protected_blocks_skipped": 0,
+      "other_resources_unchanged": true
+    }
+  ],
+  "HD_preview": {
+    "direct_physical_atlas_affine_rendering": true,
+    "no_pre_downsample_to_logical_size": true,
+    "lossless_APNG_30fps": true,
+    "GIF_fixed_global_palette": true
+  },
+  "packet_sha256": {
+    "Eighties_Speaker_1536.rsgp": "2d2942a0a523fff9f8dc909be34d813e8402892764c566ba7584de20aa13f1c1",
+    "PlantMegaGatlingPuff_1536.rsgp": "6e9aa83f9164eb9eed6a6bde4db7a35d7ddb2f1c339d49e047c06d17eea1dafa",
+    "PlantSweetpea_768.rsgp": "9e4d93f62c025973b2449cb151ce0e97db0041c13ec8bbe7179bcaeac265f19e",
+    "ZombieDarkBasicGroup_768.rsgp": "db280ac0b83f63571b9d9b062c693fb8d531e4d6141ceff4a5de74a03276bf02",
+    "UI_ZombiePackets_1536.rsgp": "555965572115bc6b052193725279c703141d7d48f75ea7d42de1fcdf358252d4",
+    "UI_ZombiePackets_768.rsgp": "38a69e4222aeb9edb749c9ba759932292dcc46cd9bbcfa571cb4c3185f253c83",
+    "UI_SeedPackets_768.rsgp": "0773164ec8c7afe53d38320e7e19ab89e68e70a7f1181181e9152b34946fd766",
+    "ZombieIronKingGroup_Common.rsgp": "d6f692a2bcc765c877fad665210f09a22e42c025977cb4b135b2a9ec83d4c0e5",
+    "PlantBonkchoy_Common.rsgp": "d6d154ac034f330c2a20be7abd396e12a64b5981eed629673e0761c7379f406e",
+    "SweetpeaEffects_1536.rsgp": "ca238a7fd64963f48a37bb9ad3d0b7d7faa6fec384325b180d181d04be8afffc",
+    "UI_ZombiePackets_384.rsgp": "2041a8bacf81ca5ac5eeb768e4297ba0821f2c81a8cc8a47b3aaaad8511bca9b",
+    "SweetpeaEffects_768.rsgp": "73bed8b1ace909c8167327207e15e18a39c8a15551107721621567ed93b6ac45",
+    "ZombieIronKingGroup_1536.rsgp": "04555429575574b3c1c83b1098b7d50b806824404c6cf0923b2f7b5e21a97b62",
+    "ZombieDarkBasicGroup_384.rsgp": "af00dd2b7484e8bd2ddf2757d9306d1d28f47000fb0c1686f4e5658225c2e0f3",
+    "__MANIFESTGROUP__.rsgp": "43b5a853d89037e77a16e4e02174f065f366605629be64cc4b82b11edcea7589",
+    "ZombieDarkBasicGroup_1536.rsgp": "66ed2d34d13a13099d7ba38bae8909244b8da0dfde4b5230db0408da4fb8bc45",
+    "WorldPackages_dark.rsgp": "c35950f349faf7e61b14980056dfa87b4520ed646177894c5896fb85ff9bb08f",
+    "ZombieIronKingGroup_384.rsgp": "2241a64517f59df57d1a7f530bdb8a9c7fb7451006aa7f03f4dd2f25779ef1fc",
+    "Packages.rsgp": "ebd613afdf1a1737010bc77763c31c0b6041693208f0f03e72c40a5bd82f1991",
+    "PlantSweetpea_Common.rsgp": "3fe3db5dd4e3cebcc326e3e7a6a17ff4c65269a3fb8314c6f6928919683a51e1",
+    "PlantSweetpea_1536.rsgp": "344c785e75f60cbe482954c918b71a043f03bec503dbda3be7b73fa9f8323384",
+    "PlantMegaGatlingPuff_768.rsgp": "4bab094bbf0a8e8b342720d61f2703269a8f2ae9c9f55c3189948fab712d2de9",
+    "ZombieIronKingGroup_768.rsgp": "30cb7397e668d193b745b27586bc335e1cc66b6b218dde6b5d7144560145e80b",
+    "SweetpeaEffects_Common.rsgp": "934b1a8efb0ff1ac67998f5b402ac27ba6643deb27eadf7c1cf230f3554bffe8",
+    "ZombieDarkBasicGroup_Common.rsgp": "de9bef8b256462e34038219948b608e195991bd62c105c3ef42274f1dd70bdb8",
+    "UI_SeedPackets_1536.rsgp": "54ef73df9d3fc160488f200e964b636e53077e5935aedd97133f604c5a2960e0",
+    "Eighties_Speaker_384.rsgp": "cd8341b100e0d5a60feb9e24a2c8db808541f57b01524a54cd4445b937f6049b",
+    "Eighties_Speaker_Common.rsgp": "1bac8feb00e523d3c7354602ee010c4028a4481a64abc0f27f0f2c1808eb0696",
+    "Eighties_Speaker_768.rsgp": "e2cdeee38bceafaa2ef8d460fe01c0b7dc1e9822287dc8c9804845cc1c4d2807",
+    "PlantMegaGatlingPuff_Common.rsgp": "9f20f6e8b73a23cb65dc1ca539bedfb8d1e98309a06c1d4ce6a98bab14911850"
+  },
+  "runtime_tested": false
+}
