@@ -1,0 +1,22 @@
+{
+  "version": 15,
+  "changed_packets": [
+    "SweetpeaEffects_1536.rsgp",
+    "SweetpeaEffects_768.rsgp",
+    "__MANIFESTGROUP__.rsgp",
+    "Packages.rsgp",
+    "SweetpeaEffects_Common.rsgp"
+  ],
+  "only_child_projectile_visual_reference_changed": true,
+  "main_projectile_and_plantfood_unchanged": true,
+  "all_gameplay_numbers_unchanged": true,
+  "original_effects_PAM_unchanged": true,
+  "new_PAM_frames": 24,
+  "resolution": [
+    1536,
+    768
+  ],
+  "new_atlas_format": "RGBA8888",
+  "lib_change_required": false,
+  "game_runtime_tested": false
+}
