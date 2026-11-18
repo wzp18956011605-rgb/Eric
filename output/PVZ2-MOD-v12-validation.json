@@ -1,0 +1,213 @@
+{
+  "version": "12",
+  "approved_design_adapted_to_original_skeleton": true,
+  "fifteen_armor_cloth_parts": true,
+  "five_transparent_original_hand_overlays": true,
+  "no_row_warp_or_original_skin_mask_clipping": true,
+  "native_tools_identical_to_v11p2": true,
+  "fire_multiplier_1p5_unchanged": true,
+  "pope_body_only_original_headgear_preserved_unchanged": true,
+  "only_six_OBB_texture_packets_changed": [
+    "ZombieDarkBasicGroup_768.rsgp",
+    "UI_ZombiePackets_1536.rsgp",
+    "UI_ZombiePackets_768.rsgp",
+    "UI_ZombiePackets_384.rsgp",
+    "ZombieDarkBasicGroup_384.rsgp",
+    "ZombieDarkBasicGroup_1536.rsgp"
+  ],
+  "OBB_gameplay_properties_unchanged": true,
+  "original_PAM_bones_unchanged": true,
+  "non_armor_atlas_pixels_unchanged": true,
+  "registry_and_structinfo_unchanged": true,
+  "art_fit": [
+    {
+      "image": 52,
+      "exposed_original_green_hand": true
+    },
+    {
+      "image": 53,
+      "original_bone_registration": true,
+      "affine_art_fit_only": true,
+      "charcoal_cloth_backing": true,
+      "no_original_skin_mask_clipping_or_row_warp": true
+    },
+    {
+      "image": 54,
+      "original_bone_registration": true,
+      "affine_art_fit_only": true,
+      "charcoal_cloth_backing": true,
+      "no_original_skin_mask_clipping_or_row_warp": true
+    },
+    {
+      "image": 55,
+      "original_bone_registration": true,
+      "affine_art_fit_only": true,
+      "charcoal_cloth_backing": true,
+      "no_original_skin_mask_clipping_or_row_warp": true
+    },
+    {
+      "image": 56,
+      "original_bone_registration": true,
+      "affine_art_fit_only": true,
+      "charcoal_cloth_backing": true,
+      "no_original_skin_mask_clipping_or_row_warp": true
+    },
+    {
+      "image": 57,
+      "original_bone_registration": true,
+      "affine_art_fit_only": true,
+      "charcoal_cloth_backing": true,
+      "no_original_skin_mask_clipping_or_row_warp": true
+    },
+    {
+      "image": 58,
+      "original_bone_registration": true,
+      "affine_art_fit_only": true,
+      "charcoal_cloth_backing": true,
+      "no_original_skin_mask_clipping_or_row_warp": true
+    },
+    {
+      "image": 59,
+      "original_bone_registration": true,
+      "affine_art_fit_only": true,
+      "charcoal_cloth_backing": true,
+      "no_original_skin_mask_clipping_or_row_warp": true
+    },
+    {
+      "image": 60,
+      "original_bone_registration": true,
+      "affine_art_fit_only": true,
+      "charcoal_cloth_backing": true,
+      "no_original_skin_mask_clipping_or_row_warp": true
+    },
+    {
+      "image": 61,
+      "original_bone_registration": true,
+      "affine_art_fit_only": true,
+      "charcoal_cloth_backing": true,
+      "no_original_skin_mask_clipping_or_row_warp": true
+    },
+    {
+      "image": 62,
+      "original_bone_registration": true,
+      "affine_art_fit_only": true,
+      "charcoal_cloth_backing": true,
+      "no_original_skin_mask_clipping_or_row_warp": true
+    },
+    {
+      "image": 63,
+      "original_bone_registration": true,
+      "affine_art_fit_only": true,
+      "charcoal_cloth_backing": true,
+      "no_original_skin_mask_clipping_or_row_warp": true
+    },
+    {
+      "image": 64,
+      "original_bone_registration": true,
+      "affine_art_fit_only": true,
+      "charcoal_cloth_backing": true,
+      "no_original_skin_mask_clipping_or_row_warp": true
+    },
+    {
+      "image": 65,
+      "exposed_original_green_hand": true
+    },
+    {
+      "image": 66,
+      "original_bone_registration": true,
+      "affine_art_fit_only": true,
+      "charcoal_cloth_backing": true,
+      "no_original_skin_mask_clipping_or_row_warp": true
+    },
+    {
+      "image": 67,
+      "original_bone_registration": true,
+      "affine_art_fit_only": true,
+      "charcoal_cloth_backing": true,
+      "no_original_skin_mask_clipping_or_row_warp": true
+    },
+    {
+      "image": 68,
+      "original_bone_registration": true,
+      "affine_art_fit_only": true,
+      "charcoal_cloth_backing": true,
+      "no_original_skin_mask_clipping_or_row_warp": true
+    },
+    {
+      "image": 69,
+      "exposed_original_green_hand": true
+    },
+    {
+      "image": 70,
+      "exposed_original_green_hand": true
+    },
+    {
+      "image": 71,
+      "exposed_original_green_hand": true
+    }
+  ],
+  "portrait_validation": [
+    {
+      "res": "1536",
+      "blocks": 1914,
+      "protected_blocks_skipped": 0,
+      "other_resources_unchanged": true
+    },
+    {
+      "res": "768",
+      "blocks": 493,
+      "protected_blocks_skipped": 0,
+      "other_resources_unchanged": true
+    },
+    {
+      "res": "384",
+      "blocks": 135,
+      "protected_blocks_skipped": 0,
+      "other_resources_unchanged": true
+    }
+  ],
+  "rendered_pose_checks": [
+    "idle",
+    "walk",
+    "eat"
+  ],
+  "HD_preview": {
+    "direct_physical_atlas_affine_rendering": true,
+    "no_pre_downsample_to_logical_size": true,
+    "lossless_APNG_30fps": true,
+    "GIF_fixed_global_palette": true
+  },
+  "packet_sha256": {
+    "Eighties_Speaker_1536.rsgp": "2d2942a0a523fff9f8dc909be34d813e8402892764c566ba7584de20aa13f1c1",
+    "PlantMegaGatlingPuff_1536.rsgp": "6e9aa83f9164eb9eed6a6bde4db7a35d7ddb2f1c339d49e047c06d17eea1dafa",
+    "PlantSweetpea_768.rsgp": "9e4d93f62c025973b2449cb151ce0e97db0041c13ec8bbe7179bcaeac265f19e",
+    "ZombieDarkBasicGroup_768.rsgp": "fb1fe0683a0d65b844d7ff6a4a32ee67e770991fcc3c136e9c9a9eaf7a42f5e5",
+    "UI_ZombiePackets_1536.rsgp": "b7fa9729b8a9e51857bc7176a90e9a298e87d8ba844c2185dfab6c07340f48b8",
+    "UI_ZombiePackets_768.rsgp": "c24ff9f2c4b5c01a0e886bef220b6a49d9775a4c240063e18a92d6fdccec04a0",
+    "UI_SeedPackets_768.rsgp": "0773164ec8c7afe53d38320e7e19ab89e68e70a7f1181181e9152b34946fd766",
+    "ZombieIronKingGroup_Common.rsgp": "d6f692a2bcc765c877fad665210f09a22e42c025977cb4b135b2a9ec83d4c0e5",
+    "PlantBonkchoy_Common.rsgp": "d6d154ac034f330c2a20be7abd396e12a64b5981eed629673e0761c7379f406e",
+    "SweetpeaEffects_1536.rsgp": "ca238a7fd64963f48a37bb9ad3d0b7d7faa6fec384325b180d181d04be8afffc",
+    "UI_ZombiePackets_384.rsgp": "7c9a295cc4eb838b971cebb690c459d1e8b7d587a0d3a13e618a61df4e8061a9",
+    "SweetpeaEffects_768.rsgp": "73bed8b1ace909c8167327207e15e18a39c8a15551107721621567ed93b6ac45",
+    "ZombieIronKingGroup_1536.rsgp": "04555429575574b3c1c83b1098b7d50b806824404c6cf0923b2f7b5e21a97b62",
+    "ZombieDarkBasicGroup_384.rsgp": "91aeb90d85303c7f1a29308eee3f20cd8cfaf56395e4685a7abfad996ce616e6",
+    "__MANIFESTGROUP__.rsgp": "43b5a853d89037e77a16e4e02174f065f366605629be64cc4b82b11edcea7589",
+    "ZombieDarkBasicGroup_1536.rsgp": "5e609ed7067b70095faae97920657395cc82684952686d30a791199c75a73e2f",
+    "WorldPackages_dark.rsgp": "c35950f349faf7e61b14980056dfa87b4520ed646177894c5896fb85ff9bb08f",
+    "ZombieIronKingGroup_384.rsgp": "2241a64517f59df57d1a7f530bdb8a9c7fb7451006aa7f03f4dd2f25779ef1fc",
+    "Packages.rsgp": "ebd613afdf1a1737010bc77763c31c0b6041693208f0f03e72c40a5bd82f1991",
+    "PlantSweetpea_Common.rsgp": "3fe3db5dd4e3cebcc326e3e7a6a17ff4c65269a3fb8314c6f6928919683a51e1",
+    "PlantSweetpea_1536.rsgp": "344c785e75f60cbe482954c918b71a043f03bec503dbda3be7b73fa9f8323384",
+    "PlantMegaGatlingPuff_768.rsgp": "4bab094bbf0a8e8b342720d61f2703269a8f2ae9c9f55c3189948fab712d2de9",
+    "ZombieIronKingGroup_768.rsgp": "30cb7397e668d193b745b27586bc335e1cc66b6b218dde6b5d7144560145e80b",
+    "SweetpeaEffects_Common.rsgp": "934b1a8efb0ff1ac67998f5b402ac27ba6643deb27eadf7c1cf230f3554bffe8",
+    "ZombieDarkBasicGroup_Common.rsgp": "de9bef8b256462e34038219948b608e195991bd62c105c3ef42274f1dd70bdb8",
+    "UI_SeedPackets_1536.rsgp": "54ef73df9d3fc160488f200e964b636e53077e5935aedd97133f604c5a2960e0",
+    "Eighties_Speaker_384.rsgp": "cd8341b100e0d5a60feb9e24a2c8db808541f57b01524a54cd4445b937f6049b",
+    "Eighties_Speaker_Common.rsgp": "1bac8feb00e523d3c7354602ee010c4028a4481a64abc0f27f0f2c1808eb0696",
+    "Eighties_Speaker_768.rsgp": "e2cdeee38bceafaa2ef8d460fe01c0b7dc1e9822287dc8c9804845cc1c4d2807",
+    "PlantMegaGatlingPuff_Common.rsgp": "9f20f6e8b73a23cb65dc1ca539bedfb8d1e98309a06c1d4ce6a98bab14911850"
+  },
+  "runtime_tested": false
+}
