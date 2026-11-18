@@ -1,0 +1,52 @@
+{
+  "actual_enum_registration_executed": {
+    "metallic": 1,
+    "damageable": 2
+  },
+  "actual_native_selector_c8d704_executed": true,
+  "actual_native_target_predicate_c9b390_executed": true,
+  "actual_original_magnet_fallback_executed": true,
+  "cases": [
+    {
+      "name": "body_only",
+      "old_mask_returns_no_item": true,
+      "fixed_absorption_order": [
+        "PaladinSuit"
+      ],
+      "one_piece_per_pull": true
+    },
+    {
+      "name": "cone_and_body",
+      "old_mask_returns_no_item": true,
+      "fixed_absorption_order": [
+        "PaladinSuit"
+      ],
+      "one_piece_per_pull": true
+    },
+    {
+      "name": "bucket_and_body",
+      "old_mask_returns_no_item": true,
+      "fixed_absorption_order": [
+        "Bucket",
+        "PaladinSuit"
+      ],
+      "one_piece_per_pull": true
+    },
+    {
+      "name": "knight_and_body",
+      "old_mask_returns_no_item": true,
+      "fixed_absorption_order": [
+        "Crown",
+        "PaladinSuit"
+      ],
+      "one_piece_per_pull": true
+    }
+  ],
+  "plain_cone_not_magnetic": true,
+  "drop_damage_mask_0x200000_preserved": true,
+  "only_4bytes_change_from_v11p2": true,
+  "python_js_identical_and_idempotent": true,
+  "pope_and_fire_code_unchanged": true,
+  "engine_handle_and_effect_apis_stubbed": true,
+  "runtime_tested": false
+}
