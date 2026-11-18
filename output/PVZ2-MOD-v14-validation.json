@@ -1,0 +1,404 @@
+{
+  "version": "14",
+  "visual_design": "fixed full-cover armor agreed before preview",
+  "changed_texture_packets": [
+    "ZombieDarkBasicGroup_768.rsgp",
+    "UI_ZombiePackets_1536.rsgp",
+    "UI_ZombiePackets_768.rsgp",
+    "UI_ZombiePackets_384.rsgp",
+    "ZombieDarkBasicGroup_384.rsgp",
+    "ZombieDarkBasicGroup_1536.rsgp"
+  ],
+  "all_OBB_gameplay_properties_unchanged_from_v13": true,
+  "original_bones_and_all_PAM_unchanged_from_v13": true,
+  "registry_and_structinfo_unchanged_from_v13": true,
+  "non_armor_atlas_pixels_unchanged": true,
+  "three_damage_states_preserved": true,
+  "body_armor1600_and_fire1p5_preserved": true,
+  "native_magnet_fix": {
+    "actual_enum_registration_executed": {
+      "metallic": 1,
+      "damageable": 2
+    },
+    "actual_native_selector_c8d704_executed": true,
+    "cached_and_property_fallback_flags_tested": true,
+    "v9p1_compatible_header_preserved": true,
+    "actual_native_target_predicate_c9b390_executed": true,
+    "actual_original_magnet_fallback_executed": true,
+    "cases": [
+      {
+        "name": "body_only",
+        "old_mask_returns_no_item": true,
+        "fixed_absorption_order": [
+          "PaladinSuit"
+        ],
+        "one_piece_per_pull": true
+      },
+      {
+        "name": "cone_and_body",
+        "old_mask_returns_no_item": true,
+        "fixed_absorption_order": [
+          "PaladinSuit"
+        ],
+        "one_piece_per_pull": true
+      },
+      {
+        "name": "bucket_and_body",
+        "old_mask_returns_no_item": true,
+        "fixed_absorption_order": [
+          "Bucket",
+          "PaladinSuit"
+        ],
+        "one_piece_per_pull": true
+      },
+      {
+        "name": "knight_and_body",
+        "old_mask_returns_no_item": true,
+        "fixed_absorption_order": [
+          "Crown",
+          "PaladinSuit"
+        ],
+        "one_piece_per_pull": true
+      }
+    ],
+    "plain_cone_not_magnetic": true,
+    "drop_damage_mask_0x200000_preserved": true,
+    "only_4bytes_change_from_v11p2": true,
+    "python_js_identical_and_idempotent": true,
+    "pope_and_fire_code_unchanged": true,
+    "engine_handle_and_effect_apis_stubbed": true,
+    "runtime_tested": false
+  },
+  "art": {
+    "style": "fixed full-cover plate armor design",
+    "three_stages_registered_to_one_crop_per_part": true,
+    "exposed_cloth_covered_with_new_steel_parts": true,
+    "original_green_hands_and_leather_heels_preserved": true,
+    "registry_and_original_skeleton_unchanged_from_v13": true,
+    "parts": [
+      {
+        "image": 53,
+        "shared_three_state_crop": [
+          59,
+          29,
+          137,
+          172
+        ],
+        "target_registration": [
+          4,
+          4,
+          30,
+          52
+        ],
+        "intact_cloth_covered": true
+      },
+      {
+        "image": 54,
+        "shared_three_state_crop": [
+          46,
+          27,
+          151,
+          176
+        ],
+        "target_registration": [
+          4,
+          4,
+          27,
+          61
+        ],
+        "intact_cloth_covered": true
+      },
+      {
+        "image": 56,
+        "shared_three_state_crop": [
+          59,
+          26,
+          145,
+          174
+        ],
+        "target_registration": [
+          4,
+          4,
+          34,
+          45
+        ],
+        "intact_cloth_covered": true
+      },
+      {
+        "image": 57,
+        "shared_three_state_crop": [
+          43,
+          72,
+          155,
+          138
+        ],
+        "target_registration": [
+          4,
+          4,
+          51,
+          30
+        ],
+        "intact_cloth_covered": false
+      },
+      {
+        "image": 58,
+        "shared_three_state_crop": [
+          58,
+          26,
+          137,
+          167
+        ],
+        "target_registration": [
+          4,
+          4,
+          21,
+          50
+        ],
+        "intact_cloth_covered": true
+      },
+      {
+        "image": 59,
+        "shared_three_state_crop": [
+          5,
+          51,
+          189,
+          156
+        ],
+        "target_registration": [
+          4,
+          4,
+          55,
+          32
+        ],
+        "intact_cloth_covered": true
+      },
+      {
+        "image": 60,
+        "shared_three_state_crop": [
+          65,
+          25,
+          142,
+          171
+        ],
+        "target_registration": [
+          4,
+          4,
+          18,
+          46
+        ],
+        "intact_cloth_covered": true
+      },
+      {
+        "image": 62,
+        "shared_three_state_crop": [
+          43,
+          63,
+          157,
+          134
+        ],
+        "target_registration": [
+          4,
+          4,
+          53,
+          32
+        ],
+        "intact_cloth_covered": false
+      },
+      {
+        "image": 63,
+        "shared_three_state_crop": [
+          54,
+          23,
+          139,
+          166
+        ],
+        "target_registration": [
+          4,
+          4,
+          23,
+          49
+        ],
+        "intact_cloth_covered": true
+      },
+      {
+        "image": 64,
+        "shared_three_state_crop": [
+          17,
+          10,
+          181,
+          191
+        ],
+        "target_registration": [
+          4,
+          4,
+          79,
+          107
+        ],
+        "intact_cloth_covered": true
+      },
+      {
+        "image": 66,
+        "shared_three_state_crop": [
+          61,
+          21,
+          142,
+          164
+        ],
+        "target_registration": [
+          4,
+          4,
+          34,
+          53
+        ],
+        "intact_cloth_covered": true
+      },
+      {
+        "image": 67,
+        "shared_three_state_crop": [
+          45,
+          19,
+          153,
+          176
+        ],
+        "target_registration": [
+          4,
+          4,
+          28,
+          63
+        ],
+        "intact_cloth_covered": true
+      },
+      {
+        "image": 68,
+        "shared_three_state_crop": [
+          25,
+          68,
+          168,
+          133
+        ],
+        "target_registration": [
+          4,
+          4,
+          82,
+          37
+        ],
+        "intact_cloth_covered": false
+      }
+    ]
+  },
+  "portraits": [
+    {
+      "res": "1536",
+      "blocks": 1914,
+      "protected_blocks_skipped": 0,
+      "other_resources_unchanged": true
+    },
+    {
+      "res": "768",
+      "blocks": 493,
+      "protected_blocks_skipped": 0,
+      "other_resources_unchanged": true
+    },
+    {
+      "res": "384",
+      "blocks": 135,
+      "protected_blocks_skipped": 0,
+      "other_resources_unchanged": true
+    }
+  ],
+  "packet_sha256": {
+    "Eighties_Speaker_1536.rsgp": "2d2942a0a523fff9f8dc909be34d813e8402892764c566ba7584de20aa13f1c1",
+    "PlantMegaGatlingPuff_1536.rsgp": "6e9aa83f9164eb9eed6a6bde4db7a35d7ddb2f1c339d49e047c06d17eea1dafa",
+    "PlantSweetpea_768.rsgp": "9e4d93f62c025973b2449cb151ce0e97db0041c13ec8bbe7179bcaeac265f19e",
+    "ZombieDarkBasicGroup_768.rsgp": "5e9cf11d09dbd11e88c8bf9010dacd455fe317b090d26396d3b44f70f87b0ff6",
+    "UI_ZombiePackets_1536.rsgp": "653154f75df14d5b1d6792e52c2e53cae29ac8eaf6d146eef49c2cae83d646db",
+    "UI_ZombiePackets_768.rsgp": "ae14927b0a3a13199bca695b57c3049b39c4db86ba18b72214c31bc54a8b0b44",
+    "UI_SeedPackets_768.rsgp": "0773164ec8c7afe53d38320e7e19ab89e68e70a7f1181181e9152b34946fd766",
+    "ZombieIronKingGroup_Common.rsgp": "d6f692a2bcc765c877fad665210f09a22e42c025977cb4b135b2a9ec83d4c0e5",
+    "PlantBonkchoy_Common.rsgp": "d6d154ac034f330c2a20be7abd396e12a64b5981eed629673e0761c7379f406e",
+    "SweetpeaEffects_1536.rsgp": "ca238a7fd64963f48a37bb9ad3d0b7d7faa6fec384325b180d181d04be8afffc",
+    "UI_ZombiePackets_384.rsgp": "e92b5aba75cbe6424c18bfca829822337fd7f73fbdaa78befe4acf6f6a28d93c",
+    "SweetpeaEffects_768.rsgp": "73bed8b1ace909c8167327207e15e18a39c8a15551107721621567ed93b6ac45",
+    "ZombieIronKingGroup_1536.rsgp": "04555429575574b3c1c83b1098b7d50b806824404c6cf0923b2f7b5e21a97b62",
+    "ZombieDarkBasicGroup_384.rsgp": "d8fdb5ad24991fadbfa31b92aa082d14dabc7c6ba68a8bae9b37cf260ff3f7b1",
+    "__MANIFESTGROUP__.rsgp": "890e0466eb129b29ffdb34d777ed023495957d12807a98f228712468c8105ef5",
+    "ZombieDarkBasicGroup_1536.rsgp": "7efad16634119c3b418137d9483fe62d5568ad574ffe14872f39eeb9a6a09cf9",
+    "WorldPackages_dark.rsgp": "c35950f349faf7e61b14980056dfa87b4520ed646177894c5896fb85ff9bb08f",
+    "ZombieIronKingGroup_384.rsgp": "2241a64517f59df57d1a7f530bdb8a9c7fb7451006aa7f03f4dd2f25779ef1fc",
+    "Packages.rsgp": "83bbe9a0dcc5fb1c61df19d6a19329b8b7bd5001d32fde994f1f946e26466f51",
+    "PlantSweetpea_Common.rsgp": "3fe3db5dd4e3cebcc326e3e7a6a17ff4c65269a3fb8314c6f6928919683a51e1",
+    "PlantSweetpea_1536.rsgp": "344c785e75f60cbe482954c918b71a043f03bec503dbda3be7b73fa9f8323384",
+    "PlantMegaGatlingPuff_768.rsgp": "4bab094bbf0a8e8b342720d61f2703269a8f2ae9c9f55c3189948fab712d2de9",
+    "ZombieIronKingGroup_768.rsgp": "30cb7397e668d193b745b27586bc335e1cc66b6b218dde6b5d7144560145e80b",
+    "SweetpeaEffects_Common.rsgp": "934b1a8efb0ff1ac67998f5b402ac27ba6643deb27eadf7c1cf230f3554bffe8",
+    "ZombieDarkBasicGroup_Common.rsgp": "bc49f8a59ff11f3d6fd85e54df8c9cc3491095a94adc56221255d604e7628731",
+    "UI_SeedPackets_1536.rsgp": "54ef73df9d3fc160488f200e964b636e53077e5935aedd97133f604c5a2960e0",
+    "Eighties_Speaker_384.rsgp": "cd8341b100e0d5a60feb9e24a2c8db808541f57b01524a54cd4445b937f6049b",
+    "Eighties_Speaker_Common.rsgp": "1bac8feb00e523d3c7354602ee010c4028a4481a64abc0f27f0f2c1808eb0696",
+    "Eighties_Speaker_768.rsgp": "e2cdeee38bceafaa2ef8d460fe01c0b7dc1e9822287dc8c9804845cc1c4d2807",
+    "PlantMegaGatlingPuff_Common.rsgp": "9f20f6e8b73a23cb65dc1ca539bedfb8d1e98309a06c1d4ce6a98bab14911850"
+  },
+  "runtime_tested": false,
+  "native_armor_damage_and_visibility": {
+    "actual_Armor_update_11b6270_executed": true,
+    "actual_recursive_visibility_15ba730_executed": true,
+    "duplicate_layer_names_all_twenty_parts_toggled": true,
+    "HP_cases": [
+      {
+        "armor_hp": 1600,
+        "visible_parts_per_state": [
+          20,
+          0,
+          0
+        ]
+      },
+      {
+        "armor_hp": 1200,
+        "visible_parts_per_state": [
+          20,
+          0,
+          0
+        ]
+      },
+      {
+        "armor_hp": 1000,
+        "visible_parts_per_state": [
+          0,
+          20,
+          0
+        ]
+      },
+      {
+        "armor_hp": 600,
+        "visible_parts_per_state": [
+          0,
+          20,
+          0
+        ]
+      },
+      {
+        "armor_hp": 500,
+        "visible_parts_per_state": [
+          0,
+          0,
+          20
+        ]
+      },
+      {
+        "armor_hp": 1,
+        "visible_parts_per_state": [
+          0,
+          0,
+          20
+        ]
+      }
+    ],
+    "detached_armor_hides_all_three_states": [
+      0,
+      0,
+      0
+    ],
+    "original_headgear_visibility_preserved": true,
+    "runtime_tested": false
+  }
+}
