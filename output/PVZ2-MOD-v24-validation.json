@@ -1,0 +1,143 @@
+{
+  "version": 24,
+  "mega_cost": 500,
+  "mega_cooldown": 15,
+  "mega_choices": [
+    "SweetpeaProjectile",
+    "ElectricPeaDefault",
+    "FirePeaDefault",
+    "UltraFirePeaDefault",
+    "GrayFirePeaDefault",
+    "PeaDefault",
+    "SnowPeaDefault",
+    "PrimalPeashooterPea",
+    "PinkFirePeaDefault",
+    "PrimalPeashooterFirePea"
+  ],
+  "mega_probabilities": [
+    10,
+    10,
+    10,
+    10,
+    10,
+    10,
+    10,
+    10,
+    10,
+    10
+  ],
+  "fire_pea_probabilities_preserved": [
+    60,
+    30,
+    10
+  ],
+  "gray_damage_preserved": [
+    100,
+    50
+  ],
+  "pink_repeat_guard": {
+    "repeated_callbacks": 4,
+    "first_projectile_children": 8,
+    "first_projectile_direct_hits": 1,
+    "invalidated_projectile_no_repeat": true,
+    "reused_address_new_weak_generation_allowed": true,
+    "64_deliberate_hash_collisions_isolated": true,
+    "eight_directions_each_one_projectile": true,
+    "no_child_only_out_of_bounds_field_writes": true,
+    "engine_apis_stubbed": true,
+    "runtime_tested": false
+  },
+  "card_name_getter_fix": {
+    "actual_native_display_call_sites_executed": true,
+    "real_RtWeakPtr_name_getter_called": true,
+    "name_getter_API_stubbed_with_real_calling_convention": true,
+    "fixtures_use_weak_reference_not_inline_name": true,
+    "all_live_GPR_and_SIMD_preserved": true,
+    "plant_objects_byte_identical": true,
+    "cases": [
+      {
+        "plant": "megagatling",
+        "long_string": false,
+        "display_premium": 1
+      },
+      {
+        "plant": "megagatling",
+        "long_string": true,
+        "display_premium": 1
+      },
+      {
+        "plant": "solartomato",
+        "long_string": false,
+        "display_premium": 1
+      },
+      {
+        "plant": "solartomato",
+        "long_string": true,
+        "display_premium": 1
+      },
+      {
+        "plant": "snowpea",
+        "long_string": false,
+        "display_premium": 1
+      },
+      {
+        "plant": "snowpea",
+        "long_string": true,
+        "display_premium": 1
+      },
+      {
+        "plant": "sunflower",
+        "long_string": false,
+        "display_premium": 0
+      },
+      {
+        "plant": "sunflower",
+        "long_string": true,
+        "display_premium": 0
+      },
+      {
+        "plant": "megagatlinx",
+        "long_string": false,
+        "display_premium": 0
+      },
+      {
+        "plant": "megagatlinx",
+        "long_string": true,
+        "display_premium": 0
+      }
+    ],
+    "runtime_tested": false
+  },
+  "pool": {
+    "native_creation_dispatch_executed": true,
+    "mega_100_bucket_counts": [
+      10,
+      10,
+      10,
+      10,
+      10,
+      10,
+      10,
+      10,
+      10,
+      10
+    ],
+    "firepea_counts": [
+      60,
+      30,
+      10
+    ],
+    "electric_configuration_only_for_electric": true,
+    "argument_and_simd_preserved": true,
+    "engine_create_api_stubbed": true,
+    "runtime_tested": false
+  },
+  "slow_effect_dependency_missing_before_and_present_after": true,
+  "all_pool_PAM_dependencies_preloaded": true,
+  "v21p2_level_registry_unchanged": true,
+  "pink_two_stage_rules_preserved": true,
+  "no_RWX_segments": true,
+  "ELF_size_unchanged": true,
+  "python_browser_output_identical": true,
+  "runtime_tested": false
+}
