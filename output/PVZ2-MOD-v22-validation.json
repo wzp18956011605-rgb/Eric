@@ -1,0 +1,72 @@
+{
+  "version": 22,
+  "pink_direct_damage": 80,
+  "pink_splash_damage": 0,
+  "first_split_count": 8,
+  "first_split_type": "SweetpeaProjectile",
+  "first_split_damage": 40,
+  "second_split_rule": "unchanged ordinary sugar pea -> eight SweetpeaCandyShard (20 damage each)",
+  "ordinary_sugar_and_shards_unchanged": true,
+  "direct_slow_seconds": 2,
+  "v21p2_manifest_and_modern_map_byte_identical": true,
+  "changed_packets": [
+    "Packages.rsgp"
+  ],
+  "changed_package_entries": [
+    "PACKAGES\\LAWNSTRINGS-EN-US.RTON",
+    "PACKAGES\\PLANTPROPERTIES.RTON",
+    "PACKAGES\\PLANTTYPES.RTON",
+    "PACKAGES\\PROJECTILETYPES.RTON"
+  ],
+  "native": {
+    "version": 22,
+    "actual_cloned_spread_loop_executed": true,
+    "eight_full_sugar_projectiles_created": true,
+    "dedicated_config_alias_resolved": "pinkfireint",
+    "eight_distinct_velocity_vectors": [
+      [
+        333.0,
+        -0.0
+      ],
+      [
+        235.47,
+        -235.47
+      ],
+      [
+        -0.0,
+        -333.0
+      ],
+      [
+        -235.47,
+        -235.47
+      ],
+      [
+        -333.0,
+        0.0
+      ],
+      [
+        -235.47,
+        235.47
+      ],
+      [
+        0.0,
+        333.0
+      ],
+      [
+        235.47,
+        235.47
+      ]
+    ],
+    "child_damage_each": 40,
+    "generic_direct_hit_called_once": true,
+    "no_child_only_member_write_on_full_sugar_projectiles": true,
+    "stack_restored": true,
+    "engine_creation_and_handle_apis_stubbed": true,
+    "runtime_tested": false
+  },
+  "entry_routing_tests_pass": true,
+  "actual_user_library_upgrade_tested": true,
+  "python_browser_output_equal": true,
+  "idempotent": true,
+  "runtime_tested": false
+}
