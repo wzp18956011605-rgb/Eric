@@ -1,0 +1,16 @@
+{
+  "version": "21.1",
+  "actual_uploaded_input_sha256": "71a1b364e7a8bf8bec5f3755098a6d26bf34bca91e910e19d5d6e00bad3b7aab",
+  "actual_uploaded_input_upgrades": true,
+  "old_sugar_hook_preserved_via_chained_trampoline": true,
+  "old_sugar_code_cave_byte_identical": true,
+  "only_intended_patches_changed": true,
+  "known_previous_versions_upgrade": true,
+  "old_v21_upgrades": true,
+  "idempotent": true,
+  "altered_legacy_code_rejected": true,
+  "runtime_tested": false,
+  "python_javascript_identical": true,
+  "actual_native_legacy_and_pink_branches_executed": true,
+  "obb_byte_identical_to_v21": true
+}
