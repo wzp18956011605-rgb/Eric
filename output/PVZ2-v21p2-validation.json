@@ -1,0 +1,25 @@
+{
+  "version": "21.2",
+  "confirmed_defect": "new modern_pope level missing from runtime Packages resource manifest",
+  "before_manifest_registration": false,
+  "after_manifest_registration": true,
+  "entry": {
+    "type": "File",
+    "slot": 41479,
+    "id": "RESFILE_PACKAGES_LEVELS_MODERN_POPE",
+    "path": [
+      "packages",
+      "levels",
+      "modern_pope.rton"
+    ]
+  },
+  "map_manifest_packet_rton_chain_resolves": true,
+  "local_level_aliases_resolve": true,
+  "preset_card_and_first_clear_reward_preserved": true,
+  "only_obb_file_changed": [
+    "Overlay/Packet/__MANIFESTGROUP__.rsgp"
+  ],
+  "all_existing_manifest_entries_unchanged": true,
+  "native_files_unchanged_from_v21p1": true,
+  "runtime_tested": false
+}

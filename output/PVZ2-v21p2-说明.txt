@@ -1,0 +1,10 @@
+第21.2版：现代新增关卡资源注册修复
+
+第21版创建了 modern_pope.rton 文件并加入地图、StructInfo，但遗漏运行时 __MANIFESTGROUP__ 的 Packages 文件资源登记。本版增加唯一的 RESFILE_PACKAGES_LEVELS_MODERN_POPE 登记，修复新关加载链路缺口。
+
+已用第21/21.1版完整OBB的用户：把本补丁Overlay/Packet/__MANIFESTGROUP__.rsgp覆盖到当前OBB对应Packet目录，重新打包即可。补丁仅含这一个Packet，无需叠加旧版包。
+如果此前只安装第20版或更早，请使用第21.2版完整整合包，不要只安装本补丁。
+第21.1版lib无需重做、无需重新安装APK。原现代关卡、黑暗机枪喷关、新关固定超级机枪豌豆卡与首通奖励都不改。
+完全退出游戏进程后进入现代新增关卡。
+
+已检查地图→资源清单→Packages文件→关卡RTON以及CurrentLevel引用链，新增资源槽位唯一，其他资源登记与玩法数据不变。未进行安卓实机验证；若补齐后仍在同一步闪退，需要启动崩溃日志定位剩余原因。
