@@ -1,0 +1,182 @@
+{
+  "version": 19,
+  "requested": {
+    "fire_red": [
+      40,
+      10,
+      "small"
+    ],
+    "fire_blue": [
+      80,
+      20,
+      "1x1"
+    ],
+    "fire_purple": [
+      100,
+      50,
+      "3x3"
+    ],
+    "fire_pink": [
+      60,
+      20,
+      "3x3",
+      "2sec stalled all splash targets",
+      "no split"
+    ],
+    "torch_cost": 200,
+    "torch_cooldown": 10,
+    "torch_hp": 1000,
+    "torch_contact_damage": 0,
+    "torch_death_action_unchanged": true,
+    "mega_chances": [
+      20,
+      20,
+      20,
+      20,
+      20
+    ],
+    "firepea_chances": [
+      45,
+      35,
+      20
+    ],
+    "original_PAM_transform_frames_timing_preserved": true,
+    "all_original_alpha_preserved": true,
+    "new_resource_slots": 64,
+    "pink_purple_terminal": true,
+    "runtime_tested": false
+  },
+  "native": {
+    "cases": [
+      {
+        "type": 1,
+        "100_buckets": [
+          20,
+          20,
+          20,
+          20,
+          20
+        ],
+        "per_bullet_creation": true
+      },
+      {
+        "type": 2,
+        "100_buckets": [
+          45,
+          35,
+          20
+        ],
+        "per_bullet_creation": true
+      },
+      {
+        "unrelated_or_child_bypassed": [
+          0,
+          true,
+          83890176
+        ]
+      },
+      {
+        "unrelated_or_child_bypassed": [
+          1,
+          false,
+          83890176
+        ]
+      },
+      {
+        "unrelated_or_child_bypassed": [
+          1,
+          true,
+          0
+        ]
+      },
+      {
+        "same_owner_repeated_creation_choices": [
+          3,
+          4,
+          5,
+          6,
+          7
+        ]
+      },
+      {
+        "radius": 0.25,
+        "x": 401.0,
+        "center": [
+          424.0,
+          350.0
+        ],
+        "half_width": 32.0,
+        "unchanged_original_point": true
+      },
+      {
+        "radius": 2.25,
+        "x": 450.0,
+        "center": [
+          424.0,
+          350.0
+        ],
+        "half_width": 96.0,
+        "unchanged_original_point": true
+      },
+      {
+        "radius": 2.25,
+        "x": 501.0,
+        "center": [
+          488.0,
+          350.0
+        ],
+        "half_width": 96.0,
+        "unchanged_original_point": true
+      },
+      {
+        "radius": 0.0625,
+        "x": 401.0,
+        "center": [
+          401.0,
+          350.0
+        ],
+        "half_width": 16.0,
+        "unchanged_original_point": true
+      },
+      {
+        "radius": 0.25,
+        "x": 401.0,
+        "center": [
+          401.0,
+          350.0
+        ],
+        "half_width": 32.0,
+        "unchanged_original_point": true
+      },
+      {
+        "radius": 1.0,
+        "x": 401.0,
+        "center": [
+          401.0,
+          350.0
+        ],
+        "half_width": 64.0,
+        "unchanged_original_point": true
+      }
+    ],
+    "existing_no_cheating_Pope_magnet_fire_ice_logic_preserved": true,
+    "idempotent": true,
+    "new_RX_only_no_mutable_executable_state": true,
+    "runtime_tested": false,
+    "limitations": "Native resource/property resolution, RNG and projectile construction use ABI fixtures. Original engine damage/animation not runtime-tested."
+  },
+  "python_javascript_equal": true,
+  "upgrade_from_v14_v17_v18_equal": true,
+  "unrelated_data_and_plant_balance_preserved": true,
+  "death_action_unchanged": true,
+  "pink_no_split_and_2second_splash_condition": true,
+  "all_fire_resources_registered_all_three_resolutions": true,
+  "packet_count": 34,
+  "changed_package_resources": [
+    "PACKAGES\\LAWNSTRINGS-EN-US.RTON",
+    "PACKAGES\\PLANTPROPERTIES.RTON",
+    "PACKAGES\\PLANTTYPES.RTON",
+    "PACKAGES\\PROJECTILETYPES.RTON"
+  ],
+  "runtime_tested": false
+}
