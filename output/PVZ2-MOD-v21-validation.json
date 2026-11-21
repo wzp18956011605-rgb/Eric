@@ -1,0 +1,67 @@
+{
+  "version": 21,
+  "previous_version": 20,
+  "overlay": {
+    "changed_package_entries": [
+      "PACKAGES\\ARMORTYPES.RTON",
+      "PACKAGES\\LEVELS\\MODERN_POPE.RTON",
+      "PACKAGES\\PLANTTYPES.RTON",
+      "PACKAGES\\PROPERTYSHEETS.RTON"
+    ],
+    "all_packet_lookup_paths_valid": true,
+    "all_rton_and_pam_readable": true,
+    "new_level_registered": true,
+    "old_pam_semantics_preserved_tolerance": 2e-05,
+    "private_binaries_excluded": true,
+    "runtime_tested": false
+  },
+  "native": {
+    "cases": [
+      {
+        "direct_draw_entry": "0x11fee94",
+        "checked_hidden": true,
+        "unchecked_original": true
+      },
+      {
+        "direct_draw_entry": "0x11fefc0",
+        "checked_hidden": true,
+        "unchecked_original": true
+      },
+      {
+        "direct_draw_entry": "0x11ff108",
+        "checked_hidden": true,
+        "unchecked_original": true
+      },
+      {
+        "direct_draw_entry": "0x11ff410",
+        "checked_hidden": true,
+        "unchecked_original": true
+      },
+      {
+        "pink_generic_hit": true,
+        "plain_sugar_original_split": true,
+        "nearby_other_props_preserved": true
+      }
+    ],
+    "argument_and_simd_preservation": true,
+    "native_entry_instructions_executed": true,
+    "preference_and_property_getters_stubbed": true,
+    "runtime_tested": false
+  },
+  "magnet": {
+    "detached_layers": [
+      "zombie_paladin_magnet_0",
+      "zombie_paladin_magnet_1",
+      "zombie_paladin_magnet_2"
+    ],
+    "parts_per_stage": 16,
+    "original_walk_eat_idle_frames_unchanged": true,
+    "shared_existing_textures": true,
+    "engine_drives_magnetic_flight": true,
+    "runtime_tested": false
+  },
+  "python_javascript_identical": true,
+  "idempotent": true,
+  "upgrade_v14_v18_v19_verified": true,
+  "runtime_tested": false
+}
