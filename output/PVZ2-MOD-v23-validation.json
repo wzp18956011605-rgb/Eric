@@ -1,0 +1,125 @@
+{
+  "version": 23,
+  "targets": [
+    "megagatling",
+    "solartomato"
+  ],
+  "requested_seed_packet_style": "snowpea gold border and warp backdrop",
+  "style_implementation": "two display-only SeedPacketUtils call sites; target backdrop warp",
+  "plant_premium_and_homeworld_unlock_fields_unchanged": true,
+  "plant_order_and_all_gameplay_properties_unchanged": true,
+  "gray_fire": [
+    100,
+    50,
+    "3x3"
+  ],
+  "fire_peashooter_chances": [
+    60,
+    30,
+    10
+  ],
+  "v22_pink_split_and_v21p2_manifest_preserved": true,
+  "changed_package_entries": [
+    "PACKAGES\\LAWNSTRINGS-EN-US.RTON",
+    "PACKAGES\\PLANTTYPES.RTON"
+  ],
+  "native": {
+    "version": 23,
+    "fire_peashooter_probabilities": [
+      60,
+      30,
+      10
+    ],
+    "mega_gatling_probabilities": [
+      20,
+      20,
+      20,
+      20,
+      20
+    ],
+    "actual_native_bucket_selection_executed": true,
+    "actual_card_visual_call_sites_executed": true,
+    "display_cases": [
+      {
+        "plant": "megagatling",
+        "long_string": false,
+        "display_premium": 1,
+        "world_visual_suppressed": true
+      },
+      {
+        "plant": "megagatling",
+        "long_string": true,
+        "display_premium": 1,
+        "world_visual_suppressed": true
+      },
+      {
+        "plant": "solartomato",
+        "long_string": false,
+        "display_premium": 1,
+        "world_visual_suppressed": true
+      },
+      {
+        "plant": "solartomato",
+        "long_string": true,
+        "display_premium": 1,
+        "world_visual_suppressed": true
+      },
+      {
+        "plant": "snowpea",
+        "long_string": false,
+        "display_premium": 1,
+        "world_visual_suppressed": false
+      },
+      {
+        "plant": "snowpea",
+        "long_string": true,
+        "display_premium": 1,
+        "world_visual_suppressed": false
+      },
+      {
+        "plant": "firepeashooter",
+        "long_string": false,
+        "display_premium": 0,
+        "world_visual_suppressed": false
+      },
+      {
+        "plant": "firepeashooter",
+        "long_string": true,
+        "display_premium": 0,
+        "world_visual_suppressed": false
+      },
+      {
+        "plant": "sunflower",
+        "long_string": false,
+        "display_premium": 0,
+        "world_visual_suppressed": false
+      },
+      {
+        "plant": "sunflower",
+        "long_string": true,
+        "display_premium": 0,
+        "world_visual_suppressed": false
+      },
+      {
+        "plant": "megagatlinx",
+        "long_string": false,
+        "display_premium": 0,
+        "world_visual_suppressed": false
+      },
+      {
+        "plant": "megagatlinx",
+        "long_string": true,
+        "display_premium": 0,
+        "world_visual_suppressed": false
+      }
+    ],
+    "plant_objects_byte_identical_after_display": true,
+    "unlock_premium_and_world_flags_unmodified": true,
+    "inline_hook_live_registers_preserved": true,
+    "idempotent": true,
+    "actual_user_library_upgrade": true,
+    "runtime_tested": false
+  },
+  "python_javascript_identical": true,
+  "runtime_tested": false
+}
