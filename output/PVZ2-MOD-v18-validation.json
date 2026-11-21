@@ -1,0 +1,137 @@
+{
+  "display_label": "no cheating",
+  "default_unchecked": true,
+  "independent_key": "no_cheating",
+  "old_cheating_key_not_reused": true,
+  "assembly_cases": [
+    [
+      "preference_read",
+      0,
+      false,
+      0
+    ],
+    [
+      "preference_read",
+      0,
+      true,
+      0
+    ],
+    [
+      "preference_read",
+      1,
+      true,
+      1
+    ],
+    [
+      "preference_read",
+      99,
+      true,
+      1
+    ],
+    [
+      "custom_toggle_and_original_notification_preserved",
+      true
+    ],
+    [
+      "new_row_checked_state",
+      0,
+      "old_row_plus_new_row"
+    ],
+    [
+      "new_row_checked_state",
+      1,
+      "old_row_plus_new_row"
+    ],
+    [
+      "power_304",
+      "enabled_hidden_and_input_gated_disabled_original"
+    ],
+    [
+      "power_520",
+      "enabled_hidden_and_input_gated_disabled_original"
+    ],
+    [
+      "power_528",
+      "enabled_hidden_and_input_gated_disabled_original"
+    ],
+    [
+      "power_536",
+      "enabled_hidden_and_input_gated_disabled_original"
+    ],
+    [
+      "power_752",
+      "enabled_hidden_and_input_gated_disabled_original"
+    ],
+    [
+      "leaf_0x1377904",
+      "purchase_masked_bank_quantity3_preserved_original_path_executes"
+    ],
+    [
+      "leaf_0x1378834",
+      "purchase_masked_bank_quantity3_preserved_original_path_executes"
+    ],
+    [
+      "leaf_0x1378c70",
+      "purchase_masked_bank_quantity3_preserved_original_path_executes"
+    ],
+    [
+      "leaf_0x1378f90",
+      "purchase_masked_bank_quantity3_preserved_original_path_executes"
+    ],
+    [
+      "leaf_0x137745c",
+      "purchase_masked_bank_quantity3_preserved_original_path_executes"
+    ],
+    [
+      "active_power_104",
+      "enabled_hidden_and_input_gated_disabled_original"
+    ],
+    [
+      "active_power_152",
+      "enabled_hidden_and_input_gated_disabled_original"
+    ],
+    [
+      "active_power_160",
+      "enabled_hidden_and_input_gated_disabled_original"
+    ],
+    [
+      "active_power_168",
+      "enabled_hidden_and_input_gated_disabled_original"
+    ],
+    [
+      "plus_read_0x13774e4",
+      "exact_native_load_returns_zero_when_on_and_original_when_off_live_registers_preserved"
+    ],
+    [
+      "plus_read_0x13775b8",
+      "exact_native_load_returns_zero_when_on_and_original_when_off_live_registers_preserved"
+    ],
+    [
+      "plus_read_0x1378078",
+      "exact_native_load_returns_zero_when_on_and_original_when_off_live_registers_preserved"
+    ],
+    [
+      "plus_read_0x13788bc",
+      "exact_native_load_returns_zero_when_on_and_original_when_off_live_registers_preserved"
+    ],
+    [
+      "plus_read_0x1379010",
+      "exact_native_load_returns_zero_when_on_and_original_when_off_live_registers_preserved"
+    ],
+    [
+      "plus_read_0x1379020",
+      "exact_native_load_returns_zero_when_on_and_original_when_off_live_registers_preserved"
+    ]
+  ],
+  "python_idempotent": true,
+  "preserves_existing_Pope_magnet_fire_code": true,
+  "only_explicit_hooks_ELF_sizes_and_append_changed": true,
+  "no_RWX_or_mutable_executable_state": true,
+  "preference_uses_original_registry_int_API": true,
+  "runtime_tested": false,
+  "limitations": "Native UI/registry calls are ABI stubs; no Android installation or rendering test.",
+  "javascript_output_equal_and_idempotent": true,
+  "upgrade_from_v17_and_v14_outputs_equal": true,
+  "active_PowerupUI_included": true,
+  "exact_plus_flag_load_sites": 6
+}
