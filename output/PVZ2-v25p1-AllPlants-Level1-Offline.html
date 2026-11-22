@@ -1,0 +1,52 @@
+<!doctype html><meta charset="utf-8"><title>全植物解锁·全部一级</title><style>body{max-width:760px;margin:45px auto;padding:20px;font:18px/1.8 system-ui;background:#f2efe6}button{padding:12px 22px}pre{white-space:pre-wrap;background:#e3e2da;padding:15px}</style><h1>第25.1版配套：全植物解锁／全部一级</h1><p>选择当前pp.dat，离线生成修改版，不上传文件，不覆盖原存档。解锁本包174种可选植物，等级统一一级、经验与精通清零；金币、钻石、进度和账号字段保留。</p><input type="file" id="file"><p><button id="go">校验并生成pp.dat</button></p><pre id="status">请先备份当前pp.dat。生成后彻底退出游戏，再替换原存档。</pre><script>const PLANT_IDS=[1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,44,50,51,52,53,54,55,58,59,60,61,62,63,64,65,66,67,68,69,70,71,72,74,76,78,79,81,82,83,84,85,86,87,88,89,90,91,92,93,94,95,96,97,98,99,100,101,102,103,104,105,106,107,108,109,110,111,112,113,114,115,116,117,118,119,120,121,122,123,124,125,126,129,130,131,132,133,134,135,136,137,138,139,140,141,142,143,144,145,146,147,148,149,150,151,152,153,154,155,156,157,158,159,160,161,162,163,164,165,166,167,168,169,170,171,172,173,174,175,176,177,178,179,181,182,183,184,185,186,187,188,189];
+const enc=new TextEncoder(),dec=new TextDecoder('utf-8',{fatal:true});
+class RtonReader{
+ constructor(bytes){this.a=bytes;this.p=8;this.c=[[],[]];if(dec.decode(bytes.slice(0,4))!=='RTON'||new DataView(bytes.buffer,bytes.byteOffset,bytes.byteLength).getUint32(4,true)!==1)throw Error('需要RTON格式pp.dat');}
+ bytes(n){if(n<0||this.p+n>this.a.length)throw Error('文件截断');const b=this.a.slice(this.p,this.p+n);this.p+=n;return b;}
+ byte(){return this.bytes(1)[0];}
+ variable(){let x=0n,s=0n;for(let i=0;i<10;i++){const b=this.byte();x|=BigInt(b&127)<<s;if(b<128)return x;s+=7n;}throw Error('无效变长整数');}
+ small(){const b=this.variable();if(b>10000000n)throw Error('数组或字符串过大');return Number(b);}
+ string(){return dec.decode(this.bytes(this.small()));}
+ number(t){const defs={8:[1,'getInt8'],10:[1,'getUint8'],16:[2,'getInt16'],18:[2,'getUint16'],32:[4,'getInt32'],34:[4,'getFloat32'],38:[4,'getUint32'],64:[8,'getBigInt64'],66:[8,'getFloat64'],70:[8,'getBigUint64']};const [n,m]=defs[t],b=this.bytes(n);return new DataView(b.buffer,b.byteOffset,b.byteLength)[m](0,true);}
+ object(){const o=Object.create(null);for(;;){const t=this.byte();if(t===255)return o;const k=this.value(t);if(typeof k!=='string')throw Error('键类型错误');o[k]=this.value(this.byte());}}
+ value(t){
+  if(t===0||t===1)return !!t;
+  if([8,10,16,18,32,34,38,64,66,70].includes(t))return this.number(t);
+  if([9,11,17,19,33,35,39,65,67,71].includes(t))return 0;
+  if([36,40,68,72,37,41,69,73].includes(t)){let n=this.variable();if([37,41,69,73].includes(t))n=(n>>1n)^-(n&1n);return n>=-9007199254740991n&&n<=9007199254740991n?Number(n):n;}
+  if(t===129)return this.string();if(t===130){this.small();return this.string();}
+  if(t===144||t===146){if(t===146)this.small();const s=this.string();this.c[t===144?0:1].push(s);return s;}
+  if(t===145||t===147){const s=this.c[t===145?0:1][this.small()];if(s===undefined)throw Error('字符串缓存无效');return s;}
+  if(t===133)return this.object();if(t===134){if(this.byte()!==253)throw Error('数组无效');const n=this.small(),a=[];for(let i=0;i<n;i++)a.push(this.value(this.byte()));if(this.byte()!==254)throw Error('数组结束标记无效');return a;}
+  if(t===132)return 'RTID(0)';throw Error('当前存档含未支持的RTON类型0x'+t.toString(16));
+ }
+}
+class RtonWriter{
+ constructor(){this.a=[82,84,79,78,1,0,0,0];}
+ put(a){for(const b of a)this.a.push(b);}
+ variable(x){x=BigInt(x);while(x>127n){this.a.push(Number(x&127n)|128);x>>=7n;}this.a.push(Number(x));}
+ string(s){const a=enc.encode(s);if(/^[\x00-\x7f]*$/.test(s))this.a.push(129);else{this.a.push(130);this.variable(Array.from(s).length);}this.variable(a.length);this.put(a);}
+ num(t,method,n,v){this.a.push(t);const a=new Uint8Array(n);new DataView(a.buffer)[method](0,v,true);this.put(a);}
+ object(o){for(const [k,v] of Object.entries(o)){this.string(k);this.value(v);}this.a.push(255);}
+ value(v){
+  if(typeof v==='boolean'){this.a.push(+v);return;}
+  if(typeof v==='bigint'){if(v>=-(1n<<63n)&&v<(1n<<63n))this.num(64,'setBigInt64',8,v);else this.num(70,'setBigUint64',8,v);return;}
+  if(typeof v==='number'){if(!Number.isFinite(v))throw Error('无效数值');if(Number.isInteger(v)){if(v>=-2147483648&&v<=2147483647)this.num(32,'setInt32',4,v);else this.num(64,'setBigInt64',8,BigInt(v));}else this.num(66,'setFloat64',8,v);return;}
+  if(typeof v==='string'){this.string(v);return;}
+  if(Array.isArray(v)){this.a.push(134,253);this.variable(v.length);for(const x of v)this.value(x);this.a.push(254);return;}
+  if(v&&typeof v==='object'){this.a.push(133);this.object(v);return;}throw Error('不支持的值');
+ }
+ finish(o){this.object(o);this.put([68,79,78,69]);return new Uint8Array(this.a);}
+}
+function editSave(bytes){
+ const r=new RtonReader(bytes),o=r.object();if(dec.decode(bytes.slice(r.p))!=='DONE')throw Error('存档结束标记不匹配');
+ const p=o.objects?.filter(x=>x.objclass==='PlayerInfo');if(!p||p.length!==1)throw Error('仅支持一个PlayerInfo的本版存档');const d=p[0].objdata;
+ if(!Array.isArray(d.p)||!Array.isArray(d.plis))throw Error('植物存档字段不匹配');
+ d.p=Array.from(new Set([...d.p.map(x=>Number(x)),...PLANT_IDS])).sort((a,b)=>Number(a)-Number(b));const known=new Set();
+ for(const row of d.plis){if(!Number.isInteger(Number(row.p)))throw Error('植物等级ID无效');known.add(Number(row.p));row.l=0;row.x=0;row.m=0;}
+ for(const id of PLANT_IDS)if(!known.has(id))d.plis.push({p:id,l:0,x:0,m:0});
+ return new RtonWriter().finish(o);
+}
+if(typeof module!=='undefined')module.exports={editSave};
+
+const picker=document.getElementById("file"),log=document.getElementById("status"),runButton=document.getElementById("go");runButton.onclick=async()=>{try{if(!picker.files[0])throw Error('请先选择pp.dat');const a=new Uint8Array(await picker.files[0].arrayBuffer());const out=editSave(a);const url=URL.createObjectURL(new Blob([out]));const link=document.createElement('a');link.href=url;link.download='pp.dat';link.click();log.textContent='已生成修改版pp.dat：174种可选植物全解锁、全部一级。彻底退出游戏进程，再备份并覆盖当前存档；不要删除其他文件。尚未安卓实机读档验证。';setTimeout(()=>URL.revokeObjectURL(url),60000);}catch(e){log.textContent='未生成文件：'+e.message;}};</script>

@@ -1,0 +1,17 @@
+{
+  "version": "25.1",
+  "base": 25,
+  "direct_upgrade_from": 24,
+  "banana_cost": 1250,
+  "banana_health": 600,
+  "all_level_cost_and_health_updated": true,
+  "changed_package_entries": [
+    "PACKAGES\\PLANTLEVELS.RTON",
+    "PACKAGES\\PLANTPROPERTIES.RTON"
+  ],
+  "all_v25_other_obb_and_native_files_byte_identical": true,
+  "private_save_excluded_from_public_archives": true,
+  "offline_save_tool_tested_on_uploaded_save": true,
+  "save_tool_python_js_semantically_equal": true,
+  "runtime_tested": false
+}
