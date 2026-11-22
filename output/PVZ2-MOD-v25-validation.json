@@ -1,0 +1,164 @@
+{
+  "version": 25,
+  "probabilities": {
+    "normal": 50,
+    "snow": 12,
+    "primal": 12,
+    "red": 8,
+    "blue": 8,
+    "sugar": 5,
+    "electric": 3,
+    "gray": 1,
+    "pink": 1
+  },
+  "removed_from_mega_pool": "PrimalPeashooterFirePea",
+  "cooldowns": {
+    "megagatling": 20,
+    "hotdate": 10,
+    "coconutcannon": 15,
+    "primalsunflower": 7.5
+  },
+  "health": {
+    "coconutcannon": 1000,
+    "banana": 300,
+    "primalsunflower": 300
+  },
+  "mega_cost": 500,
+  "no_cheating_active_hooks_removed": 26,
+  "settings_row_listener_powerup_and_leaf_purchase_original_bytes_restored": true,
+  "old_no_cheating_preference_no_longer_queried_by_these_UI_paths": true,
+  "card": {
+    "real_game_string_normalizer_executed": true,
+    "only_libc_toupper_and_memcpy_stubbed": true,
+    "normalizer_calls": 28,
+    "toupper_calls": 284,
+    "lower_upper_mixed_case_matches": true,
+    "live_GPR_SIMD_and_plant_fields_preserved": true,
+    "cases": [
+      {
+        "name": "megagatling",
+        "long_string": false,
+        "target": true,
+        "premium_frame": 1
+      },
+      {
+        "name": "megagatling",
+        "long_string": true,
+        "target": true,
+        "premium_frame": 1
+      },
+      {
+        "name": "MEGAGATLING",
+        "long_string": false,
+        "target": true,
+        "premium_frame": 1
+      },
+      {
+        "name": "MEGAGATLING",
+        "long_string": true,
+        "target": true,
+        "premium_frame": 1
+      },
+      {
+        "name": "solartomato",
+        "long_string": false,
+        "target": true,
+        "premium_frame": 1
+      },
+      {
+        "name": "solartomato",
+        "long_string": true,
+        "target": true,
+        "premium_frame": 1
+      },
+      {
+        "name": "SolarTomato",
+        "long_string": false,
+        "target": true,
+        "premium_frame": 1
+      },
+      {
+        "name": "SolarTomato",
+        "long_string": true,
+        "target": true,
+        "premium_frame": 1
+      },
+      {
+        "name": "snowpea",
+        "long_string": false,
+        "target": false,
+        "premium_frame": 1
+      },
+      {
+        "name": "snowpea",
+        "long_string": true,
+        "target": false,
+        "premium_frame": 1
+      },
+      {
+        "name": "sunflower",
+        "long_string": false,
+        "target": false,
+        "premium_frame": 0
+      },
+      {
+        "name": "sunflower",
+        "long_string": true,
+        "target": false,
+        "premium_frame": 0
+      },
+      {
+        "name": "megagatlinx",
+        "long_string": false,
+        "target": false,
+        "premium_frame": 0
+      },
+      {
+        "name": "megagatlinx",
+        "long_string": true,
+        "target": false,
+        "premium_frame": 0
+      }
+    ],
+    "runtime_tested": false
+  },
+  "pool": {
+    "native_creation_dispatch_executed": true,
+    "mega_100_bucket_counts": [
+      5,
+      3,
+      8,
+      8,
+      1,
+      50,
+      12,
+      12,
+      1
+    ],
+    "firepea_counts": [
+      60,
+      30,
+      10
+    ],
+    "electric_configuration_only_for_electric": true,
+    "argument_and_simd_preserved": true,
+    "engine_create_api_stubbed": true,
+    "runtime_tested": false
+  },
+  "pink_guard_regression": {
+    "repeated_callbacks": 4,
+    "first_projectile_children": 8,
+    "first_projectile_direct_hits": 1,
+    "invalidated_projectile_no_repeat": true,
+    "reused_address_new_weak_generation_allowed": true,
+    "64_deliberate_hash_collisions_isolated": true,
+    "eight_directions_each_one_projectile": true,
+    "no_child_only_out_of_bounds_field_writes": true,
+    "engine_apis_stubbed": true,
+    "runtime_tested": false
+  },
+  "prior_projectile_properties_and_unlock_fields_preserved": true,
+  "v21p2_modern_registry_preserved": true,
+  "python_javascript_identical": true,
+  "runtime_tested": false
+}
