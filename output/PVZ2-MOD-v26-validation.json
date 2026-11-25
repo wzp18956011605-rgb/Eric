@@ -1,0 +1,302 @@
+{
+  "version": 26,
+  "integrated_base": "25.1",
+  "preserved_v24_v25_v25p1_unrelated_data": true,
+  "threepeater_gold_terminal_and_fixed40": true,
+  "native_gold_signature_unique_among_all_torch_outputs": true,
+  "new_animation_resources_registered_and_references_resolved": true,
+  "packet_indices_valid": true,
+  "native": {
+    "original_native_live_damage_ratio_executed": true,
+    "engine_property_swap_and_owner_queries_stubbed": true,
+    "converted_projectile_splash_hook_executed": true,
+    "cases": [
+      {
+        "original": 0,
+        "three_stages": [
+          [
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0
+          ]
+        ]
+      },
+      {
+        "original": 15,
+        "three_stages": [
+          [
+            30.0,
+            0.0
+          ],
+          [
+            60.0,
+            15.0
+          ],
+          [
+            75.0,
+            30.0
+          ]
+        ]
+      },
+      {
+        "original": 20,
+        "three_stages": [
+          [
+            40.0,
+            0.0
+          ],
+          [
+            80.0,
+            20.0
+          ],
+          [
+            100.0,
+            40.0
+          ]
+        ]
+      },
+      {
+        "original": 25,
+        "three_stages": [
+          [
+            50.0,
+            0.0
+          ],
+          [
+            100.0,
+            25.0
+          ],
+          [
+            125.0,
+            50.0
+          ]
+        ]
+      },
+      {
+        "original": 30,
+        "three_stages": [
+          [
+            60.0,
+            0.0
+          ],
+          [
+            120.0,
+            30.0
+          ],
+          [
+            150.0,
+            60.0
+          ]
+        ]
+      },
+      {
+        "original": 110,
+        "three_stages": [
+          [
+            220.0,
+            0.0
+          ],
+          [
+            440.0,
+            110.0
+          ],
+          [
+            550.0,
+            220.0
+          ]
+        ]
+      },
+      {
+        "original": 500,
+        "three_stages": [
+          [
+            1000.0,
+            0.0
+          ],
+          [
+            2000.0,
+            500.0
+          ],
+          [
+            2500.0,
+            1000.0
+          ]
+        ]
+      }
+    ],
+    "pink_and_giant_conversion_bypass": true,
+    "gold_fixed_40_independent_of_incoming_damage": true,
+    "firepea_100_buckets": [
+      40,
+      40,
+      20
+    ],
+    "no_RWX": true,
+    "runtime_tested": false
+  },
+  "gold_white": {
+    "gold": [
+      {
+        "kind": "PROJECTILE",
+        "original_frame_counts_preserved": true,
+        "shared_gray_images": true
+      },
+      {
+        "kind": "IMPACT",
+        "original_frame_counts_preserved": true,
+        "shared_gray_images": true
+      }
+    ],
+    "white_reuses_existing_white_round_image": "IMAGE_CUSTOM_FIRE_GRAY_8",
+    "original_pea_animation_frames_and_timing_preserved": true,
+    "new_texture_pixels": false,
+    "new_PAM_count": 3,
+    "threepeater_level1_damage": 20,
+    "chill_seconds": 0.5,
+    "gold_damage": 40,
+    "freeze_seconds": 0.5,
+    "gold_splash": 0,
+    "gold_terminal": true,
+    "gold_logical_fire_flag_omitted_to_avoid_thawing_freeze": true,
+    "runtime_tested": false
+  },
+  "mega_pool": {
+    "native_creation_dispatch_executed": true,
+    "mega_100_bucket_counts": [
+      5,
+      3,
+      8,
+      8,
+      1,
+      50,
+      12,
+      12,
+      1
+    ],
+    "firepea_counts": [
+      40,
+      40,
+      20
+    ],
+    "electric_configuration_only_for_electric": true,
+    "argument_and_simd_preserved": true,
+    "engine_create_api_stubbed": true,
+    "runtime_tested": false
+  },
+  "pink_regression": {
+    "repeated_callbacks": 4,
+    "first_projectile_children": 8,
+    "first_projectile_direct_hits": 1,
+    "invalidated_projectile_no_repeat": true,
+    "reused_address_new_weak_generation_allowed": true,
+    "64_deliberate_hash_collisions_isolated": true,
+    "eight_directions_each_one_projectile": true,
+    "no_child_only_out_of_bounds_field_writes": true,
+    "engine_apis_stubbed": true,
+    "runtime_tested": false
+  },
+  "card_regression": {
+    "real_game_string_normalizer_executed": true,
+    "only_libc_toupper_and_memcpy_stubbed": true,
+    "normalizer_calls": 28,
+    "toupper_calls": 284,
+    "lower_upper_mixed_case_matches": true,
+    "live_GPR_SIMD_and_plant_fields_preserved": true,
+    "cases": [
+      {
+        "name": "megagatling",
+        "long_string": false,
+        "target": true,
+        "premium_frame": 1
+      },
+      {
+        "name": "megagatling",
+        "long_string": true,
+        "target": true,
+        "premium_frame": 1
+      },
+      {
+        "name": "MEGAGATLING",
+        "long_string": false,
+        "target": true,
+        "premium_frame": 1
+      },
+      {
+        "name": "MEGAGATLING",
+        "long_string": true,
+        "target": true,
+        "premium_frame": 1
+      },
+      {
+        "name": "solartomato",
+        "long_string": false,
+        "target": true,
+        "premium_frame": 1
+      },
+      {
+        "name": "solartomato",
+        "long_string": true,
+        "target": true,
+        "premium_frame": 1
+      },
+      {
+        "name": "SolarTomato",
+        "long_string": false,
+        "target": true,
+        "premium_frame": 1
+      },
+      {
+        "name": "SolarTomato",
+        "long_string": true,
+        "target": true,
+        "premium_frame": 1
+      },
+      {
+        "name": "snowpea",
+        "long_string": false,
+        "target": false,
+        "premium_frame": 1
+      },
+      {
+        "name": "snowpea",
+        "long_string": true,
+        "target": false,
+        "premium_frame": 1
+      },
+      {
+        "name": "sunflower",
+        "long_string": false,
+        "target": false,
+        "premium_frame": 0
+      },
+      {
+        "name": "sunflower",
+        "long_string": true,
+        "target": false,
+        "premium_frame": 0
+      },
+      {
+        "name": "megagatlinx",
+        "long_string": false,
+        "target": false,
+        "premium_frame": 0
+      },
+      {
+        "name": "megagatlinx",
+        "long_string": true,
+        "target": false,
+        "premium_frame": 0
+      }
+    ],
+    "runtime_tested": false
+  },
+  "python_browser_v24_v25_v26_byte_identical": true,
+  "runtime_tested": false
+}
