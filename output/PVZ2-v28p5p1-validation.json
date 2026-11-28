@@ -1,0 +1,42 @@
+{
+  "version": "28.5.1",
+  "mower_alias": "GreatwallMovers",
+  "level_reference": "RTID(GreatwallMovers@LevelModules)",
+  "changed_levels": [
+    1,
+    2
+  ],
+  "modern_and_other_level_entries_byte_identical": true,
+  "original_LevelModules_objects_unchanged": true,
+  "world_selector_and_internal_map_packets_byte_identical": true,
+  "native_library": "unchanged from28.4",
+  "mower_native_animation_labels": {
+    "idle": 0,
+    "transition": 10,
+    "attack": 17
+  },
+  "mower_29_frames_stop_boundaries_match_original": true,
+  "original_planting_grid_pixels_and_geometry_preserved": true,
+  "changed_packets_from28p4": [
+    "DelayLoad_Background_GreatWall_Night_1536.rsgp",
+    "__MANIFESTGROUP__.rsgp",
+    "DelayLoad_Background_GreatWall_Night_384.rsgp",
+    "DelayLoad_Background_GreatWall_Day_1536.rsgp",
+    "Packages.rsgp",
+    "GreatwallMoverGroup_1536.rsgp",
+    "GreatwallMoverGroup_Common.rsgp",
+    "GreatwallMoverGroup_768.rsgp",
+    "DelayLoad_Background_GreatWall_Day_384.rsgp",
+    "GreatwallMoverGroup_384.rsgp",
+    "DelayLoad_Background_GreatWall_Day_768.rsgp",
+    "DelayLoad_Background_GreatWall_Night_768.rsgp",
+    "UI_Universe_1536.rsgp",
+    "UI_Universe_768.rsgp",
+    "UI_Universe_384.rsgp"
+  ],
+  "android_runtime_tested": false,
+  "world_selector": "Restored byte-for-byte to v28.4 camp island",
+  "internal_20_island_map_unchanged": true,
+  "other_world_icons_and_original_UI_atlases_byte_identical": true,
+  "world_icon_metadata_geometry_unchanged": true
+}
