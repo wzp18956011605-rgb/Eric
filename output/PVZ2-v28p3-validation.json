@@ -1,0 +1,18 @@
+{
+  "version": "28.3",
+  "reported_symptom": "Crash after Review before map appears",
+  "exact_crash_PC_available": false,
+  "root_cause_confirmed": false,
+  "compatibility_change": "Use original static island image path, remove all custom GreatWall PopAnim initialization",
+  "static_art_nodes": 20,
+  "playable_level_entries": 2,
+  "giant_static_index": 2,
+  "boss_static_index": 3,
+  "all_static_images_present_in_three_resolutions": true,
+  "custom_world_PAM_not_registered_or_loaded": true,
+  "button_and_level_entry_positions_unchanged": true,
+  "gameplay_and_level_stage_definitions_byte_identical_to_v28p2": true,
+  "merged_world_indexes_valid": true,
+  "native_library_unchanged": true,
+  "android_runtime_tested": false
+}
