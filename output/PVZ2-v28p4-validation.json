@@ -1,0 +1,195 @@
+{
+  "version": "28.4",
+  "base_OBB": "28 through28.3",
+  "native_input": "v26ARM64 family used by27-28.3",
+  "requires_OBB_and_native_update": true,
+  "overlay": {
+    "version": "28.4",
+    "original_modern_background_packets_restored_byte_for_byte": [
+      "DelayLoad_Background_FrontLawn_1536.rsgp",
+      "DelayLoad_Background_FrontLawn_768.rsgp",
+      "DelayLoad_Background_FrontLawn_384.rsgp"
+    ],
+    "original_modern_resource_descriptors_unchanged": true,
+    "Packages_and_level_gameplay_byte_identical_to_v28p3": true,
+    "greatwall_scene_names": [
+      "GreatwallStage",
+      "GreatwallNightsStage"
+    ],
+    "only_greatwall_left_camp_recomposed": true,
+    "planting_grid_native_rect": [
+      1068,
+      395,
+      2547,
+      1379
+    ],
+    "planting_grid_pixels_exactly_preserved": true,
+    "other_scene_pixels_unchanged_outside_left_visible_strip": true,
+    "edited_native_region": [
+      0,
+      234,
+      1068,
+      1536
+    ],
+    "texture_checks": [
+      {
+        "mode": "DAY",
+        "res": 1536,
+        "atlas_size": [
+          4096,
+          4096
+        ],
+        "tile_grid_pixels_and_size_preserved_at_source": true
+      },
+      {
+        "mode": "DAY",
+        "res": 768,
+        "atlas_size": [
+          2048,
+          2048
+        ],
+        "tile_grid_pixels_and_size_preserved_at_source": true
+      },
+      {
+        "mode": "DAY",
+        "res": 384,
+        "atlas_size": [
+          1024,
+          1024
+        ],
+        "tile_grid_pixels_and_size_preserved_at_source": true
+      },
+      {
+        "mode": "NIGHT",
+        "res": 1536,
+        "atlas_size": [
+          4096,
+          4096
+        ],
+        "tile_grid_pixels_and_size_preserved_at_source": true
+      },
+      {
+        "mode": "NIGHT",
+        "res": 768,
+        "atlas_size": [
+          2048,
+          2048
+        ],
+        "tile_grid_pixels_and_size_preserved_at_source": true
+      },
+      {
+        "mode": "NIGHT",
+        "res": 384,
+        "atlas_size": [
+          1024,
+          1024
+        ],
+        "tile_grid_pixels_and_size_preserved_at_source": true
+      }
+    ],
+    "requires_paired_v28p4_native_hook": true,
+    "android_runtime_tested": false
+  },
+  "native": {
+    "version": "28.4",
+    "native_arm64_hook_cases": [
+      {
+        "prefix": "IMAGE_BACKGROUNDS_GREATWALL_DAY",
+        "original_flag": 0,
+        "draw_flag": 0
+      },
+      {
+        "prefix": "IMAGE_BACKGROUNDS_GREATWALL_DAY",
+        "original_flag": 1,
+        "draw_flag": 0
+      },
+      {
+        "prefix": "IMAGE_BACKGROUNDS_GREATWALL_NIGHT",
+        "original_flag": 0,
+        "draw_flag": 0
+      },
+      {
+        "prefix": "IMAGE_BACKGROUNDS_GREATWALL_NIGHT",
+        "original_flag": 1,
+        "draw_flag": 0
+      },
+      {
+        "prefix": "IMAGE_BACKGROUNDS_FRONTLAWN",
+        "original_flag": 0,
+        "draw_flag": 0
+      },
+      {
+        "prefix": "IMAGE_BACKGROUNDS_FRONTLAWN",
+        "original_flag": 1,
+        "draw_flag": 1
+      },
+      {
+        "prefix": "IMAGE_BACKGROUNDS_BEACH",
+        "original_flag": 0,
+        "draw_flag": 0
+      },
+      {
+        "prefix": "IMAGE_BACKGROUNDS_BEACH",
+        "original_flag": 1,
+        "draw_flag": 1
+      },
+      {
+        "prefix": "IMAGE_BACKGROUNDS_GREATWALLISH",
+        "original_flag": 0,
+        "draw_flag": 0
+      },
+      {
+        "prefix": "IMAGE_BACKGROUNDS_GREATWALLISH",
+        "original_flag": 1,
+        "draw_flag": 1
+      },
+      {
+        "prefix": "IMAGE_BACKGROUNDS_greatwall_DAY",
+        "original_flag": 0,
+        "draw_flag": 0
+      },
+      {
+        "prefix": "IMAGE_BACKGROUNDS_greatwall_DAY",
+        "original_flag": 1,
+        "draw_flag": 1
+      },
+      {
+        "prefix": "",
+        "original_flag": 0,
+        "draw_flag": 0
+      },
+      {
+        "prefix": "",
+        "original_flag": 1,
+        "draw_flag": 1
+      }
+    ],
+    "null_properties_keeps_original_flag": true,
+    "caller_registers_stack_FP_and_NZCV_preserved": true,
+    "original_ModernStage_Draw_flow_executed": [
+      {
+        "prefix": "IMAGE_BACKGROUNDS_GREATWALL_DAY",
+        "base_background_drawn": true,
+        "shared_modern_grass_branch_entered": false
+      },
+      {
+        "prefix": "IMAGE_BACKGROUNDS_GREATWALL_NIGHT",
+        "base_background_drawn": true,
+        "shared_modern_grass_branch_entered": false
+      },
+      {
+        "prefix": "IMAGE_BACKGROUNDS_FRONTLAWN",
+        "base_background_drawn": true,
+        "shared_modern_grass_branch_entered": true
+      }
+    ],
+    "properties_getter_and_base_renderer_stubbed": true,
+    "shared_grass_cache_not_touched_for_GreatWall": true,
+    "all_other_native_bytes_identical_to_v26": true,
+    "no_new_segments_no_RWX_no_file_growth": true,
+    "android_runtime_tested": false
+  },
+  "offline_browser_equals_python": true,
+  "mismatched_libraries_rejected": true,
+  "android_runtime_tested": false
+}
