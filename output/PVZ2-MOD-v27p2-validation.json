@@ -1,0 +1,86 @@
+{
+  "version": "27.2",
+  "actual_image_gen_repainted_RGB_atlases": {
+    "SKYREF": "exec-dd12acc2-6a67-4efa-9bef-8ffbf1b58cac",
+    "SILVERREF": "exec-7907cee4-38e6-419c-887f-9b9856b31bf8"
+  },
+  "new_texture_checks": [
+    {
+      "res": 1536,
+      "color": "SKYREF",
+      "size": [
+        1024,
+        1024
+      ],
+      "alpha_identical_to_original": true,
+      "sprite_rectangles_copied": 29
+    },
+    {
+      "res": 1536,
+      "color": "SILVERREF",
+      "size": [
+        1024,
+        1024
+      ],
+      "alpha_identical_to_original": true,
+      "sprite_rectangles_copied": 29
+    },
+    {
+      "res": 768,
+      "color": "SKYREF",
+      "size": [
+        512,
+        512
+      ],
+      "alpha_identical_to_original": true,
+      "sprite_rectangles_copied": 29
+    },
+    {
+      "res": 768,
+      "color": "SILVERREF",
+      "size": [
+        512,
+        512
+      ],
+      "alpha_identical_to_original": true,
+      "sprite_rectangles_copied": 29
+    },
+    {
+      "res": 384,
+      "color": "SKYREF",
+      "size": [
+        256,
+        256
+      ],
+      "alpha_identical_to_original": true,
+      "sprite_rectangles_copied": 29
+    },
+    {
+      "res": 384,
+      "color": "SILVERREF",
+      "size": [
+        256,
+        256
+      ],
+      "alpha_identical_to_original": true,
+      "sprite_rectangles_copied": 29
+    }
+  ],
+  "new_slots": 56,
+  "PAM_geometry_and_timing_identical_to_original": true,
+  "no_cumulative_tint_or_additive_layers": true,
+  "numeric_Packages_byte_identical": true,
+  "native_files_byte_identical": true,
+  "runtime_tested": false,
+  "new_image_and_parent_references_valid": true,
+  "all_atlas_rectangles_and_packet_indices_valid": true,
+  "changed_files": [
+    "Overlay/StructInfo.json",
+    "Overlay/Packet/CustomFirePeaEffects_384.rsgp",
+    "Overlay/Packet/CustomFirePeaEffects_768.rsgp",
+    "Overlay/Packet/CustomFirePeaEffects_Common.rsgp",
+    "Overlay/Packet/__MANIFESTGROUP__.rsgp",
+    "Overlay/Packet/CustomFirePeaEffects_1536.rsgp"
+  ],
+  "numeric_stats_and_native_unchanged": true
+}
