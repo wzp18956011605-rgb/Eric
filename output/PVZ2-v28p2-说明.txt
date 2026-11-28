@@ -1,0 +1,17 @@
+第28.2版：从28直接升级，包含28.1全部修复＋场景定义改名
+
+无需先下载28.1。已经安装28或28.1的OBB，都可直接用本补丁。
+
+本次实际修改了Packages.rsgp里的LevelModules场景定义：
+白天 aliases: ["GreatwallStage"]
+夜晚 aliases: ["GreatwallNightsStage"]
+长城第一关StageModule同步改为RTID(GreatwallStage@LevelModules)，第二关同步改为RTID(GreatwallNightsStage@LevelModules)。大小写与拼写按此使用。
+这是场景别名与关卡引用改名；底层objclass继续使用兼容摩登1玩法的ModernStageProperties，背景图、数值和波次不变。
+
+同时包含28.1：纠正长城被路由到riftcircus的问题，长城资源编号为实际合并列表下标12，潘妮条目随追加位置同步为13—91；世界选择页长城主岛等比放大、主体居中，修正偏小偏下。
+保留长城20个展示浮岛、第10巨人岛、第20长城首领堡垒；只有第一二关有入口，内容使用摩登1，场景分别白天/夜晚长城及修正帐篷。其余28版累积改动保留。
+
+安装：解包当前OBB，将本包Overlay目录里面的Packet和StructInfo.json完整合并覆盖到OBB解包根目录，然后重打包。不要删除原Packet或只更换Packages；7个覆盖文件必须一起更新。结束游戏后台进程后重新启动。26版lib不用更换，APK和存档保留。
+
+参考场景JSON目录只是方便以后写关时查看定义；实际已写入Packages.rsgp，不要把参考JSON当作额外必需资源导入。
+校验：别名及引用解析通过；28.1修复保留；合并补丁覆盖28版后与28.2完整Overlay逐字节一致；Packet索引/ZIP CRC检查通过。沿用28.1原生索引模拟验证，未安卓实机验证。

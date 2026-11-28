@@ -1,0 +1,15 @@
+{
+  "version": "28.2",
+  "direct_upgrade_from": "28",
+  "includes_v28p1_routing_and_icon_fixes": true,
+  "scene_aliases": {
+    "GreatWallDayStage": "GreatwallStage",
+    "GreatWallNightStage": "GreatwallNightsStage"
+  },
+  "level1_StageModule": "RTID(GreatwallStage@LevelModules)",
+  "level2_StageModule": "RTID(GreatwallNightsStage@LevelModules)",
+  "only_alias_and_level_references_changed_from_28p1": true,
+  "merged_world_index_alignment": true,
+  "native_unchanged": true,
+  "android_runtime_tested": false
+}
