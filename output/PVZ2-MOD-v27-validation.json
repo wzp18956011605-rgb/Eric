@@ -1,0 +1,40 @@
+{
+  "cost": 300,
+  "chill": 0.1,
+  "pale_sky_tint": [
+    0.78,
+    0.9,
+    1.0
+  ],
+  "gray_tint": [
+    0.65,
+    0.65,
+    0.65
+  ],
+  "changed_PAMs": [
+    "IMAGES\\768\\CUSTOM\\EFFECTS\\FIRE_GOLD_PROJECTILE\\FIRE_GOLD_PROJECTILE.PAM",
+    "IMAGES\\768\\CUSTOM\\EFFECTS\\FIRE_GRAY_PROJECTILE\\FIRE_GRAY_PROJECTILE.PAM",
+    "IMAGES\\768\\CUSTOM\\EFFECTS\\FIRE_GOLD_IMPACT\\FIRE_GOLD_IMPACT.PAM",
+    "IMAGES\\768\\CUSTOM\\EFFECTS\\FIRE_GRAY_IMPACT\\FIRE_GRAY_IMPACT.PAM"
+  ],
+  "shared_atlas_pixels_unchanged": true,
+  "white_projectile_PAM_unchanged": true,
+  "animation_geometry_timing_alpha_preserved": true,
+  "native_library_changes": false,
+  "worldmap_changes": false,
+  "version": 27,
+  "base_version": 26,
+  "cost_all_level_entries": 300,
+  "sky_direct_damage": 40,
+  "sky_freeze_seconds": 0.5,
+  "sky_terminal": true,
+  "gray_gameplay_unchanged": true,
+  "native_files_byte_identical": true,
+  "only_changed_existing_files": [
+    "Overlay/Packet/CustomFirePeaEffects_Common.rsgp",
+    "Overlay/Packet/Packages.rsgp"
+  ],
+  "all_other_plant_fields_preserved": true,
+  "packet_index_roundtrip": true,
+  "runtime_tested": false
+}
