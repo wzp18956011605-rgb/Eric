@@ -1,0 +1,48 @@
+{
+  "version": "27.1",
+  "changed_files": [
+    "Overlay/Packet/CustomFirePeaEffects_Common.rsgp"
+  ],
+  "sky_base_rgb": [
+    0.78,
+    0.9,
+    1
+  ],
+  "sky_additive_rgb": [
+    0.22,
+    0.2,
+    0.17
+  ],
+  "gray_rgb": [
+    0.9,
+    0.9,
+    0.9
+  ],
+  "standard_PAM_additive_flag_preserved": true,
+  "PAM_checks": [
+    {
+      "path": "IMAGES\\768\\CUSTOM\\EFFECTS\\FIRE_GRAY_PROJECTILE\\FIRE_GRAY_PROJECTILE.PAM",
+      "additive_leaf_instances": 0,
+      "original_images_and_frame_timing_preserved": true
+    },
+    {
+      "path": "IMAGES\\768\\CUSTOM\\EFFECTS\\FIRE_GOLD_PROJECTILE\\FIRE_GOLD_PROJECTILE.PAM",
+      "additive_leaf_instances": 50,
+      "original_images_and_frame_timing_preserved": true
+    },
+    {
+      "path": "IMAGES\\768\\CUSTOM\\EFFECTS\\FIRE_GRAY_IMPACT\\FIRE_GRAY_IMPACT.PAM",
+      "additive_leaf_instances": 0,
+      "original_images_and_frame_timing_preserved": true
+    },
+    {
+      "path": "IMAGES\\768\\CUSTOM\\EFFECTS\\FIRE_GOLD_IMPACT\\FIRE_GOLD_IMPACT.PAM",
+      "additive_leaf_instances": 2,
+      "original_images_and_frame_timing_preserved": true
+    }
+  ],
+  "stats_native_maps_and_all_texture_pixels_byte_identical_to_v27": true,
+  "runtime_tested": false,
+  "active_sprite_indexes_and_resource_bounds_valid": true,
+  "checked_sprite_frames": 282
+}
