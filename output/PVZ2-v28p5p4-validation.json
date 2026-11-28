@@ -1,0 +1,129 @@
+{
+  "version": "28.5.4",
+  "whole_scene_imported_from_one_coherent_panorama_per_lighting": true,
+  "old_left_strip_on_old_right_scene_compositing_removed": true,
+  "tent": "horizontal width increased toward left with broader gable and doorway; roof and feet height and right edge held fixed",
+  "native_grid_rectangle": [
+    1068,
+    395,
+    2547,
+    1379
+  ],
+  "source_painted_seam_anchors": {
+    "DAY": {
+      "x": [
+        0,
+        350,
+        447,
+        541,
+        624,
+        712,
+        802,
+        890,
+        976,
+        1064,
+        1151,
+        1244,
+        1774
+      ],
+      "y": [
+        0,
+        288,
+        393,
+        490,
+        594,
+        696,
+        801,
+        887
+      ],
+      "outer_edge_rectification": {
+        "left": [
+          448,
+          415
+        ],
+        "right": [
+          1234,
+          1252
+        ]
+      }
+    },
+    "NIGHT": {
+      "x": [
+        0,
+        350,
+        456,
+        541,
+        625,
+        713,
+        802,
+        890,
+        977,
+        1064,
+        1151,
+        1244,
+        1774
+      ],
+      "y": [
+        0,
+        288,
+        393,
+        490,
+        593,
+        696,
+        801,
+        887
+      ],
+      "outer_edge_rectification": {
+        "left": [
+          448,
+          415
+        ],
+        "right": [
+          1234,
+          1252
+        ]
+      }
+    }
+  },
+  "grid_columns": 9,
+  "grid_rows": 5,
+  "native_grid_x_boundaries": [
+    1068,
+    1232,
+    1397,
+    1561,
+    1725,
+    1890,
+    2054,
+    2218,
+    2383,
+    2547
+  ],
+  "native_grid_y_boundaries": [
+    395,
+    592,
+    789,
+    985,
+    1182,
+    1379
+  ],
+  "planting_grid_geometry_preserved": true,
+  "left_courtyard_registration_anchor": [
+    350,
+    780
+  ],
+  "width_adjustment_preserves_roof_and_foot_y_and_keeps_door_behind_mowers": true,
+  "continuous_mesh_rectifies_painted_outer_tile_edges_to_native_rectangle": true,
+  "old_grid_pixels_repainted_for_scene_consistency": true,
+  "atlas_gutters_extruded_for_all_three_texture_parts_at_all_resolutions": true,
+  "mowers_levels_original_worlds_islands_manifest_struct_and_native_unchanged_from28p5p3": true,
+  "changed_packets_from28p5p3": [
+    "DelayLoad_Background_GreatWall_Night_1536.rsgp",
+    "DelayLoad_Background_GreatWall_Night_384.rsgp",
+    "DelayLoad_Background_GreatWall_Day_1536.rsgp",
+    "DelayLoad_Background_GreatWall_Day_384.rsgp",
+    "DelayLoad_Background_GreatWall_Day_768.rsgp",
+    "DelayLoad_Background_GreatWall_Night_768.rsgp"
+  ],
+  "android_runtime_tested": false
+}
