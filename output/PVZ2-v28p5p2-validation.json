@@ -1,0 +1,28 @@
+{
+  "version": "28.5.2",
+  "changes": [
+    "horizontal left courtyard pavilion in day and night",
+    "muted painterly wood-and-canvas GreatwallMovers artwork",
+    "mower draw origin moved up40 PAM units on all frames"
+  ],
+  "mower_logic_hit_detection_and_row_assignment_unchanged": true,
+  "mower_reference": "RTID(GreatwallMovers@LevelModules)",
+  "level1_and2_references_preserved": true,
+  "world_selector": "camp island retained; no mountain icon",
+  "all_map_and_original_world_packets_unchanged_from28p5p1": true,
+  "planting_grid_pixels_and_dimensions_exactly_preserved": true,
+  "native_library": "keep28.4 corrected lib",
+  "changed_packets_from28p5p1": [
+    "DelayLoad_Background_GreatWall_Night_1536.rsgp",
+    "DelayLoad_Background_GreatWall_Night_384.rsgp",
+    "DelayLoad_Background_GreatWall_Day_1536.rsgp",
+    "GreatwallMoverGroup_1536.rsgp",
+    "GreatwallMoverGroup_Common.rsgp",
+    "GreatwallMoverGroup_768.rsgp",
+    "DelayLoad_Background_GreatWall_Day_384.rsgp",
+    "GreatwallMoverGroup_384.rsgp",
+    "DelayLoad_Background_GreatWall_Day_768.rsgp",
+    "DelayLoad_Background_GreatWall_Night_768.rsgp"
+  ],
+  "android_runtime_tested": false
+}
